@@ -18,8 +18,6 @@ export default function Home() {
         <AboutSection />
 
         <ProjectTabs />
-
-        <FeaturedProjects />
         
         <OfficeLocations/>
 
