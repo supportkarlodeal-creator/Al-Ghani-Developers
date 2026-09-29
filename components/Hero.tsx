@@ -16,29 +16,69 @@ const slides = [
     height: 581,
     alt: "Al Ghani Developers",
   },
-{   image: "/images/hero/hero-3.png",
-     width: 1600,
-     height: 610,
-     alt: "Al Ghani Developers",
-   },
+  {
+    image: "/images/hero/hero-3.png",
+    width: 1600,
+    height: 610,
+    alt: "Al Ghani Developers",
+  },
 ];
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  /*
+   * Automatically move to the next slide every 5 seconds.
+   */
   useEffect(() => {
-    if (slides.length <= 1) return;
+    if (slides.length <= 1) {
+      return;
+    }
 
     const interval = setInterval(() => {
-      setCurrentSlide(
-        (current) => (current + 1) % slides.length
-      );
+      setCurrentSlide((current) => {
+        return (current + 1) % slides.length;
+      });
     }, 5000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
+  /*
+   * Get the currently active slide.
+   *
+   * IMPORTANT:
+   * This must be declared BEFORE the JSX because
+   * the slider uses current.width and current.height.
+   */
   const current = slides[currentSlide];
+
+  /*
+   * Go to previous slide.
+   */
+  const goToPrevious = () => {
+    setCurrentSlide((current) => {
+      return (current - 1 + slides.length) % slides.length;
+    });
+  };
+
+  /*
+   * Go to next slide.
+   */
+  const goToNext = () => {
+    setCurrentSlide((current) => {
+      return (current + 1) % slides.length;
+    });
+  };
+
+  /*
+   * Go directly to a specific slide.
+   */
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
 
   return (
     <section className="hero-section">
@@ -61,6 +101,7 @@ export default function Hero() {
               width={slide.width}
               height={slide.height}
               priority={index === 0}
+              loading={index === 0 ? "eager" : "lazy"}
               sizes="100vw"
               className="hero-image"
             />
@@ -68,18 +109,16 @@ export default function Hero() {
         ))}
       </div>
 
+      {/* =====================================================
+          DESKTOP ARROWS
+      ===================================================== */}
+
       {slides.length > 1 && (
         <>
           <button
             type="button"
             className="hero-arrow hero-arrow-left"
-            onClick={() =>
-              setCurrentSlide(
-                (current) =>
-                  (current - 1 + slides.length) %
-                  slides.length
-              )
-            }
+            onClick={goToPrevious}
             aria-label="Previous slide"
           >
             ‹
@@ -88,16 +127,15 @@ export default function Hero() {
           <button
             type="button"
             className="hero-arrow hero-arrow-right"
-            onClick={() =>
-              setCurrentSlide(
-                (current) =>
-                  (current + 1) % slides.length
-              )
-            }
+            onClick={goToNext}
             aria-label="Next slide"
           >
             ›
           </button>
+
+          {/* =================================================
+              SLIDE DOTS
+          ================================================= */}
 
           <div className="hero-dots">
             {slides.map((slide, index) => (
@@ -107,8 +145,11 @@ export default function Hero() {
                 className={`hero-dot ${
                   index === currentSlide ? "active" : ""
                 }`}
-                onClick={() => setCurrentSlide(index)}
+                onClick={() => goToSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
+                aria-current={
+                  index === currentSlide ? "true" : undefined
+                }
               />
             ))}
           </div>

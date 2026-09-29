@@ -827,19 +827,21 @@ img {
 .hero-slider {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: hidden
+  background #000000;
+  /*
+   * Hero.tsx supplies the slide aspect ratio.
+   * Do not give .hero-section a fixed height.
+   */
 }
 
 .hero-slide {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
   opacity: 0;
   visibility: hidden;
-
   transition:
     opacity 0.8s ease,
     visibility 0.8s ease;
@@ -852,10 +854,8 @@ img {
 
 .hero-image {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: contain;
   object-position: center;
 }
@@ -866,31 +866,20 @@ img {
 
 .hero-arrow {
   position: absolute;
-
   top: 50%;
   z-index: 5;
-
   width: 48px;
   height: 48px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   transform: translateY(-50%);
-
-  border: 1px solid
-    rgba(255, 255, 255, 0.5);
-
+  border: 1px solid rgba(255, 255, 255, 0.5);
   background: rgba(0, 0, 0, 0.35);
-
   color: #ffffff;
-
   font-size: 32px;
   line-height: 1;
-
   cursor: pointer;
-
   transition:
     background 0.2s ease,
     border-color 0.2s ease;
@@ -898,7 +887,6 @@ img {
 
 .hero-arrow:hover {
   background: rgba(0, 0, 0, 0.7);
-
   border-color: #ffffff;
 }
 
@@ -916,31 +904,22 @@ img {
 
 .hero-dots {
   position: absolute;
-
   left: 50%;
   bottom: 20px;
-
   z-index: 5;
-
   display: flex;
   gap: 8px;
-
   transform: translateX(-50%);
 }
 
 .hero-dot {
   width: 9px;
   height: 9px;
-
   padding: 0;
-
   border: 1px solid #ffffff;
   border-radius: 50%;
-
   background: transparent;
-
   cursor: pointer;
-
   transition:
     width 0.2s ease,
     background 0.2s ease;
@@ -948,15 +927,9 @@ img {
 
 .hero-dot.active {
   width: 28px;
-
   border-radius: 10px;
-
   background: #ffffff;
 }
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
 @media (max-width: 600px) {
   .hero-arrow {
@@ -964,7 +937,7 @@ img {
   }
 
   .hero-dots {
-    bottom: 12px;
+    bottom: 10px;
   }
 
   .hero-dot {
@@ -976,6 +949,7 @@ img {
     width: 22px;
   }
 }
+
 /* =========================================================
    SECTION HEADINGS
 ========================================================= */
@@ -1483,6 +1457,159 @@ img {
   display: flex;
 
   justify-content: center;
+}
+
+/* =========================================================
+   OFFICE LOCATIONS
+========================================================= */
+
+.office-locations-section {
+  width: 100%;
+  padding: 10px 0 75px;
+  background: #ffffff;
+}
+
+.office-locations-container {
+  width: min(
+    1200px,
+    calc(100% - 50px)
+  );
+
+  margin: 0 auto;
+}
+
+.office-locations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* =========================================================
+   OFFICE CARD
+========================================================= */
+
+.office-location-card {
+  overflow: hidden;
+
+  border: 1px solid #b19a45;
+  border-radius: 11px;
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.office-location-header {
+  min-height: 104px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 20px;
+
+  background: #164d39;
+
+  text-align: center;
+}
+
+.office-location-header h2 {
+  margin: 0 0 6px;
+
+  color: #c8a83e;
+
+  font-size: 27px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.office-location-header p {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 19px;
+  font-weight: 400;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.office-map {
+  position: relative;
+
+  width: 100%;
+  height: 420px;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+
+  border-top: 1px solid #b19a45;
+}
+
+.office-map iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .office-locations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .office-map {
+    height: 400px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .office-locations-section {
+    padding: 5px 0 55px;
+  }
+
+  .office-locations-container {
+    width: calc(100% - 30px);
+  }
+
+  .office-location-header {
+    min-height: 90px;
+    padding: 14px 12px;
+  }
+
+  .office-location-header h2 {
+    font-size: 22px;
+  }
+
+  .office-location-header p {
+    font-size: 15px;
+  }
+
+  .office-map {
+    height: 330px;
+  }
 }
 
 /* =========================================================
@@ -2153,77 +2280,6 @@ img {
   }
 }
 
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 850px) {
-  .hero-section {
-    height: 560px;
-  }
-
-  .hero-content {
-    width: calc(100% - 35px);
-  }
-
-  .hero-small-title {
-    font-size: 11px;
-
-    letter-spacing: 1.5px;
-  }
-
-  .hero-title {
-    font-size: 43px;
-  }
-
-  .hero-description {
-    max-width: 570px;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-  }
-
-  .hero-location {
-    font-size: 13px;
-  }
-
-  .about-section,
-  .featured-projects-section,
-  .contact-section {
-    padding: 80px 0;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-
-    gap: 60px;
-  }
-
-  .about-image-wrapper {
-    min-height: 480px;
-
-    max-width: 650px;
-
-    width: 100%;
-
-    margin: 0 auto;
-  }
-
-  .about-content {
-    padding-right: 0;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-
-    gap: 50px;
-  }
-
-  .contact-content > p {
-    max-width: 650px;
-  }
-}
 
 /* =========================================================
    MOBILE
@@ -2235,6 +2291,10 @@ img {
     --header-main-height: 75px;
   }
 
+  /* =======================================================
+     COMMON CONTAINERS
+  ======================================================= */
+
   .container {
     width: calc(100% - 30px);
   }
@@ -2242,6 +2302,10 @@ img {
   .header-container {
     width: calc(100% - 25px);
   }
+
+  /* =======================================================
+     HEADER
+  ======================================================= */
 
   .header-socials {
     gap: 3px;
@@ -2259,7 +2323,6 @@ img {
 
   .header-phone {
     font-size: 9px;
-
     gap: 6px;
   }
 
@@ -2273,52 +2336,24 @@ img {
     height: 60px;
   }
 
+  /* =======================================================
+     HERO
+  ======================================================= */
+
+  /*
+   * DO NOT set a fixed height here.
+   *
+   * Hero.tsx supplies the correct aspect ratio based
+   * on the currently active image.
+   */
+
   .hero-section {
-    height: 500px;
+    height: auto;
+    min-height: 0;
   }
 
-  .hero-content {
-    width: calc(100% - 30px);
-
-    justify-content: center;
-  }
-
-  .hero-small-title {
-    margin-bottom: 10px;
-
-    font-size: 9px;
-
-    letter-spacing: 1.2px;
-  }
-
-  .hero-title {
-    margin-bottom: 16px;
-
-    font-size: 34px;
-  }
-
-  .hero-description {
-    margin-bottom: 12px;
-
-    font-size: 12px;
-
-    line-height: 1.65;
-  }
-
-  .hero-location {
-    margin-bottom: 22px;
-
-    font-size: 11px;
-
-    line-height: 1.6;
-  }
-
-  .hero-button {
-    min-height: 45px;
-
-    padding: 0 20px;
-
-    font-size: 9px;
+  .hero-slider {
+    height: auto;
   }
 
   .hero-arrow {
@@ -2326,8 +2361,21 @@ img {
   }
 
   .hero-dots {
-    bottom: 17px;
+    bottom: 10px;
   }
+
+  .hero-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .hero-dot.active {
+    width: 22px;
+  }
+
+  /* =======================================================
+     SECTION HEADINGS
+  ======================================================= */
 
   .section-heading {
     margin-bottom: 32px;
@@ -2341,12 +2389,20 @@ img {
     font-size: 30px;
   }
 
+  /* =======================================================
+     SECTIONS
+  ======================================================= */
+
   .about-section,
   .project-tabs-section,
   .featured-projects-section,
   .contact-section {
     padding: 65px 0;
   }
+
+  /* =======================================================
+     ABOUT
+  ======================================================= */
 
   .about-image-wrapper {
     min-height: 330px;
@@ -2358,49 +2414,54 @@ img {
 
   .about-content p {
     font-size: 13px;
-
     line-height: 1.8;
   }
+
+  /* =======================================================
+     BUTTONS
+  ======================================================= */
 
   .primary-button,
   .secondary-button {
     min-height: 46px;
-
     padding: 0 18px;
-
     font-size: 9px;
   }
 
+  /* =======================================================
+     PROJECT TABS
+  ======================================================= */
+
   .project-tabs {
     display: grid;
-
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 
   .project-tab {
     min-height: 48px;
-
     padding: 8px 10px;
-
     text-align: center;
-
     font-size: 9px;
   }
 
+  /* =======================================================
+     FEATURED PROJECTS
+  ======================================================= */
+
   .featured-projects-grid {
     grid-template-columns: 1fr;
-
     gap: 20px;
   }
 
   .project-card-title {
     min-height: auto;
-
     font-size: 16px;
   }
+
+  /* =======================================================
+     CONTACT
+  ======================================================= */
 
   .contact-form-wrapper {
     padding: 25px 20px;
@@ -2408,7 +2469,6 @@ img {
 
   .contact-form-row {
     grid-template-columns: 1fr;
-
     gap: 20px;
   }
 
@@ -2420,78 +2480,74 @@ img {
     font-size: 13px;
   }
 
+  /* =======================================================
+     FLOATING ACTION
+  ======================================================= */
+
   .floating-actions {
     right: 12px;
-
     bottom: 75px;
   }
 
   .floating-action {
     min-height: 40px;
-
     padding: 0 14px;
-
     font-size: 8px;
   }
 
+  /* =======================================================
+     MOBILE FOOTER
+  ======================================================= */
+
   .footer-container {
     grid-template-columns: 1fr;
-
     gap: 40px;
-
     padding: 55px 0 85px;
   }
 
   .footer-bottom-inner {
     min-height: auto;
-
     padding: 20px 0 85px;
-
     flex-direction: column;
-
     align-items: flex-start;
   }
 
+  /* =======================================================
+     MOBILE BOTTOM NAVIGATION
+  ======================================================= */
+
   .mobile-footer-actions {
     position: fixed;
-
     left: 0;
     right: 0;
     bottom: 0;
-
     z-index: 200;
 
     height: 62px;
 
     display: grid;
-
-    grid-template-columns:
-      repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     background: #ffffff;
 
     border-top: 1px solid #dddddd;
 
     box-shadow:
-      0 -5px 20px
-        rgba(0, 0, 0, 0.08);
+      0 -5px 20px rgba(0, 0, 0, 0.08);
   }
 
   .mobile-footer-actions a,
   .mobile-footer-action-disabled {
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     flex-direction: column;
-
     gap: 4px;
 
     color: #555555;
 
     font-size: 8px;
-
     font-weight: 600;
 
     text-decoration: none;
@@ -2499,9 +2555,7 @@ img {
 
   .mobile-footer-icon {
     font-size: 17px;
-
     line-height: 1;
-
     color: var(--primary-color);
   }
 
@@ -2528,18 +2582,6 @@ img {
     width: 125px;
   }
 
-  .hero-title {
-    font-size: 30px;
-  }
-
-  .hero-description {
-    font-size: 11px;
-  }
-
-  .hero-location {
-    font-size: 10px;
-  }
-
   .project-tabs {
     grid-template-columns: 1fr;
   }
@@ -2549,154 +2591,205 @@ img {
   }
 }
 /* =========================================================
-   OFFICE LOCATIONS
+   PRIVACY POLICY
 ========================================================= */
 
-.office-locations-section {
-  width: 100%;
-  padding: 10px 0 75px;
+.privacy-policy-page {
   background: #ffffff;
 }
 
-.office-locations-container {
-  width: min(
-    1200px,
-    calc(100% - 50px)
-  );
+/* HERO */
 
-  margin: 0 auto;
-}
-
-.office-locations-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-/* =========================================================
-   OFFICE CARD
-========================================================= */
-
-.office-location-card {
-  overflow: hidden;
-
-  border: 1px solid #b19a45;
-  border-radius: 11px;
-
-  background: #ffffff;
-}
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.office-location-header {
-  min-height: 104px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 15px 20px;
-
+.privacy-policy-hero {
+  padding: 75px 0;
   background: #164d39;
-
   text-align: center;
 }
 
-.office-location-header h2 {
-  margin: 0 0 6px;
+.privacy-policy-hero .container {
+  max-width: 900px;
+}
+
+.privacy-policy-eyebrow {
+  display: block;
+  margin-bottom: 12px;
 
   color: #c8a83e;
 
-  font-size: 27px;
+  font-size: 10px;
   font-weight: 700;
-
-  line-height: 1.2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.office-location-header p {
-  margin: 0;
+.privacy-policy-hero h1 {
+  margin: 0 0 15px;
 
   color: #ffffff;
 
-  font-size: 19px;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(36px, 5vw, 54px);
   font-weight: 400;
-
-  line-height: 1.4;
+  line-height: 1.15;
 }
 
-/* =========================================================
-   MAP
-========================================================= */
+.privacy-policy-hero p {
+  max-width: 700px;
+  margin: 0 auto;
 
-.office-map {
-  position: relative;
+  color: rgba(255, 255, 255, 0.82);
 
-  width: 100%;
-  height: 420px;
-
-  overflow: hidden;
-
-  background: #eeeeee;
-
-  border-top: 1px solid #b19a45;
+  font-size: 13px;
+  line-height: 1.8;
 }
 
-.office-map iframe {
-  display: block;
+/* CONTENT */
 
-  width: 100%;
-  height: 100%;
+.privacy-policy-section {
+  padding: 80px 0 100px;
+  background: #ffffff;
+}
 
+.privacy-policy-container {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* BLOCKS */
+
+.privacy-policy-block {
+  margin-bottom: 55px;
+}
+
+.privacy-policy-block:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-policy-block h2 {
+  margin: 0 0 18px;
+
+  color: #171717;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.privacy-policy-block p {
+  margin: 0 0 15px;
+
+  color: #555555;
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.privacy-policy-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* LINKS */
+
+.privacy-policy-block a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.privacy-policy-block a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* LISTS */
+
+.privacy-policy-block ul,
+.privacy-policy-block ol {
   margin: 0;
-  padding: 0;
+  padding-left: 22px;
 
-  border: 0;
+  color: #555555;
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.privacy-policy-block li {
+  margin-bottom: 9px;
+}
+
+.privacy-policy-block li:last-child {
+  margin-bottom: 0;
+}
+
+/* CONTACT LIST */
+
+.privacy-contact-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+.privacy-contact-list li {
+  margin-bottom: 12px;
+}
+
+.privacy-contact-list strong {
+  color: #222222;
+  font-weight: 600;
 }
 
 /* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-  .office-locations-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .office-map {
-    height: 400px;
-  }
-}
-
-/* =========================================================
-   MOBILE
+   PRIVACY POLICY MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
-  .office-locations-section {
-    padding: 5px 0 55px;
+  .privacy-policy-hero {
+    padding: 55px 20px;
   }
 
-  .office-locations-container {
+  .privacy-policy-eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .privacy-policy-hero h1 {
+    font-size: 36px;
+  }
+
+  .privacy-policy-hero p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .privacy-policy-section {
+    padding: 55px 0 75px;
+  }
+
+  .privacy-policy-container {
     width: calc(100% - 30px);
   }
 
-  .office-location-header {
-    min-height: 90px;
-    padding: 14px 12px;
+  .privacy-policy-block {
+    margin-bottom: 42px;
   }
 
-  .office-location-header h2 {
-    font-size: 22px;
+  .privacy-policy-block h2 {
+    font-size: 24px;
+    margin-bottom: 14px;
   }
 
-  .office-location-header p {
-    font-size: 15px;
-  }
-
-  .office-map {
-    height: 330px;
+  .privacy-policy-block p,
+  .privacy-policy-block ul,
+  .privacy-policy-block ol {
+    font-size: 12px;
+    line-height: 1.8;
   }
 }

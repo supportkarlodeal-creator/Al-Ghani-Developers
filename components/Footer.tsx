@@ -129,6 +129,7 @@ export default function Footer() {
                   Ballot Result
                 </Link>
               </li>
+              <Link href="/privacy-policy">Privacy Policy</Link>
             </ul>
           </div>
 
