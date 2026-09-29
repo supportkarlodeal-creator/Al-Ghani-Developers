@@ -2,6 +2,10 @@ import Link from "next/link";
 
 const projects = [
   {
+    label: "Olive Block",
+    href: "/olive-block",
+  },
+  {
     label: "Square Avenue",
     href: "/square-avenue",
   },
@@ -25,10 +29,7 @@ const projects = [
     label: "Kings Lane",
     href: "/kings-lane",
   },
-  {
-    label: "Azmat Heights",
-    href: "/azmat-heights",
-  },
+  
 ];
 
 export default function ProjectTabs() {

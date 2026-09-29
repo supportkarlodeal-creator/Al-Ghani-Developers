@@ -14,7 +14,7 @@ type ProjectItem = {
 const projects: ProjectItem[] = [
   {
     label: "Al Ghani Garden Phase 7",
-    href: "/alghani",
+    href: "/phase-7",
     children: [
       {
         label: "The East Block",

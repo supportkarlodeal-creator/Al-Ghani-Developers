@@ -7,6 +7,11 @@ const projectGroups = [
     href: "/alghani",
     children: [
       {
+        label: "Olive Block",
+        href: "/olive-block",
+        badge: "New Project",
+      },
+      {
         label: "The East Block",
         href: "/the-east-block",
         badge: "New Project",
@@ -29,10 +34,7 @@ const projectGroups = [
     label: "Kings Lane",
     href: "/kings-lane",
   },
-  {
-    label: "Azmat Heights",
-    href: "/azmat-heights",
-  },
+  
   {
     label: "Al Ghani Phase III",
     href: "/al-ghani-phase-iii",
@@ -188,8 +190,8 @@ export default function Footer() {
                 CALL US (24/7)
               </span>
 
-              <a href="tel:+9242111116117">
-                042 111 116 117
+              <a href="tel:+92 327 8754344">
+                +92 327 8754344
               </a>
             </div>
 

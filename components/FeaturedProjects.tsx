@@ -1,80 +1,126 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useRef } from "react";
 
 const projects = [
   {
-    title: "AL-GHANI GARDEN PHASE I",
-    href: "/al-ghani-phase-i",
+    name: "OLIVE BLOCK",
+    slug: "olive-block",
+    image: "/images/projects/olive-block/olive-block-1.png",
   },
   {
-    title: "AZMAT HEIGHTS",
-    href: "/azmat-heights",
+    name: "THE EAST BLOCK",
+    slug: "the-east-block",
+    image: "/images/projects/the-east-block/the-east-block-1.png",
   },
   {
-    title: "AL GHANI GARDEN PHASE II",
-    href: "/al-ghani-phase-ii",
+    name: "AL-GHANI GARDEN PHASE 7",
+    slug: "phase-1",
+    image: "/images/projects/phase-7/phase-7-1.png",
   },
   {
-    title: "KINGS LANE",
-    href: "/kings-lane",
+    name: "AL-GHANI GARDEN PHASE I",
+    slug: "phase-1",
+    image: "/images/projects/phase-1/phase-1-1.png",
+  },
+  {
+    name: "AL GHANI GARDEN PHASE II",
+    slug: "phase-2",
+    image: "/images/projects/phase-2/phase-2-1.png",
+  },
+  {
+    name: "KINGS LANE",
+    slug: "kings-lane",
+    image: "/images/projects/kings-lane/kings-lane-1.png",
   },
 ];
 
 export default function FeaturedProjects() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollNext = () => {
+    if (!carouselRef.current) return;
+
+    carouselRef.current.scrollBy({
+      left: carouselRef.current.clientWidth * 0.82,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollPrevious = () => {
+    if (!carouselRef.current) return;
+
+    carouselRef.current.scrollBy({
+      left: -carouselRef.current.clientWidth * 0.82,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="featured-projects-section">
-      <div className="container">
-        <div className="section-heading">
-          <span className="section-small-title">
-            AL GHANI DEVELOPERS
-          </span>
+      <div className="featured-projects-container">
 
+        {/* Heading */}
+        <div className="featured-projects-heading">
+          <span>AL GHANI DEVELOPERS</span>
           <h2>Featured Projects</h2>
         </div>
 
-        <div className="featured-projects-grid">
-          {projects.map((project) => (
-            <article
-              key={project.href}
-              className="project-card"
-            >
-              <div className="project-card-image-wrapper">
-                <Image
-                  src="/images/hero/hero-1.png"
-                  alt={project.title}
-                  width={700}
-                  height={500}
-                  className="project-card-image"
-                />
-              </div>
+        {/* Carousel */}
+        <div className="featured-projects-carousel-wrapper">
 
-              <div className="project-card-content">
-                <span className="project-card-category">
-                  AL GHANI DEVELOPERS
-                </span>
-
-                <h3 className="project-card-title">
-                  {project.title}
-                </h3>
-
-                <Link
-                  href={project.href}
-                  className="project-card-link"
-                >
-                  VIEW PROJECT
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="featured-projects-button">
-          <Link
-            href="/projects"
-            className="primary-button"
+          <button
+            type="button"
+            className="featured-projects-arrow featured-projects-arrow-left"
+            onClick={scrollPrevious}
+            aria-label="Previous projects"
           >
-            VIEW ALL PROJECTS
-          </Link>
+            ‹
+          </button>
+
+          <div
+            ref={carouselRef}
+            className="featured-projects-carousel"
+          >
+            {projects.map((project) => (
+              <article
+                key={project.slug}
+                className="featured-project-card"
+              >
+                <div className="featured-project-image">
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    sizes="(max-width: 600px) 85vw, (max-width: 900px) 45vw, 285px"
+                  />
+                </div>
+
+                <div className="featured-project-content">
+                  <span className="featured-project-label">
+                    AL GHANI DEVELOPERS
+                  </span>
+
+                  <h3>{project.name}</h3>
+
+                  <a href={`/projects/${project.slug}`}>
+                    VIEW PROJECT
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className="featured-projects-arrow featured-projects-arrow-right"
+            onClick={scrollNext}
+            aria-label="Next projects"
+          >
+            ›
+          </button>
+
         </div>
       </div>
     </section>

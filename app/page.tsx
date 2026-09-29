@@ -6,6 +6,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import OfficeLocations from "@/components/OfficeLocations";
+import FeaturedProjects from "@/components/FeaturedProjects";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <AboutSection />
 
         <ProjectTabs />
+        <FeaturedProjects/>
         
         <OfficeLocations/>
 
