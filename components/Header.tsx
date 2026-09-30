@@ -17,6 +17,12 @@ const projects: ProjectItem[] = [
     href: "/phase-7",
     children: [
       {
+        label: "Olive Block",
+        href: "/olive-block",
+        badge: "New Project",
+      },
+
+      {
         label: "The East Block",
         href: "/the-east-block",
         badge: "New Project",
@@ -25,24 +31,22 @@ const projects: ProjectItem[] = [
         label: "Zavia Block",
         href: "/zavia-block",
       },
-      {
-        label: "Square Avenue",
-        href: "/square-avenue",
-      },
+     
       {
         label: "Awami Block",
         href: "/awami-block",
       },
     ],
   },
+   {
+        label: "Square Avenue",
+        href: "/square-avenue",
+      },
   {
     label: "Kings Lane",
     href: "/kings-lane",
   },
-  {
-    label: "Azmat Heights",
-    href: "/azmat-heights",
-  },
+  
   {
     label: "Al Ghani Phase III",
     href: "/al-ghani-phase-iii",
@@ -321,7 +325,7 @@ export default function Header() {
 
           <div className="header-phone">
             <span className="header-phone-number">
-              +92-327-8754344
+              +92-307-3777841
             </span>
 
             <span className="phone-separator">
@@ -330,8 +334,8 @@ export default function Header() {
 
             <span>
               Call Now:{" "}
-              <a href="tel:+92-327-8754344">
-                +92-327-8754344
+              <a href="tel:+92-307-3777841">
+                +92-307-3777841
               </a>{" "}
               (UAN)
             </span>
@@ -402,14 +406,14 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* LOGIN */}
+          {/* LOGIN
 
           <Link
             href="/my-account"
             className="login-register-button"
           >
             Login / Register
-          </Link>
+          </Link> */}
 
           {/* MOBILE MENU BUTTON */}
 

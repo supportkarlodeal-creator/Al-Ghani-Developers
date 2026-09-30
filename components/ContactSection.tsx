@@ -54,8 +54,8 @@ export default function ContactSection() {
                   Phone
                 </span>
 
-                <a href="tel:+92-327-8754344">
-                  +92-327-8754344
+                <a href="tel:+92-307-3777841">
+                  +92-307-3777841
                 </a>
               </div>
 

@@ -237,14 +237,14 @@ export default function PrivacyPolicyPage() {
               <ul className="privacy-contact-list">
                 <li>
                   <strong>Phone:</strong>{" "}
-                  <a href="tel:+923268001076">
-                    +92 326 8001076
+                  <a href="tel:+92-307-3777841">
+                    +92-307-3777841
                   </a>
                 </li>
 
                 <li>
                   <strong>Email:</strong>{" "}
-                  <a href="mailto:Info@alghani.com.pk">
+                  <a href="mailto:Info@alghani-developers.com">
                     Info@alghani.com.pk
                   </a>
                 </li>

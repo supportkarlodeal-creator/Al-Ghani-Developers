@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import OfficeLocations from "@/components/OfficeLocations";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import OliveBlockPromo from "@/components/OliveBlockPromo";
 
 export default function Home() {
   return (
@@ -16,11 +17,14 @@ export default function Home() {
       <main>
         <Hero />
 
+        <OliveBlockPromo/>
+
         <AboutSection />
 
         <ProjectTabs />
+
         <FeaturedProjects/>
-        
+      
         <OfficeLocations/>
 
         <ContactSection />

@@ -1,0 +1,440 @@
+:root {
+  --zavia-green: #164d39;
+  --zavia-green-dark: #0d3527;
+  --zavia-gold: #c8a83e;
+  --zavia-cream: #f7f3e8;
+  --zavia-text: #1c2b25;
+}
+
+.page {
+  background: #fff;
+  color: var(--zavia-text);
+}
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.containerWide {
+  width: min(1380px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #102f25;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 31, 23, .78), rgba(8, 31, 23, .28) 55%, rgba(8, 31, 23, .65)),
+    linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: min(900px, calc(100% - 40px));
+  text-align: center;
+  color: #fff;
+  padding: 120px 0 90px;
+}
+
+.heroContent span {
+  color: #e0c75f;
+  letter-spacing: .22em;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.heroContent h1 {
+  margin: 8px 0 0;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: .95;
+  letter-spacing: .04em;
+}
+
+.heroContent h2 {
+  margin: 18px 0 8px;
+  color: #fff;
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.heroContent p {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: .12em;
+  color: #f5e9b7;
+}
+
+.heroActions,
+.contactActions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.primaryButton,
+.secondaryButton,
+.whatsappButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 25px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  transition: .2s ease;
+}
+
+.primaryButton {
+  background: var(--zavia-gold);
+  color: #102f25;
+}
+
+.secondaryButton {
+  border: 1px solid rgba(255,255,255,.7);
+  color: #fff;
+  background: rgba(0,0,0,.12);
+}
+
+.whatsappButton {
+  background: #25d366;
+  color: #fff;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.whatsappButton:hover {
+  transform: translateY(-2px);
+}
+
+.intro {
+  padding: 95px 0;
+  background: #fff;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: #a48424;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.intro h2,
+.sectionHeading h2,
+.contactBox h2,
+.ctaBox h2 {
+  margin: 10px 0 18px;
+  color: var(--zavia-green);
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.1;
+}
+
+.intro p,
+.sectionHeading p,
+.contactBox p,
+.ctaBox p {
+  max-width: 900px;
+  margin: 0;
+  color: #59655f;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.amenities,
+.payment,
+.spotlight {
+  padding: 90px 0;
+  background: var(--zavia-cream);
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.sectionHeading p {
+  margin: 0 auto;
+}
+
+.amenityGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.amenityCard {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 15px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ded6bd;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(23, 58, 45, .05);
+}
+
+.amenityIcon {
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+}
+
+.amenityIcon img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.amenityCard h3 {
+  margin: 0;
+  color: var(--zavia-green);
+  font-size: 17px;
+}
+
+.location {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  min-height: 430px;
+  border: 1px solid #d9cfad;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.locationCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  background: var(--zavia-green);
+  color: #fff;
+}
+
+.coordinates {
+  color: #f4e7a9;
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+.map {
+  min-height: 430px;
+  background: #eee;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  border: 0;
+  display: block;
+}
+
+.paymentGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  align-items: start;
+}
+
+.paymentGrid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #fff;
+  border: 1px solid #d9cfad;
+  border-radius: 8px;
+}
+
+.contact {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.contactBox,
+.ctaBox {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 60px;
+  text-align: center;
+  border: 1px solid #d9cfad;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fff, #f8f5eb);
+}
+
+.contactBox p,
+.ctaBox p {
+  margin: 0 auto;
+}
+
+.gallerySection,
+.ceremony {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.spotlight {
+  background: var(--zavia-cream);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.galleryItem {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #e8e5da;
+}
+
+.galleryItem img {
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.galleryItem:hover img {
+  transform: scale(1.04);
+}
+
+.cta {
+  padding: 90px 0 110px;
+  background: var(--zavia-green-dark);
+}
+
+.ctaBox {
+  border-color: rgba(200,168,62,.5);
+  background: rgba(255,255,255,.97);
+}
+
+@media (max-width: 950px) {
+  .amenityGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .locationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationCopy {
+    min-height: 260px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .container,
+  .containerWide {
+    width: calc(100% - 30px);
+  }
+
+  .hero {
+    min-height: 570px;
+  }
+
+  .heroContent {
+    padding: 100px 0 70px;
+  }
+
+  .heroContent span {
+    font-size: 11px;
+  }
+
+  .heroContent p {
+    font-size: 13px;
+    letter-spacing: .08em;
+  }
+
+  .intro,
+  .amenities,
+  .location,
+  .payment,
+  .contact,
+  .gallerySection,
+  .spotlight,
+  .ceremony {
+    padding: 65px 0;
+  }
+
+  .amenityGrid,
+  .paymentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .contactBox,
+  .ctaBox {
+    padding: 35px 22px;
+  }
+
+  .locationCopy {
+    padding: 35px 25px;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero {
+    min-height: 520px;
+  }
+
+  .heroContent {
+    width: calc(100% - 28px);
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .whatsappButton {
+    width: 100%;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1199,11 +1199,41 @@ img {
 .about-project-image,
 .project-phase-2
 .about-project-image,
-.project-kings-lane
+
 .about-project-image,
 .project-azmat-heights
 .about-project-image {
   aspect-ratio: 1.75;
+}
+/* =========================================================
+   KINGS LANE — FULL WIDTH, SAME HEIGHT AS OTHER PROJECTS
+========================================================= */
+
+.project-kings-lane {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+}
+
+/* Image wrapper */
+.project-kings-lane > div:first-child {
+  position: relative !important;
+
+  width: 100% !important;
+
+  height: 420px !important;
+
+  aspect-ratio: auto !important;
+
+  overflow: hidden !important;
+}
+
+/* Actual Next.js image */
+.project-kings-lane > div:first-child img {
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: center !important;
 }
 
 /* =========================================================
@@ -2056,51 +2086,157 @@ img {
   }
 }
 /* =========================================================
-   FLOATING ACTION
+   FLOATING ACTIONS
 ========================================================= */
 
 .floating-actions {
   position: fixed;
 
-  right: 20px;
-  bottom: 25px;
+  right: 22px;
+  bottom: 22px;
 
-  z-index: 90;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 10px;
 }
 
-.floating-action {
-  min-height: 44px;
 
-  padding: 0 20px;
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.floating-whatsapp {
+  min-width: 145px;
+  height: 46px;
+
+  padding: 0 17px;
 
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
+
+  gap: 9px;
+
+  border-radius: 4px;
+
+  background: #25d366;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  box-shadow:
+    0 7px 22px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 11px 28px rgba(0, 0, 0, 0.22);
+}
+
+.floating-whatsapp-icon {
+  width: 21px;
+  height: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-whatsapp-icon svg {
+  width: 21px;
+  height: 21px;
+
+  fill: #ffffff;
+}
+
+
+/* =========================================================
+   GET IN TOUCH
+========================================================= */
+
+.floating-contact {
+  min-width: 145px;
+  height: 46px;
+
+  padding: 0 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
 
   background: var(--primary-color);
 
   color: #ffffff;
 
-  font-size: 10px;
-
-  font-weight: 700;
-
   text-decoration: none;
 
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
   box-shadow:
-    0 8px 25px
-      rgba(0, 0, 0, 0.2);
+    0 7px 22px rgba(0, 0, 0, 0.18);
 
   transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.floating-action:hover {
-  background: var(--dark);
+.floating-contact:hover {
+  transform: translateY(-3px);
 
-  transform: translateY(-2px);
+  box-shadow:
+    0 11px 28px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .floating-actions {
+    right: 14px;
+    bottom: 14px;
+
+    gap: 8px;
+  }
+
+  .floating-whatsapp,
+  .floating-contact {
+    min-width: 130px;
+    height: 42px;
+
+    padding: 0 13px;
+
+    font-size: 9px;
+  }
+
+  .floating-whatsapp-icon,
+  .floating-whatsapp-icon svg {
+    width: 19px;
+    height: 19px;
+  }
 }
 
 /* =========================================================
@@ -2630,20 +2766,6 @@ img {
     font-size: 13px;
   }
 
-  /* =======================================================
-     FLOATING ACTION
-  ======================================================= */
-
-  .floating-actions {
-    right: 12px;
-    bottom: 75px;
-  }
-
-  .floating-action {
-    min-height: 40px;
-    padding: 0 14px;
-    font-size: 8px;
-  }
 
   /* =======================================================
      MOBILE FOOTER
@@ -4764,5 +4886,2567 @@ img {
 
   .contact-final-cta {
     padding: 70px 0;
+  }
+}
+
+/* =========================================================
+   OLIVE BLOCK
+   ========================================================= */
+
+.olive-page {
+  --olive-green: #142713;
+  --olive-green-dark: #091208;
+  --olive-green-light: #294128;
+  --olive-gold: #e7c783;
+  --olive-gold-light: #f3d99d;
+  --olive-cream: #f7f0df;
+  --olive-white: #ffffff;
+  background: var(--olive-cream);
+  color: var(--olive-green);
+}
+
+/* HERO */
+
+.olive-hero {
+  position: relative;
+  width: 100%;
+  min-height: min(850px, 78vw);
+  overflow: hidden;
+  background: var(--olive-green-dark);
+}
+
+.olive-hero-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.olive-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 13, 5, 0.65) 0%,
+      rgba(5, 13, 5, 0.15) 45%,
+      rgba(5, 13, 5, 0.1) 100%
+    );
+}
+
+.olive-hero-content {
+  position: relative;
+  z-index: 2;
+  min-height: min(850px, 78vw);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+  color: white;
+}
+
+.olive-eyebrow {
+  margin-bottom: 14px;
+  color: var(--olive-gold-light);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.olive-hero-content h1 {
+  margin: 0;
+  color: var(--olive-gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(70px, 10vw, 150px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 4px;
+}
+
+.olive-hero-content p {
+  margin: 12px 0 35px;
+  color: var(--olive-gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(18px, 2vw, 28px);
+  letter-spacing: 8px;
+}
+
+.olive-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 28px;
+  border: 1px solid var(--olive-gold);
+  border-radius: 3px;
+  background: rgba(20, 39, 19, 0.7);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.olive-primary-button:hover {
+  background: var(--olive-gold);
+  color: var(--olive-green-dark);
+}
+
+/* COMMON */
+
+.olive-container {
+  width: min(1180px, calc(100% - 50px));
+  margin: 0 auto;
+}
+
+.olive-section-heading {
+  text-align: center;
+}
+
+.olive-section-heading > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #98783d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.olive-section-heading h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 5vw, 66px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.olive-section-heading p {
+  margin: 12px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+
+/* INTRO */
+
+.olive-intro {
+  padding: 100px 0;
+  background: var(--olive-cream);
+}
+
+.olive-intro-copy {
+  max-width: 720px;
+  margin: 35px auto 0;
+  text-align: center;
+}
+
+.olive-intro-copy p {
+  margin: 0;
+  color: #4b5548;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+/* PLOTS */
+
+.olive-plots {
+  padding: 100px 0;
+  background:
+    radial-gradient(
+      circle at center,
+      #345434 0%,
+      var(--olive-green) 55%,
+      var(--olive-green-dark) 100%
+    );
+  color: white;
+}
+
+.olive-section-heading.light > span {
+  color: var(--olive-gold);
+}
+
+.olive-section-heading.light h2 {
+  color: white;
+}
+
+.olive-plot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 55px;
+}
+
+.olive-plot-card {
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(231, 199, 131, 0.7);
+  background: rgba(255, 255, 255, 0.035);
+  text-align: center;
+}
+
+.olive-plot-card strong {
+  color: var(--olive-gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.olive-plot-card span {
+  margin-top: 10px;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+/* INSTALLMENT */
+
+.olive-installment {
+  padding: 100px 0;
+  background: #eee5d1;
+}
+
+.olive-installment-box {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 45px 50px;
+  border: 1px solid #a8894c;
+  text-align: center;
+}
+
+.olive-installment-box > span {
+  color: #765d2c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  letter-spacing: 4px;
+}
+
+.olive-installment-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.olive-installment-price strong {
+  color: var(--olive-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(75px, 10vw, 125px);
+  line-height: 1;
+}
+
+.olive-installment-price div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #765d2c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.olive-installment-note {
+  max-width: 650px;
+  margin: 20px auto 0;
+  color: #706958;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* TRANSFER */
+
+.olive-transfer {
+  padding: 60px 0;
+  background: var(--olive-green);
+  text-align: center;
+}
+
+.olive-transfer p {
+  margin: 0;
+  color: var(--olive-gold-light);
+  font-size: clamp(26px, 4vw, 48px);
+  font-weight: 600;
+}
+
+/* MASTER PLAN */
+
+.olive-masterplan {
+  padding: 100px 0;
+  background: var(--olive-cream);
+}
+
+.olive-masterplan-image {
+  max-width: 950px;
+  margin: 55px auto 0;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(20, 39, 19, 0.18);
+}
+
+.olive-masterplan-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* CREATIVES */
+
+.olive-creatives {
+  padding: 100px 0;
+  background: #e9e0cc;
+}
+
+.olive-creatives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 55px;
+}
+
+.olive-creative-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 15px 45px rgba(20, 39, 19, 0.15);
+}
+
+.olive-creative-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* CTA */
+
+.olive-cta {
+  padding: 110px 0;
+  background:
+    linear-gradient(
+      rgba(9, 18, 8, 0.94),
+      rgba(9, 18, 8, 0.94)
+    ),
+    url("/images/projects/olive-block/olive-hero.jpg") center / cover;
+  color: white;
+  text-align: center;
+}
+
+.olive-cta > .olive-container > span {
+  color: var(--olive-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.olive-cta h2 {
+  margin: 20px 0 0;
+  color: var(--olive-gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(60px, 8vw, 110px);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.olive-cta h2 small {
+  display: block;
+  margin-top: 15px;
+  font-size: 18px;
+  letter-spacing: 7px;
+}
+
+.olive-cta p {
+  max-width: 600px;
+  margin: 30px auto;
+  color: #ddd7c8;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.olive-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.olive-cta-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 25px;
+  border: 1px solid var(--olive-gold);
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: 0.25s ease;
+}
+
+.olive-cta-actions a:hover {
+  background: var(--olive-gold);
+  color: var(--olive-green-dark);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .olive-hero,
+  .olive-hero-content {
+    min-height: 700px;
+  }
+
+  .olive-plot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .olive-creatives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .olive-creatives-grid .olive-creative-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .olive-container {
+    width: calc(100% - 30px);
+  }
+
+  .olive-hero {
+    min-height: 620px;
+  }
+
+  .olive-hero-content {
+    min-height: 620px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .olive-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .olive-hero-content h1 {
+    font-size: 75px;
+  }
+
+  .olive-hero-content p {
+    font-size: 15px;
+    letter-spacing: 5px;
+  }
+
+  .olive-intro,
+  .olive-plots,
+  .olive-installment,
+  .olive-masterplan,
+  .olive-creatives,
+  .olive-cta {
+    padding: 70px 0;
+  }
+
+  .olive-plot-grid {
+    gap: 10px;
+    margin-top: 35px;
+  }
+
+  .olive-plot-card {
+    min-height: 150px;
+  }
+
+  .olive-plot-card strong {
+    font-size: 55px;
+  }
+
+  .olive-installment-box {
+    padding: 30px 15px;
+  }
+
+  .olive-installment-box > span {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .olive-installment-price {
+    gap: 12px;
+  }
+
+  .olive-installment-price strong {
+    font-size: 70px;
+  }
+
+  .olive-installment-price div {
+    font-size: 14px;
+  }
+
+  .olive-creatives-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .olive-creatives-grid .olive-creative-card:last-child {
+    max-width: none;
+  }
+
+  .olive-transfer {
+    padding: 45px 15px;
+  }
+
+  .olive-cta h2 small {
+    font-size: 13px;
+    letter-spacing: 4px;
+  }
+}
+/* =========================================================
+   OLIVE BLOCK HOME PROMO
+   Desktop:
+   - White background
+   - Text on left
+   - Portrait video on right
+
+   Mobile:
+   - Portrait video becomes full background
+   - Promotional content overlays the video
+   ========================================================= */
+
+.olive-home-promo {
+  width: 100%;
+  padding: 70px 0 85px;
+  background: #ffffff;
+}
+
+.olive-home-promo-inner {
+  width: min(1320px, calc(100% - 70px));
+  min-height: 650px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 470px);
+  gap: 70px;
+  align-items: center;
+}
+
+/* =========================================================
+   LEFT — PROMOTIONAL CONTENT
+   ========================================================= */
+
+.olive-home-promo-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+}
+
+.olive-home-copy {
+  width: min(650px, 100%);
+}
+
+.olive-home-eyebrow {
+  display: block;
+  margin-bottom: 12px;
+
+  color: #a78345;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.olive-home-promo-content h2 {
+  margin: 0;
+
+  color: #263c25;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(78px, 8vw, 122px);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: 3px;
+}
+
+.olive-home-tagline {
+  margin: 14px 0 25px;
+
+  color: #a78345;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  letter-spacing: 6px;
+}
+
+.olive-home-description {
+  max-width: 590px;
+  margin: 0 0 25px;
+
+  color: #555b52;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.olive-home-description strong {
+  color: #263c25;
+  font-weight: 700;
+}
+
+/* =========================================================
+   DETAILS
+   ========================================================= */
+
+.olive-home-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+
+  max-width: 590px;
+  margin-bottom: 22px;
+}
+
+.olive-home-details > div {
+  padding: 16px 18px;
+
+  border-left: 2px solid #c8a45a;
+  background: #faf9f5;
+}
+
+.olive-detail-label {
+  display: block;
+  margin-bottom: 7px;
+
+  color: #a78345;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.olive-home-details strong {
+  color: #263c25;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   INSTALLMENT OFFER
+   ========================================================= */
+
+.olive-home-offer {
+  width: min(100%, 470px);
+  padding: 20px 25px;
+
+  border: 1px solid #c8a45a;
+  background: #faf8f2;
+}
+
+.olive-home-offer > span {
+  display: block;
+
+  color: #6f5a31;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.olive-home-price {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-top: 3px;
+}
+
+.olive-home-price strong {
+  color: #263c25;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(62px, 6vw, 82px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.olive-home-price div {
+  display: flex;
+  flex-direction: column;
+
+  color: #a78345;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.olive-home-note {
+  margin: 9px 0 20px;
+
+  color: #77736a;
+  font-size: 11px;
+}
+
+/* =========================================================
+   LOCATION HIGHLIGHTS
+   ========================================================= */
+
+.olive-home-location {
+  max-width: 590px;
+  margin-bottom: 25px;
+}
+
+.olive-home-location > span {
+  color: #a78345;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.olive-home-location p {
+  margin: 7px 0 0;
+
+  color: #6a6e66;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.olive-home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50px;
+  padding: 0 27px;
+
+  background: #263c25;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.olive-home-button:hover {
+  background: #a78345;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RIGHT — PORTRAIT VIDEO
+   ========================================================= */
+
+.olive-home-video {
+  position: relative;
+
+  justify-self: end;
+
+  width: min(100%, 430px);
+  aspect-ratio: 9 / 16;
+
+  overflow: hidden;
+
+  background: #142313;
+
+  box-shadow: 0 20px 55px rgba(20, 39, 19, 0.18);
+}
+
+.olive-home-video video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .olive-home-promo {
+    padding: 55px 0 70px;
+  }
+
+  .olive-home-promo-inner {
+    width: min(900px, calc(100% - 45px));
+
+    gap: 40px;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(290px, 370px);
+  }
+
+  .olive-home-details {
+    grid-template-columns: 1fr;
+  }
+
+  .olive-home-promo-content h2 {
+    font-size: clamp(68px, 9vw, 100px);
+  }
+
+  .olive-home-tagline {
+    font-size: 17px;
+    letter-spacing: 5px;
+  }
+
+  .olive-home-description {
+    font-size: 15px;
+  }
+
+  .olive-home-price strong {
+    font-size: 65px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  /*
+   * Remove the desktop white spacing.
+   * The video becomes the complete background of the section.
+   */
+
+  .olive-home-promo {
+    padding: 0;
+    background: #142313;
+  }
+
+  .olive-home-promo-inner {
+    position: relative;
+
+    width: 100%;
+    min-height: 720px;
+
+    display: block;
+
+    overflow: hidden;
+  }
+
+  /* =======================================================
+     VIDEO BACKGROUND
+     ======================================================= */
+
+  .olive-home-video {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    aspect-ratio: auto;
+
+    background: #142313;
+
+    box-shadow: none;
+  }
+
+  .olive-home-video video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /*
+   * Dark overlay over the video.
+   * This makes the promotional text readable.
+   */
+
+  .olive-home-video::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7, 18, 7, 0.48) 0%,
+        rgba(7, 18, 7, 0.58) 45%,
+        rgba(7, 18, 7, 0.78) 100%
+      );
+
+    pointer-events: none;
+  }
+
+  /* =======================================================
+     OVERLAY CONTENT
+     ======================================================= */
+
+  .olive-home-promo-content {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 20px;
+
+    background: transparent;
+
+    color: #ffffff;
+  }
+
+  .olive-home-copy {
+    width: 100%;
+    max-width: 520px;
+
+    text-align: center;
+  }
+
+  /* =======================================================
+     MOBILE HEADING
+     ======================================================= */
+
+  .olive-home-eyebrow {
+    margin-bottom: 10px;
+
+    color: #f0ca88;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .olive-home-promo-content h2 {
+    margin: 0;
+
+    color: #f0ca88;
+
+    font-size: 76px;
+    line-height: 0.85;
+    letter-spacing: 3px;
+  }
+
+  .olive-home-tagline {
+    margin: 13px 0 22px;
+
+    color: #f0ca88;
+
+    font-size: 15px;
+    letter-spacing: 4px;
+  }
+
+  /* =======================================================
+     MOBILE DESCRIPTION
+     ======================================================= */
+
+  .olive-home-description {
+    max-width: 450px;
+    margin: 0 auto 22px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .olive-home-description strong {
+    color: #f0ca88;
+  }
+
+  /* =======================================================
+     MOBILE DETAILS
+     ======================================================= */
+
+  .olive-home-details {
+    grid-template-columns: 1fr;
+
+    width: 100%;
+    max-width: 430px;
+
+    margin: 0 auto 18px;
+
+    gap: 10px;
+
+    text-align: left;
+  }
+
+  .olive-home-details > div {
+    padding: 13px 16px;
+
+    border: 1px solid rgba(240, 202, 136, 0.55);
+    border-left: 2px solid #f0ca88;
+
+    background: rgba(8, 20, 8, 0.55);
+
+    backdrop-filter: blur(4px);
+  }
+
+  .olive-detail-label {
+    margin-bottom: 5px;
+
+    color: #f0ca88;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .olive-home-details strong {
+    color: #ffffff;
+
+    font-size: 12px;
+  }
+
+  /* =======================================================
+     MOBILE OFFER
+     ======================================================= */
+
+  .olive-home-offer {
+    width: 100%;
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    padding: 17px 20px;
+
+    border: 1px solid rgba(240, 202, 136, 0.8);
+
+    background: rgba(8, 20, 8, 0.62);
+
+    backdrop-filter: blur(5px);
+
+    text-align: left;
+  }
+
+  .olive-home-offer > span {
+    color: #f0ca88;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .olive-home-price {
+    gap: 13px;
+  }
+
+  .olive-home-price strong {
+    color: #f0ca88;
+
+    font-size: 65px;
+  }
+
+  .olive-home-price div {
+    color: #f0ca88;
+
+    font-size: 12px;
+  }
+
+  .olive-home-note {
+    margin: 8px auto 17px;
+
+    color: #f2eee3;
+
+    font-size: 10px;
+  }
+
+  /* =======================================================
+     MOBILE LOCATION
+     ======================================================= */
+
+  .olive-home-location {
+    width: 100%;
+    max-width: 430px;
+
+    margin: 0 auto 20px;
+
+    text-align: left;
+  }
+
+  .olive-home-location > span {
+    color: #f0ca88;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .olive-home-location p {
+    margin-top: 5px;
+
+    color: #f3f0e7;
+
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  /* =======================================================
+     MOBILE BUTTON
+     ======================================================= */
+
+  .olive-home-button {
+    min-height: 48px;
+
+    margin: 0 auto;
+    padding: 0 24px;
+
+    background: #f0ca88;
+    color: #142313;
+
+    font-size: 10px;
+    letter-spacing: 1.8px;
+  }
+
+  .olive-home-button:hover {
+    background: #ffffff;
+    color: #142313;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .olive-home-promo-inner,
+  .olive-home-promo-content {
+    min-height: 680px;
+  }
+
+  .olive-home-promo-content {
+    padding: 35px 15px;
+  }
+
+  .olive-home-promo-content h2 {
+    font-size: 64px;
+  }
+
+  .olive-home-tagline {
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+
+  .olive-home-description {
+    font-size: 13px;
+  }
+
+  .olive-home-price strong {
+    font-size: 56px;
+  }
+
+  .olive-home-details > div {
+    padding: 11px 13px;
+  }
+
+  .olive-home-location p {
+    font-size: 10px;
+  }
+}
+/* =========================================================
+   ABOUT US PAGE
+========================================================= */
+
+.about-page {
+  width: 100%;
+  background: #ffffff;
+  color: #111111;
+}
+
+.about-container {
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   ABOUT / WHO WE ARE
+========================================================= */
+
+.about-section {
+  width: 100%;
+  padding: 75px 0 90px;
+  background: #ffffff;
+}
+
+.about-intro {
+  max-width: 900px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.about-eyebrow {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--primary-color);
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+}
+
+.about-heading {
+  margin: 0 0 12px;
+
+  color: #111111;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 31px;
+  font-weight: 500;
+
+  line-height: 1.15;
+}
+
+.about-intro-text {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  color: #333333;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   OUR MISSION
+========================================================= */
+
+.about-mission {
+  max-width: 1000px;
+
+  margin: 0 auto 45px;
+
+  display: grid;
+
+  grid-template-columns:
+    0.72fr
+    1.28fr;
+
+  column-gap: 45px;
+
+  align-items: start;
+}
+
+.about-mission-heading {
+  min-width: 0;
+}
+
+.about-mission-content {
+  padding-top: 19px;
+}
+
+.about-mission-content p {
+  margin: 0;
+
+  color: #333333;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   MAIN ABOUT IMAGE
+========================================================= */
+
+.about-main-image {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  aspect-ratio: 2.27 / 1;
+
+  background: #eeeeee;
+}
+
+.about-main-image img {
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.about-projects-section {
+  width: 100%;
+
+  padding: 75px 0 90px;
+
+  background: #ffffff;
+}
+
+.about-projects-heading {
+  margin-bottom: 42px;
+
+  text-align: center;
+}
+
+.about-projects-heading .about-heading {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.about-project-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.about-project-card {
+  display: block;
+
+  min-width: 0;
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+.about-project-image {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  aspect-ratio: 1.35 / 1;
+
+  background: #eeeeee;
+}
+
+.about-project-image img {
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.about-project-card:hover
+.about-project-image img {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   VIEW PROJECT
+========================================================= */
+
+.about-view-project {
+  display: block;
+
+  margin-top: 10px;
+
+  color: #333333;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  text-align: center;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    color 0.2s ease;
+}
+
+.about-project-card:hover
+.about-view-project {
+  color: var(--primary-color);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .about-mission {
+    grid-template-columns: 1fr;
+
+    row-gap: 20px;
+  }
+
+  .about-mission-content {
+    padding-top: 0;
+  }
+
+  .about-project-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .about-section {
+    padding: 55px 0 65px;
+  }
+
+  .about-projects-section {
+    padding: 55px 0 70px;
+  }
+
+  .about-container {
+    width: calc(100% - 30px);
+  }
+
+  .about-intro {
+    margin-bottom: 40px;
+  }
+
+  .about-heading {
+    font-size: 28px;
+  }
+
+  .about-intro-text,
+  .about-mission-content p {
+    font-size: 12px;
+  }
+
+  .about-mission {
+    margin-bottom: 30px;
+  }
+
+  .about-main-image {
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .about-projects-heading {
+    margin-bottom: 35px;
+  }
+
+  .about-project-grid {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .about-project-image {
+    aspect-ratio: 1.45 / 1;
+  }
+
+  .about-view-project {
+    margin-top: 9px;
+  }
+}
+/* =========================================================
+   THE EAST BLOCK
+========================================================= */
+
+.east-block-page {
+  --east-green: #164d39;
+  --east-dark: #0b2b1e;
+  --east-gold: #c8a83e;
+  --east-light-gold: #dfc873;
+  --east-cream: #f7f3e9;
+  --east-text: #424a45;
+
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: var(--east-green);
+}
+
+.east-container {
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.east-hero {
+  position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  background: var(--east-dark);
+}
+
+.east-hero-image {
+  position: absolute;
+  inset: 0;
+}
+
+.east-hero-image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.east-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 28, 19, 0.88) 0%,
+      rgba(5, 28, 19, 0.62) 42%,
+      rgba(5, 28, 19, 0.18) 100%
+    );
+}
+
+.east-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1200px, calc(100% - 50px));
+  min-height: 650px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  color: #fff;
+}
+
+.east-hero-content > span {
+  color: var(--east-light-gold);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.east-hero-content h1 {
+  margin: 15px 0;
+
+  color: #fff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(55px, 8vw, 105px);
+  font-weight: 400;
+
+  line-height: 0.95;
+}
+
+.east-hero-content p {
+  margin: 0;
+
+  color: #f3f1e8;
+
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.east-hero-buttons {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+.east-hero-buttons a {
+  min-height: 50px;
+
+  padding: 0 27px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--east-gold);
+
+  background: var(--east-gold);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.east-hero-buttons a + a {
+  background: transparent;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.east-section-heading {
+  max-width: 900px;
+}
+
+.east-section-heading.center {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.east-section-heading > span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #a17f32;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.east-section-heading h2 {
+  margin: 0;
+
+  color: var(--east-green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(38px, 5vw, 66px);
+  font-weight: 400;
+
+  line-height: 1.05;
+}
+
+.east-section-heading p {
+  max-width: 680px;
+
+  margin: 20px auto 0;
+
+  color: var(--east-text);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.east-intro {
+  padding: 100px 0;
+
+  background: #fff;
+}
+
+.east-intro-content {
+  max-width: 850px;
+
+  margin: 40px auto 0;
+
+  color: var(--east-text);
+
+  text-align: center;
+}
+
+.east-intro-content p {
+  margin: 0 0 20px;
+
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   AMENITIES
+========================================================= */
+
+.east-amenities {
+  padding: 105px 0;
+
+  background: var(--east-cream);
+}
+
+.east-amenities-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 15px;
+
+  margin-top: 55px;
+}
+
+.east-amenity-card {
+  min-height: 180px;
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid rgba(200, 168, 62, 0.35);
+
+  background: #fff;
+}
+
+.east-amenity-card span {
+  color: var(--east-gold);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 27px;
+}
+
+.east-amenity-card h3 {
+  margin: 20px 0 0;
+
+  color: var(--east-green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   INVESTMENT
+========================================================= */
+
+.east-investment {
+  padding: 100px 0;
+
+  background: #fff;
+}
+
+.east-investment-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.east-investment-image {
+  position: relative;
+
+  min-height: 560px;
+
+  overflow: hidden;
+}
+
+.east-investment-image img {
+  object-fit: cover;
+}
+
+.east-investment-content > span {
+  color: #a17f32;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.east-investment-content h2 {
+  margin: 14px 0 25px;
+
+  color: var(--east-green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 400;
+
+  line-height: 1.05;
+}
+
+.east-investment-content p {
+  max-width: 580px;
+
+  margin: 0 0 30px;
+
+  color: var(--east-text);
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+.east-investment-content a {
+  min-height: 50px;
+
+  padding: 0 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--east-green);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+.east-highlights {
+  padding: 105px 0;
+
+  background: var(--east-cream);
+}
+
+.east-highlight-layout {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    0.9fr;
+
+  gap: 50px;
+
+  margin-top: 55px;
+
+  align-items: stretch;
+}
+
+.east-highlight-image {
+  position: relative;
+
+  min-height: 550px;
+
+  overflow: hidden;
+}
+
+.east-highlight-image img {
+  object-fit: cover;
+}
+
+.east-highlight-list {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 0;
+
+  background: var(--east-green);
+}
+
+.east-highlight-list div {
+  display: grid;
+
+  grid-template-columns: 50px 1fr;
+
+  gap: 15px;
+
+  padding: 23px 25px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.east-highlight-list strong {
+  color: var(--east-light-gold);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.east-highlight-list span {
+  color: #fff;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PLOT SIZES
+========================================================= */
+
+.east-plots {
+  padding: 100px 0;
+
+  background: #fff;
+}
+
+.east-plot-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+
+  margin-top: 50px;
+}
+
+.east-plot-card {
+  min-height: 190px;
+
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(200, 168, 62, 0.55);
+
+  background: var(--east-cream);
+
+  text-align: center;
+}
+
+.east-plot-card span {
+  color: #a17f32;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.east-plot-card strong {
+  margin: 12px 0 5px;
+
+  color: var(--east-green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.east-plot-card small {
+  color: #555;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.east-location {
+  padding: 100px 0;
+
+  background: var(--east-green);
+}
+
+.east-location-grid {
+  display: grid;
+
+  grid-template-columns:
+    0.85fr
+    1.15fr;
+
+  gap: 60px;
+
+  align-items: stretch;
+}
+
+.east-location-content {
+  padding: 25px 0;
+
+  color: #fff;
+}
+
+.east-location-content > span {
+  color: var(--east-light-gold);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.east-location-content h2 {
+  margin: 15px 0 25px;
+
+  color: #fff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 400;
+
+  line-height: 1.05;
+}
+
+.east-location-content p {
+  max-width: 500px;
+
+  margin: 0 0 18px;
+
+  color: #e7ebe7;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.east-location-content a {
+  margin-top: 15px;
+
+  min-height: 48px;
+
+  padding: 0 25px;
+
+  display: inline-flex;
+  align-items: center;
+
+  border: 1px solid var(--east-gold);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.east-location-map {
+  min-height: 480px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.east-location-map iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 480px;
+
+  border: 0;
+}
+
+
+/* =========================================================
+   PAYMENT
+========================================================= */
+
+.east-payment {
+  padding: 100px 0;
+
+  background: #fff;
+}
+
+.east-payment-image {
+  max-width: 1100px;
+
+  margin: 50px auto 0;
+
+  overflow: hidden;
+
+  background: #f2f2f2;
+}
+
+.east-payment-image img {
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.east-contact {
+  padding: 100px 0;
+
+  background: var(--east-cream);
+
+  text-align: center;
+}
+
+.east-contact > .east-container > span {
+  color: #a17f32;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.east-contact h2 {
+  margin: 14px 0 20px;
+
+  color: var(--east-green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.east-contact p {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color: var(--east-text);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+.east-contact-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.east-contact-buttons a {
+  min-height: 50px;
+
+  padding: 0 27px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--east-green);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.east-contact-buttons a:first-child {
+  background: #25d366;
+}
+
+
+/* =========================================================
+   DEVELOPMENT
+========================================================= */
+
+.east-development {
+  padding: 100px 0;
+
+  background: #fff;
+}
+
+.east-development-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 50px;
+}
+
+.east-development-image {
+  position: relative;
+
+  aspect-ratio: 1 / 0.78;
+
+  overflow: hidden;
+
+  background: #eee;
+}
+
+.east-development-image img {
+  object-fit: cover;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.east-development-image:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.east-final-cta {
+  position: relative;
+
+  min-height: 500px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    url("/images/projects/east-block/final-cta.png")
+    center / cover
+    no-repeat;
+
+  text-align: center;
+}
+
+.east-final-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    rgba(5, 29, 20, 0.72);
+}
+
+.east-final-content {
+  position: relative;
+  z-index: 2;
+
+  color: #fff;
+}
+
+.east-final-content > span {
+  color: var(--east-light-gold);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.east-final-content h2 {
+  margin: 15px 0;
+
+  color: #fff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(55px, 8vw, 100px);
+  font-weight: 400;
+
+  line-height: 0.95;
+}
+
+.east-final-content p {
+  margin: 0 0 30px;
+
+  color: #eee;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+}
+
+.east-final-content a {
+  min-height: 50px;
+
+  padding: 0 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--east-gold);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .east-amenities-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .east-investment-grid,
+  .east-highlight-layout,
+  .east-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .east-investment-image {
+    min-height: 450px;
+  }
+
+  .east-highlight-image {
+    min-height: 450px;
+  }
+
+  .east-location-map {
+    min-height: 400px;
+  }
+
+  .east-location-map iframe {
+    min-height: 400px;
+  }
+
+  .east-plot-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .east-development-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .east-container,
+  .east-hero-content {
+    width: calc(100% - 30px);
+  }
+
+  .east-hero {
+    min-height: 560px;
+  }
+
+  .east-hero-content {
+    min-height: 560px;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .east-hero-content h1 {
+    font-size: 55px;
+  }
+
+  .east-hero-content p {
+    font-size: 14px;
+  }
+
+  .east-hero-buttons {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .east-hero-buttons a {
+    width: 100%;
+  }
+
+  .east-intro,
+  .east-amenities,
+  .east-investment,
+  .east-highlights,
+  .east-plots,
+  .east-location,
+  .east-payment,
+  .east-contact,
+  .east-development {
+    padding: 70px 0;
+  }
+
+  .east-section-heading h2 {
+    font-size: 40px;
+  }
+
+  .east-intro-content p {
+    font-size: 15px;
+  }
+
+  .east-amenities-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 35px;
+  }
+
+  .east-amenity-card {
+    min-height: 145px;
+  }
+
+  .east-investment-grid,
+  .east-highlight-layout,
+  .east-location-grid {
+    gap: 30px;
+  }
+
+  .east-investment-image,
+  .east-highlight-image {
+    min-height: 330px;
+  }
+
+  .east-highlight-list div {
+    padding: 18px;
+  }
+
+  .east-plot-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+  }
+
+  .east-plot-card {
+    min-height: 145px;
+  }
+
+  .east-plot-card strong {
+    font-size: 34px;
+  }
+
+  .east-location-map,
+  .east-location-map iframe {
+    min-height: 330px;
+  }
+
+  .east-contact-buttons {
+    flex-direction: column;
+  }
+
+  .east-contact-buttons a {
+    width: 100%;
+  }
+
+  .east-development-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .east-final-cta {
+    min-height: 460px;
+  }
+
+  .east-final-content h2 {
+    font-size: 55px;
+  }
+
+  .east-final-content p {
+    font-size: 14px;
   }
 }

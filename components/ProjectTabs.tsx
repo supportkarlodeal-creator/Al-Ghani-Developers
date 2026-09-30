@@ -2,33 +2,38 @@ import Link from "next/link";
 
 const projects = [
   {
+    label: "Al Ghani Garden Phase 7",
+    href: "/phase-7",
+  },
+  {
     label: "Olive Block",
     href: "/olive-block",
   },
+ 
   {
     label: "Square Avenue",
     href: "/square-avenue",
   },
-  {
-    label: "Al Ghani Garden Phase 7",
-    href: "/alghani",
-  },
-  {
-    label: "Al Ghani Garden Phase 1",
-    href: "/al-ghani-phase-i",
+   {
+    label: "Kings Lane",
+    href: "/kings-lane",
   },
   {
     label: "Al Ghani Garden Phase 3",
     href: "/al-ghani-phase-iii",
   },
+  
   {
     label: "Al Ghani Garden Phase 2",
     href: "/al-ghani-phase-ii",
   },
+
   {
-    label: "Kings Lane",
-    href: "/kings-lane",
+    label: "Al Ghani Garden Phase 1",
+    href: "/al-ghani-phase-i",
   },
+  
+ 
   
 ];
 

@@ -59,23 +59,23 @@ export default function ContactUsPage() {
               </p>
 
               <a
-                href="tel:+923278754344"
+                href="tel:+92-307-3777841"
                 className="contact-phone"
               >
-                +92-327-8754344
+                +92-307-3777841
               </a>
 
               <div className="contact-actions">
 
                 <a
-                  href="tel:+923278754344"
+                  href="tel:+92-307-3777841"
                   className="contact-primary-button"
                 >
                   CALL NOW
                 </a>
 
                 <a
-                  href="https://wa.me/923278754344"
+                  href="https://wa.me/923073777841"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-secondary-button"
@@ -94,7 +94,7 @@ export default function ContactUsPage() {
                 <span>SALES & INQUIRIES</span>
 
                 <strong>
-                  +92-327-8754344
+                  +92-307-3777841
                 </strong>
               </div>
             </div>
@@ -294,10 +294,10 @@ export default function ContactUsPage() {
             </h2>
 
             <a
-              href="tel:+923278754344"
+              href="tel:+92-307-3777841"
               className="contact-primary-button"
             >
-              +92-327-8754344
+              +92-307-3777841
             </a>
 
           </div>

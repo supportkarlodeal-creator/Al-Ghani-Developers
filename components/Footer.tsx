@@ -4,7 +4,7 @@ import Link from "next/link";
 const projectGroups = [
   {
     label: "Al Ghani Garden Phase 7",
-    href: "/alghani",
+    href: "/phase-7",
     children: [
       {
         label: "Olive Block",
@@ -66,7 +66,7 @@ export default function Footer() {
               className="footer-logo"
             >
               <Image
-                src="/images/logo.png"
+                src="/images/logo-2.png"
                 alt="Al-Ghani Developers"
                 width={180}
                 height={180}
@@ -190,8 +190,8 @@ export default function Footer() {
                 CALL US (24/7)
               </span>
 
-              <a href="tel:+92 327 8754344">
-                +92 327 8754344
+              <a href="tel:+92-307-3777841">
+                +92-307-3777841
               </a>
             </div>
 
@@ -238,7 +238,7 @@ export default function Footer() {
             <p>
               CREATED BY{" "}
               <span className="footer-credit">
-                MARCABLE SOLUTIONS
+                MEGALODON SOFTWARES
               </span>
               . A Digital Marketing Agency.
             </p>

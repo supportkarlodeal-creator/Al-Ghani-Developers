@@ -1,54 +1,22 @@
 import Image from "next/image";
-
-const projects = [
-  {
-    title: "Square Avenue",
-    image: "/images/about/square-avenue.png",
-    className: "project-square",
-  },
-  {
-    title: "AL GHANI GARDEN PHASE 7",
-    image: "/images/about/phase-7.png",
-    className: "project-phase-7",
-  },
-  {
-    title: "AL GHANI GARDEN PHASE 1",
-    image: "/images/about/phase-1.png",
-    className: "project-phase-1",
-  },
-  {
-    title: "AL GHANI GARDEN PHASE 3",
-    image: "/images/about/phase-3.png",
-    className: "project-phase-3",
-  },
-  {
-    title: "AL GHANI GARDEN PHASE 2",
-    image: "/images/about/phase-2.png",
-    className: "project-phase-2",
-  },
-  {
-    title: "KINGS LANE",
-    image: "/images/about/kings-lane.png",
-    className: "project-kings-lane",
-  },
-  {
-    title: "AZMAT HEIGHTS",
-    image: "/images/about/azmat-heights.png",
-    className: "project-azmat-heights",
-  },
-];
+import Link from "next/link";
 
 function ProjectImage({
   title,
   image,
   className,
+  href,
 }: {
   title: string;
   image: string;
   className: string;
+  href: string;
 }) {
   return (
-    <div className={`about-project ${className}`}>
+    <Link
+      href={href}
+      className={`about-project ${className}`}
+    >
       <div className="about-project-image">
         <Image
           src={image}
@@ -62,7 +30,7 @@ function ProjectImage({
       <div className="about-project-title">
         {title}
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -109,6 +77,7 @@ export default function AboutSection() {
             title="Square Avenue"
             image="/images/about/square-avenue.png"
             className="project-square"
+            href="/square-avenue"
           />
 
           {/* RIGHT TOP */}
@@ -116,18 +85,20 @@ export default function AboutSection() {
           <div className="about-right-top">
             <ProjectImage
               title="AL GHANI GARDEN PHASE 7"
-              image="/images/about/phase-7.png"
+              image="/images/about/33322999.jpeg"
               className="project-phase-7"
+              href="/phase-7"
             />
 
             <ProjectImage
               title="AL GHANI GARDEN PHASE 1"
               image="/images/about/phase-1.png"
               className="project-phase-1"
+              href="/al-ghani-phase-i"
             />
           </div>
 
-          {/* BOTTOM FOUR PROJECTS */}
+          {/* BOTTOM PROJECTS */}
 
           <div className="about-bottom-projects">
 
@@ -135,24 +106,21 @@ export default function AboutSection() {
               title="AL GHANI GARDEN PHASE 3"
               image="/images/about/phase-3.png"
               className="project-phase-3"
+              href="/al-ghani-phase-iii"
             />
 
             <ProjectImage
               title="AL GHANI GARDEN PHASE 2"
               image="/images/about/phase-2.png"
               className="project-phase-2"
+              href="/al-ghani-phase-ii"
             />
 
             <ProjectImage
               title="KINGS LANE"
               image="/images/about/kings-lane.png"
               className="project-kings-lane"
-            />
-
-            <ProjectImage
-              title="AZMAT HEIGHTS"
-              image="/images/about/azmat-heights.png"
-              className="project-azmat-heights"
+              href="/kings-lane"
             />
 
           </div>
