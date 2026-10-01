@@ -1,0 +1,397 @@
+/* =========================================================
+   PROJECTS PAGE
+========================================================= */
+
+.page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #111111;
+}
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.projectsSection {
+  width: 100%;
+  padding: 45px 0 90px;
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  width: min(735px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.heading {
+  width: 100%;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.heading > span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #164d39;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 2.6px;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+.heading h1 {
+  margin: 0 0 30px;
+
+  color: #111111;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 30px;
+  font-weight: 400;
+
+  line-height: 1.1;
+}
+
+.heading p {
+  width: 100%;
+
+  margin: 0;
+
+  color: #666666;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.projectsGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px 17px;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.projectCard {
+  min-width: 0;
+
+  overflow: hidden;
+
+  border: 1px solid #e1e1e1;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 22px
+      rgba(22, 77, 57, 0.08);
+}
+
+
+/* =========================================================
+   PROJECT LINK
+========================================================= */
+
+.projectLink {
+  display: block;
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.projectImage {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1.72 / 1;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+.projectImageElement {
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.45s ease;
+}
+
+.projectCard:hover
+.projectImageElement {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+.projectContent {
+  min-height: 74px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  padding: 13px 14px 14px;
+}
+
+.projectContent h2 {
+  margin: 0;
+
+  color: #111111;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   VIEW PROJECT
+========================================================= */
+
+.viewProject {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 9px;
+
+  color: #164d39;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 6.5px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.projectCard:hover
+.viewProject {
+  color: #b18d27;
+
+  gap: 9px;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.arrow {
+  color: #c8a83e;
+
+  font-size: 10px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .container {
+    width: min(735px, calc(100% - 40px));
+  }
+
+  .projectsSection {
+    padding-top: 40px;
+  }
+
+  .heading {
+    margin-bottom: 32px;
+  }
+
+  .heading h1 {
+    margin-bottom: 25px;
+
+    font-size: 29px;
+  }
+
+  .heading p {
+    font-size: 10px;
+  }
+
+  .projectsGrid {
+    gap: 20px 15px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .projectsSection {
+    padding: 40px 0 65px;
+  }
+
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .heading {
+    margin-bottom: 30px;
+  }
+
+  .heading > span {
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+
+  .heading h1 {
+    margin-bottom: 22px;
+
+    font-size: 28px;
+  }
+
+  .heading p {
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    text-align: left;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .projectImage {
+    aspect-ratio: 1.7 / 1;
+  }
+
+  .projectContent {
+    min-height: 78px;
+
+    padding: 14px 15px 15px;
+  }
+
+  .projectContent h2 {
+    font-size: 10px;
+  }
+
+  .viewProject {
+    margin-top: 9px;
+
+    font-size: 6.5px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .projectsSection {
+    padding-top: 32px;
+  }
+
+  .heading h1 {
+    font-size: 26px;
+  }
+
+  .heading p {
+    font-size: 9px;
+  }
+
+  .projectsGrid {
+    gap: 18px;
+  }
+
+  .projectImage {
+    aspect-ratio: 1.65 / 1;
+  }
+}

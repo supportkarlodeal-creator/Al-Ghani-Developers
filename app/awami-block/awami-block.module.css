@@ -1,0 +1,792 @@
+.page {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+}
+
+.container {
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #123f30;
+}
+
+.heroImage {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 38, 28, 0.86) 0%,
+      rgba(8, 38, 28, 0.6) 45%,
+      rgba(8, 38, 28, 0.2) 100%
+    );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+  padding: 120px 0 100px;
+  color: #fff;
+}
+
+.heroEyebrow {
+  display: block;
+  margin-bottom: 14px;
+  color: #d0b24d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.heroContent h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(48px, 6vw, 82px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.heroSubtitle {
+  margin: 22px 0 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.heroButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 35px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 27px;
+  border: 1px solid transparent;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.primaryButton {
+  background: #164d39;
+  border-color: #164d39;
+  color: #fff;
+}
+
+.primaryButton:hover {
+  background: #c6a43d;
+  border-color: #c6a43d;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  background: #c6a43d;
+  border-color: #c6a43d;
+  color: #fff;
+}
+
+.secondaryButton:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #164d39;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.sectionEyebrow {
+  display: block;
+  margin-bottom: 11px;
+  color: #164d39;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.sectionHeading {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.sectionHeading > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #164d39;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  color: #111;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.coverImage {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.introSection {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 65px;
+  align-items: center;
+}
+
+.introImage {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.introContent {
+  padding-right: 15px;
+}
+
+.introContent h2 {
+  margin: 0 0 8px;
+  color: #111;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.introContent h3 {
+  margin: 0 0 22px;
+  color: #164d39;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.introContent p,
+.developmentContent p,
+.masjidContent p,
+.whyContent p,
+.locationContent p,
+.contactContent p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.featureList {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.featureCheck {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #164d39;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   DEVELOPMENT
+========================================================= */
+
+.developmentSection {
+  padding: 90px 0;
+  background: #f7f6f1;
+}
+
+.developmentGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  min-height: 500px;
+  background: #fff;
+}
+
+.developmentImage {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.developmentContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 65px;
+}
+
+.developmentContent h2 {
+  margin: 0 0 20px;
+  color: #111;
+  font-size: 38px;
+  line-height: 1.15;
+}
+
+.developmentContent p {
+  margin: 0 0 25px;
+}
+
+/* =========================================================
+   MASJID
+========================================================= */
+
+.masjidSection {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.masjidGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  min-height: 520px;
+  background: #f7f6f1;
+}
+
+.masjidContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 65px;
+}
+
+.masjidContent h2 {
+  margin: 0 0 20px;
+  color: #111;
+  font-size: 38px;
+  line-height: 1.15;
+}
+
+.masjidContent p {
+  margin: 0 0 25px;
+}
+
+.masjidImage {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+/* =========================================================
+   PAYMENT
+========================================================= */
+
+.paymentSection {
+  padding: 90px 0 100px;
+  background: #f7f6f1;
+}
+
+.paymentCard {
+  width: min(1050px, 100%);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.paymentImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   WHY CHOOSE
+========================================================= */
+
+.whySection {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 65px;
+  align-items: center;
+}
+
+.whyImage {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+}
+
+.whyContent h2 {
+  margin: 0 0 20px;
+  color: #111;
+  font-size: 42px;
+  line-height: 1.15;
+}
+
+.whyContent p {
+  margin: 0;
+}
+
+.whyHighlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 35px;
+}
+
+.whyHighlights > div {
+  min-height: 115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  border: 1px solid #e2dfd5;
+  text-align: center;
+}
+
+.whyHighlights strong {
+  display: block;
+  color: #164d39;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.whyHighlights span {
+  display: block;
+  margin-top: 7px;
+  color: #666;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.locationSection {
+  width: 100%;
+  background: #fff;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  min-height: 480px;
+}
+
+.locationCopy {
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      135deg,
+      #103e2e 0%,
+      #164d39 65%,
+      #205f46 100%
+    );
+}
+
+.locationContent {
+  width: 100%;
+  padding: 70px;
+}
+
+.locationContent .sectionEyebrow {
+  color: #d0b24d;
+}
+
+.locationContent h2 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: 42px;
+  line-height: 1.15;
+}
+
+.locationContent p {
+  margin: 0 0 25px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.map {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border: 0;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contactSection {
+  padding: 90px 0;
+  background: #f7f6f1;
+}
+
+.contactCard {
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      135deg,
+      #103e2e 0%,
+      #164d39 55%,
+      #245f46 100%
+    );
+}
+
+.contactContent {
+  width: min(700px, calc(100% - 40px));
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contactContent .sectionEyebrow {
+  color: #d0b24d;
+}
+
+.contactContent h2 {
+  margin: 0 0 15px;
+  color: #fff;
+  font-size: 44px;
+}
+
+.contactContent p {
+  margin: 0 0 28px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.contactContent .primaryButton {
+  background: #c6a43d;
+  border-color: #c6a43d;
+}
+
+.contactContent .primaryButton:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #164d39;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .hero {
+    min-height: 570px;
+  }
+
+  .introGrid,
+  .whyGrid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .introImage,
+  .whyImage {
+    min-height: 450px;
+  }
+
+  .introContent {
+    padding-right: 0;
+  }
+
+  .developmentGrid,
+  .masjidGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .developmentImage,
+  .masjidImage {
+    min-height: 430px;
+  }
+
+  .developmentContent,
+  .masjidContent {
+    padding: 55px;
+  }
+
+  .locationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationCopy {
+    min-height: 400px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 400px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .hero {
+    min-height: 560px;
+  }
+
+  .heroContent {
+    width: calc(100% - 30px);
+    padding: 100px 0 80px;
+  }
+
+  .heroContent h1 {
+    font-size: 48px;
+  }
+
+  .heroSubtitle {
+    font-size: 13px;
+    letter-spacing: 1.4px;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .introSection,
+  .developmentSection,
+  .masjidSection,
+  .whySection {
+    padding: 60px 0;
+  }
+
+  .introImage,
+  .whyImage {
+    min-height: 350px;
+  }
+
+  .introContent h2,
+  .whyContent h2 {
+    font-size: 34px;
+  }
+
+  .introContent h3 {
+    font-size: 18px;
+  }
+
+  .introContent p,
+  .developmentContent p,
+  .masjidContent p,
+  .whyContent p,
+  .locationContent p,
+  .contactContent p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .featureList {
+    margin-top: 24px;
+  }
+
+  .developmentImage,
+  .masjidImage {
+    min-height: 330px;
+  }
+
+  .developmentContent,
+  .masjidContent {
+    padding: 40px 25px;
+  }
+
+  .developmentContent h2,
+  .masjidContent h2 {
+    font-size: 32px;
+  }
+
+  .paymentSection {
+    padding: 60px 0 70px;
+  }
+
+  .sectionHeading {
+    margin-bottom: 30px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 32px;
+  }
+
+  .whyHighlights {
+    grid-template-columns: 1fr;
+    margin-top: 28px;
+  }
+
+  .whyHighlights > div {
+    min-height: 95px;
+  }
+
+  .locationCopy {
+    min-height: 350px;
+  }
+
+  .locationContent {
+    padding: 45px 25px;
+  }
+
+  .locationContent h2 {
+    font-size: 34px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 330px;
+  }
+
+  .contactSection {
+    padding: 60px 0;
+  }
+
+  .contactCard {
+    min-height: 300px;
+  }
+
+  .contactContent {
+    padding: 50px 10px;
+  }
+
+  .contactContent h2 {
+    font-size: 34px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .hero {
+    min-height: 520px;
+  }
+
+  .heroContent h1 {
+    font-size: 40px;
+  }
+
+  .heroEyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .introImage,
+  .whyImage {
+    min-height: 290px;
+  }
+
+  .developmentImage,
+  .masjidImage {
+    min-height: 280px;
+  }
+
+  .locationCopy {
+    min-height: 330px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 300px;
+  }
+}

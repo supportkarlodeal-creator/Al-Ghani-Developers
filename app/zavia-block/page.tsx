@@ -5,8 +5,7 @@ import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import styles from "./zavia-block.module.css";
 
-const salesNumber = "923073777841
-";
+const salesNumber = "923073777841";
 const whatsappHref = `https://wa.me/${salesNumber}?text=${encodeURIComponent(
   "Hello, I would like information about Al Ghani Garden Phase 7 - Zavia Block."
 )}`;

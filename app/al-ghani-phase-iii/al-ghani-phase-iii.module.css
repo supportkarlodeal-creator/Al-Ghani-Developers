@@ -1,0 +1,742 @@
+.page {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+}
+
+.container {
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+   IMAGE ONLY
+========================================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.heroImage {
+  position: relative !important;
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primaryButton,
+.secondaryButton,
+.outlineButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 27px;
+  border: 1px solid transparent;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.primaryButton {
+  background: #164d39;
+  border-color: #164d39;
+  color: #fff;
+}
+
+.primaryButton:hover {
+  background: #c6a43d;
+  border-color: #c6a43d;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  background: #c6a43d;
+  border-color: #c6a43d;
+  color: #fff;
+}
+
+.secondaryButton:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #164d39;
+  transform: translateY(-2px);
+}
+
+.outlineButton {
+  background: transparent;
+  border-color: #164d39;
+  color: #164d39;
+}
+
+.outlineButton:hover {
+  background: #164d39;
+  border-color: #164d39;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.sectionEyebrow {
+  display: block;
+  margin-bottom: 11px;
+  color: #164d39;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.sectionHeading {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.sectionHeading > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #164d39;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  color: #111;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.coverImage {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.introSection {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 65px;
+  align-items: center;
+}
+
+/*
+   This is a logo / graphic.
+   It is NOT treated as a photographic block.
+*/
+
+.introLogo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: transparent;
+}
+
+.logoImage {
+  display: block;
+  width: min(420px, 80%);
+  height: auto;
+  object-fit: contain;
+}
+
+.introContent h2 {
+  margin: 0 0 20px;
+  color: #111;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.introContent h3 {
+  margin: 25px 0 10px;
+  color: #164d39;
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.introContent p {
+  margin: 0 0 16px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   KEY HIGHLIGHTS
+========================================================= */
+
+.highlightsSection {
+  padding: 90px 0 100px;
+  background: #f7f6f1;
+}
+
+.highlightGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.highlightCard {
+  position: relative;
+  min-height: 330px;
+  padding: 35px 30px;
+  border: 1px solid #e1ded4;
+  background: #fff;
+}
+
+.highlightNumber {
+  margin-bottom: 25px;
+  color: #c6a43d;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.highlightCard h3 {
+  margin: 0 0 18px;
+  color: #164d39;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.highlightCard p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   EXTENDED SOCIETY
+========================================================= */
+
+.extendedSection {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.extendedGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  min-height: 520px;
+  background: #f7f6f1;
+}
+
+.extendedContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 65px;
+}
+
+.extendedContent h2 {
+  margin: 0 0 20px;
+  color: #111;
+  font-size: 40px;
+  line-height: 1.15;
+}
+
+.extendedContent p {
+  margin: 0 0 28px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.extendedImage {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+/* =========================================================
+   AMENITIES
+========================================================= */
+
+.amenitiesSection {
+  padding: 90px 0 100px;
+  background: #f7f6f1;
+}
+
+.amenitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.amenityCard {
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 15px;
+  border: 1px solid #e1ded4;
+  background: #fff;
+  text-align: center;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.amenityCard:hover {
+  transform: translateY(-4px);
+  border-color: #c6a43d;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+.amenityIcon {
+  position: relative;
+  width: 78px;
+  height: 78px;
+  margin-bottom: 15px;
+}
+
+.containImage {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+.amenityCard h3 {
+  margin: 0;
+  color: #222;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   PAYMENT PLAN
+========================================================= */
+
+.paymentSection {
+  padding: 90px 0 100px;
+  background: #fff;
+}
+
+.paymentBlock {
+  margin-bottom: 50px;
+}
+
+.paymentHeading {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.paymentHeading h3 {
+  margin: 0;
+  color: #164d39;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.paymentImageBox {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.paymentImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.paymentNote {
+  margin: 5px 0 0;
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.locationSection {
+  width: 100%;
+  background: #fff;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  min-height: 480px;
+}
+
+.locationCopy {
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      135deg,
+      #103e2e 0%,
+      #164d39 65%,
+      #205f46 100%
+    );
+}
+
+.locationContent {
+  width: 100%;
+  padding: 70px;
+}
+
+.locationContent .sectionEyebrow {
+  color: #d0b24d;
+}
+
+.locationContent h2 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: 42px;
+  line-height: 1.15;
+}
+
+.locationContent p {
+  margin: 0 0 25px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.map {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border: 0;
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.contactSection {
+  padding: 90px 0;
+  background: #f7f6f1;
+}
+
+.contactCard {
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      135deg,
+      #103e2e 0%,
+      #164d39 55%,
+      #245f46 100%
+    );
+}
+
+.contactContent {
+  width: min(800px, calc(100% - 40px));
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contactContent .sectionEyebrow {
+  color: #d0b24d;
+}
+
+.contactContent h2 {
+  margin: 0 0 28px;
+  color: #fff;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .introGrid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .introLogo {
+    padding: 20px;
+  }
+
+  .logoImage {
+    width: min(380px, 60%);
+  }
+
+  .highlightGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlightCard {
+    min-height: auto;
+  }
+
+  .extendedGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .extendedImage {
+    min-height: 430px;
+  }
+
+  .extendedContent {
+    padding: 55px;
+  }
+
+  .amenitiesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .locationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationCopy {
+    min-height: 400px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 400px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .introSection,
+  .highlightsSection,
+  .extendedSection,
+  .amenitiesSection {
+    padding: 60px 0 70px;
+  }
+
+  .introLogo {
+    padding: 15px 5px;
+  }
+
+  .logoImage {
+    width: min(320px, 75%);
+  }
+
+  .introContent h2 {
+    font-size: 36px;
+  }
+
+  .introContent h3 {
+    font-size: 18px;
+  }
+
+  .introContent p,
+  .highlightCard p,
+  .extendedContent p,
+  .locationContent p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .outlineButton {
+    width: 100%;
+  }
+
+  .highlightGrid {
+    gap: 14px;
+  }
+
+  .highlightCard {
+    padding: 28px 23px;
+  }
+
+  .extendedContent {
+    padding: 40px 25px;
+  }
+
+  .extendedContent h2 {
+    font-size: 32px;
+  }
+
+  .extendedImage {
+    min-height: 330px;
+  }
+
+  .amenitiesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .amenityCard {
+    min-height: 155px;
+    padding: 18px 10px;
+  }
+
+  .amenityIcon {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 12px;
+  }
+
+  .amenityCard h3 {
+    font-size: 12px;
+  }
+
+  .paymentSection {
+    padding: 60px 0 70px;
+  }
+
+  .sectionHeading {
+    margin-bottom: 30px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 32px;
+  }
+
+  .paymentBlock {
+    margin-bottom: 35px;
+  }
+
+  .locationCopy {
+    min-height: 350px;
+  }
+
+  .locationContent {
+    padding: 45px 25px;
+  }
+
+  .locationContent h2 {
+    font-size: 34px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 330px;
+  }
+
+  .contactSection {
+    padding: 60px 0;
+  }
+
+  .contactCard {
+    min-height: 290px;
+  }
+
+  .contactContent {
+    padding: 45px 10px;
+  }
+
+  .contactContent h2 {
+    font-size: 32px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .logoImage {
+    width: min(280px, 78%);
+  }
+
+  .amenitiesGrid {
+    gap: 9px;
+  }
+
+  .amenityCard {
+    min-height: 140px;
+  }
+
+  .amenityIcon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .amenityCard h3 {
+    font-size: 11px;
+  }
+
+  .locationCopy {
+    min-height: 330px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 300px;
+  }
+}

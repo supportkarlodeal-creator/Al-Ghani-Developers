@@ -1,0 +1,561 @@
+.page {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.container {
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   TOP LOGO
+========================================================= */
+
+.logoSection {
+  width: 100%;
+  padding: 12px 0 20px;
+  background: #fff;
+}
+
+.topLogo {
+  display: block;
+  width: 105px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   FIRST ROW
+========================================================= */
+
+.firstSection {
+  width: 100%;
+  padding: 0 0 60px;
+  background: #fff;
+}
+
+.firstRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.firstContent {
+  width: 100%;
+}
+
+.firstContent p {
+  margin: 0;
+  color: #555;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.firstImage {
+  width: 100%;
+  overflow: hidden;
+}
+
+.contentImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  width: 100%;
+  margin-top: 20px;
+}
+
+.locationButton,
+.bookButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 35px;
+  padding: 0 10px;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.locationButton {
+  background: #c6aa42;
+  color: #111;
+}
+
+.locationButton:hover {
+  background: #b49735;
+}
+
+.bookButton {
+  background: #164d39;
+  color: #c6aa42;
+}
+
+.bookButton:hover {
+  background: #103b2d;
+}
+
+
+/* =========================================================
+   SECOND ROW
+========================================================= */
+
+.secondSection {
+  width: 100%;
+  padding: 0 0 70px;
+  background: #fff;
+}
+
+.secondRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.secondImage {
+  width: 100%;
+  overflow: hidden;
+}
+
+.secondContent {
+  width: 100%;
+}
+
+.secondLogo {
+  display: block;
+  width: 75px;
+  height: auto;
+  margin: 0 0 12px;
+}
+
+.secondContent p {
+  margin: 0 0 17px;
+
+  color: #555;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   AMENITIES
+========================================================= */
+
+.amenitiesSection {
+  width: 100%;
+  padding: 75px 0;
+  background: #f8f8f8;
+}
+
+.sectionHeading {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.sectionHeading span {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #164d39;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+
+  color: #111;
+
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.amenitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.amenityCard {
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px 12px;
+
+  border: 1px solid #e5e5e5;
+
+  background: #fff;
+
+  text-align: center;
+}
+
+.amenityIcon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 14px;
+}
+
+.amenityImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.amenityCard h3 {
+  margin: 0;
+
+  color: #222;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.locationsSection {
+  width: 100%;
+  padding: 75px 0 70px;
+  background: #fff;
+}
+
+.locationHeading {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.locationHeading span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #164d39;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.locationHeading h2 {
+  margin: 0;
+
+  color: #080808;
+
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.mapsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.mapColumn {
+  width: 100%;
+}
+
+.mapColumn h3 {
+  margin: 0 0 12px;
+
+  color: #111;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.mapWrapper {
+  position: relative;
+
+  width: 100%;
+  height: 190px;
+
+  overflow: hidden;
+
+  background: #eee;
+}
+
+.mapWrapper iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contactSection {
+  width: 100%;
+  padding: 25px 20px 75px;
+
+  background: #fff;
+
+  text-align: center;
+}
+
+.contactInner {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.contactInner > span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #164d39;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.contactInner h2 {
+  margin: 0;
+
+  color: #111;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.contactButton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  margin-top: 25px;
+  padding: 0 28px;
+
+  background: #c6aa42;
+  color: #111;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .firstRow,
+  .secondRow {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .amenitiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .logoSection {
+    padding: 15px 0;
+  }
+
+  .topLogo {
+    width: 90px;
+  }
+
+  .firstRow,
+  .secondRow {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .firstContent {
+    order: 2;
+  }
+
+  .firstImage {
+    order: 1;
+  }
+
+  .secondImage {
+    order: 1;
+  }
+
+  .secondContent {
+    order: 2;
+  }
+
+  .firstContent p,
+  .secondContent p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .secondLogo {
+    width: 70px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  .locationButton,
+  .bookButton {
+    min-height: 37px;
+    font-size: 9px;
+  }
+
+  .amenitiesSection,
+  .locationsSection {
+    padding: 55px 0;
+  }
+
+  .sectionHeading {
+    margin-bottom: 30px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 30px;
+  }
+
+  .amenitiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .amenityCard {
+    min-height: 150px;
+    padding: 15px 8px;
+  }
+
+  .amenityIcon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .amenityCard h3 {
+    font-size: 12px;
+  }
+
+  .locationsSection {
+    padding: 55px 0 50px;
+  }
+
+  .locationHeading {
+    margin-bottom: 30px;
+  }
+
+  .locationHeading span {
+    font-size: 9px;
+    letter-spacing: 1.7px;
+  }
+
+  .locationHeading h2 {
+    font-size: 34px;
+  }
+
+  .mapsGrid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .mapColumn h3 {
+    font-size: 22px;
+  }
+
+  .mapWrapper {
+    height: 230px;
+  }
+
+  .contactSection {
+    padding: 15px 15px 55px;
+  }
+
+  .contactInner h2 {
+    font-size: 27px;
+  }
+}

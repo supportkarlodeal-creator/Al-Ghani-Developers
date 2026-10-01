@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function FloatingActions() {
-  const whatsappNumber = "923278754344";
+  const whatsappNumber = "923073777841";
 
   const whatsappMessage = encodeURIComponent(
     "Hello, I would like to get information about Al Ghani Developers."

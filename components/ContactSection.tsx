@@ -1,25 +1,81 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 export default function ContactSection() {
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{
+    type: "success" | "error" | "";
+    message: string;
+  }>({
+    type: "",
+    message: "",
+  });
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    // We will connect this to your API later.
+    setIsSubmitting(true);
+    setStatus({
+      type: "",
+      message: "",
+    });
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const data = {
+      name: String(formData.get("name") ?? "").trim(),
+      phone: String(formData.get("phone") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      message: String(formData.get("message") ?? "").trim(),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result.error || "Unable to submit your enquiry."
+        );
+      }
+
+      setStatus({
+        type: "success",
+        message:
+          "Thank you! Your enquiry has been submitted successfully. Our team will contact you shortly.",
+      });
+
+      form.reset();
+    } catch (error) {
+      console.error("Contact form error:", error);
+
+      setStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
     <section className="contact-section">
       <div className="contact-container">
         <div className="contact-grid">
-
-          {/* LEFT CONTENT */}
-
           <div className="contact-content">
-            <span className="contact-eyebrow">
-              CONTACT US
-            </span>
+            <span className="contact-eyebrow">CONTACT US</span>
 
             <h2 className="contact-title">
               Elevate your lifestyle with
@@ -40,9 +96,7 @@ export default function ContactSection() {
 
             <div className="contact-details">
               <div className="contact-detail">
-                <span className="contact-detail-label">
-                  Email
-                </span>
+                <span className="contact-detail-label">Email</span>
 
                 <a href="mailto:info@alghani-developers.com">
                   info@alghani-developers.com
@@ -50,9 +104,7 @@ export default function ContactSection() {
               </div>
 
               <div className="contact-detail">
-                <span className="contact-detail-label">
-                  Phone
-                </span>
+                <span className="contact-detail-label">Phone</span>
 
                 <a href="tel:+92-307-3777841">
                   +92-307-3777841
@@ -65,14 +117,12 @@ export default function ContactSection() {
                 </span>
 
                 <p>
-                  Main G.T Road, 2KM Quaid-e-Azam
-                  Interchange, Ring Road, Lahore.
+                  Main G.T Road, 2KM Quaid-e-Azam Interchange,
+                  Ring Road, Lahore.
                 </p>
               </div>
             </div>
           </div>
-
-          {/* FORM */}
 
           <div className="contact-form-wrapper">
             <form
@@ -91,6 +141,7 @@ export default function ContactSection() {
                     type="text"
                     placeholder="Your Name"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -105,6 +156,7 @@ export default function ContactSection() {
                     type="tel"
                     placeholder="Your Mobile Number"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -119,6 +171,7 @@ export default function ContactSection() {
                   name="email"
                   type="email"
                   placeholder="Your Email"
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -132,18 +185,34 @@ export default function ContactSection() {
                   name="message"
                   rows={5}
                   placeholder="Your Message"
+                  disabled={isSubmitting}
                 />
               </div>
 
               <button
                 type="submit"
                 className="contact-submit"
+                disabled={isSubmitting}
               >
-                GET IN TOUCH
+                {isSubmitting
+                  ? "SUBMITTING..."
+                  : "GET IN TOUCH"}
               </button>
+
+              {status.message && (
+                <p
+                  className={`contact-form-status ${
+                    status.type === "success"
+                      ? "contact-form-status-success"
+                      : "contact-form-status-error"
+                  }`}
+                  aria-live="polite"
+                >
+                  {status.message}
+                </p>
+              )}
             </form>
           </div>
-
         </div>
       </div>
     </section>

@@ -1,0 +1,774 @@
+.page {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+}
+
+.container {
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+}
+
+.containerWide {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #123f30;
+}
+
+.heroImage {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 38, 28, 0.82) 0%,
+      rgba(8, 38, 28, 0.56) 45%,
+      rgba(8, 38, 28, 0.2) 100%
+    );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+  padding: 120px 0 100px;
+  color: #fff;
+}
+
+.heroEyebrow {
+  margin: 0 0 14px;
+  color: #d0b24d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.heroContent h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(48px, 6vw, 82px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.heroSubtitle {
+  max-width: 600px;
+  margin: 22px 0 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 2px;
+}
+
+.heroButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 35px;
+}
+
+/* =========================================================
+   COMMON BUTTONS
+========================================================= */
+
+.primaryButton,
+.secondaryButton,
+.outlineButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 27px;
+  border: 1px solid transparent;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.primaryButton {
+  background: #164d39;
+  border-color: #164d39;
+  color: #fff;
+}
+
+.primaryButton:hover {
+  background: #c6a43d;
+  border-color: #c6a43d;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  background: #c6a43d;
+  border-color: #c6a43d;
+  color: #fff;
+}
+
+.secondaryButton:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #164d39;
+  transform: translateY(-2px);
+}
+
+.outlineButton {
+  background: transparent;
+  border-color: #164d39;
+  color: #164d39;
+}
+
+.outlineButton:hover {
+  background: #164d39;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.introSection {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 65px;
+  align-items: center;
+}
+
+.introImage {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.coverImage {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+.introContent {
+  padding-right: 20px;
+}
+
+.sectionEyebrow {
+  display: block;
+  margin-bottom: 11px;
+  color: #164d39;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.introContent h2,
+.featureContent h2,
+.locationContent h2,
+.contactContent h2 {
+  margin: 0 0 22px;
+  color: #111;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.introContent p,
+.featureContent p,
+.locationContent p,
+.contactContent p {
+  margin: 0 0 17px;
+  color: #555;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   PROJECT FEATURES
+========================================================= */
+
+.featuresSection {
+  padding: 20px 0 90px;
+  background: #fff;
+}
+
+.featureRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 540px;
+  margin-bottom: 25px;
+  background: #f6f5ef;
+}
+
+.featureRowReverse {
+  direction: rtl;
+}
+
+.featureRowReverse > * {
+  direction: ltr;
+}
+
+.featureImage {
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+}
+
+.featureContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px;
+}
+
+.featureContent h2 {
+  font-size: 38px;
+}
+
+/* =========================================================
+   AMENITIES
+========================================================= */
+
+.amenitiesSection {
+  padding: 90px 0 100px;
+  background: #f7f6f1;
+}
+
+.sectionHeading {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.sectionHeading > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #164d39;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  color: #111;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.amenitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.amenityCard {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 15px;
+  border: 1px solid #e4e1d7;
+  background: #fff;
+  text-align: center;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.amenityCard:hover {
+  transform: translateY(-4px);
+  border-color: #c6a43d;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+.amenityIcon {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 17px;
+}
+
+.containImage {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+.amenityCard h3 {
+  margin: 0;
+  color: #222;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   PAYMENT PLAN
+========================================================= */
+
+.paymentSection {
+  padding: 90px 0 100px;
+  background: #fff;
+}
+
+.paymentGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  align-items: start;
+}
+
+.paymentCard {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.paymentImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.locationSection {
+  padding: 0;
+  background: #fff;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  min-height: 480px;
+}
+
+.locationCopy {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      135deg,
+      #103e2e 0%,
+      #164d39 65%,
+      #205f46 100%
+    );
+}
+
+.locationContent {
+  width: 100%;
+  padding: 70px;
+}
+
+.locationContent .sectionEyebrow {
+  color: #d0b24d;
+}
+
+.locationContent h2 {
+  color: #fff;
+}
+
+.locationContent p {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.locationContent .primaryButton {
+  margin-top: 10px;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border: 0;
+}
+
+/* =========================================================
+   CONTACT / CTA
+========================================================= */
+
+.contactSection {
+  padding: 90px 0;
+  background: #f7f6f1;
+}
+
+.contactCard {
+  position: relative;
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      #103e2e 0%,
+      #164d39 55%,
+      #245f46 100%
+    );
+}
+
+.contactContent {
+  position: relative;
+  z-index: 1;
+  width: min(700px, calc(100% - 40px));
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contactContent .sectionEyebrow {
+  color: #d0b24d;
+}
+
+.contactContent h2 {
+  margin-bottom: 14px;
+  color: #fff;
+  font-size: 44px;
+}
+
+.contactContent p {
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 16px;
+}
+
+.contactContent .primaryButton {
+  background: #c6a43d;
+  border-color: #c6a43d;
+}
+
+.contactContent .primaryButton:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #164d39;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .hero {
+    min-height: 570px;
+  }
+
+  .introGrid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .introImage {
+    min-height: 500px;
+  }
+
+  .introContent {
+    padding-right: 0;
+  }
+
+  .featureRow,
+  .featureRowReverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .featureImage {
+    min-height: 450px;
+  }
+
+  .featureContent {
+    padding: 55px;
+  }
+
+  .amenitiesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .locationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationCopy {
+    min-height: 400px;
+  }
+
+  .locationContent {
+    padding: 55px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 400px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .hero {
+    min-height: 560px;
+  }
+
+  .heroContent {
+    width: calc(100% - 30px);
+    padding: 100px 0 80px;
+  }
+
+  .heroContent h1 {
+    font-size: 48px;
+  }
+
+  .heroSubtitle {
+    font-size: 13px;
+    letter-spacing: 1.4px;
+  }
+
+  .heroButtons,
+  .buttonRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .outlineButton {
+    width: 100%;
+  }
+
+  .introSection {
+    padding: 60px 0;
+  }
+
+  .introImage {
+    min-height: 360px;
+  }
+
+  .introContent h2,
+  .featureContent h2,
+  .locationContent h2 {
+    font-size: 32px;
+  }
+
+  .introContent p,
+  .featureContent p,
+  .locationContent p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .featuresSection {
+    padding: 0 0 60px;
+  }
+
+  .featureRow {
+    margin-bottom: 18px;
+  }
+
+  .featureImage {
+    min-height: 330px;
+  }
+
+  .featureContent {
+    padding: 40px 25px;
+  }
+
+  .amenitiesSection {
+    padding: 60px 0 70px;
+  }
+
+  .sectionHeading {
+    margin-bottom: 30px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 32px;
+  }
+
+  .amenitiesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .amenityCard {
+    min-height: 160px;
+    padding: 20px 10px;
+  }
+
+  .amenityIcon {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 13px;
+  }
+
+  .amenityCard h3 {
+    font-size: 12px;
+  }
+
+  .paymentSection {
+    padding: 60px 0 70px;
+  }
+
+  .paymentGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .locationCopy {
+    min-height: 350px;
+  }
+
+  .locationContent {
+    padding: 45px 25px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 340px;
+  }
+
+  .contactSection {
+    padding: 60px 0;
+  }
+
+  .contactCard {
+    min-height: 300px;
+  }
+
+  .contactContent {
+    padding: 50px 10px;
+  }
+
+  .contactContent h2 {
+    font-size: 34px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .hero {
+    min-height: 520px;
+  }
+
+  .heroContent h1 {
+    font-size: 40px;
+  }
+
+  .heroEyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .introImage {
+    min-height: 300px;
+  }
+
+  .featureImage {
+    min-height: 280px;
+  }
+
+  .amenitiesGrid {
+    gap: 10px;
+  }
+
+  .amenityCard {
+    min-height: 145px;
+  }
+
+  .amenityIcon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .amenityCard h3 {
+    font-size: 11px;
+  }
+
+  .locationCopy {
+    min-height: 330px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 300px;
+  }
+}

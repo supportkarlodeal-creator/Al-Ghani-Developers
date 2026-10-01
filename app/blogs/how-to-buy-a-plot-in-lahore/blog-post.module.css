@@ -1,0 +1,416 @@
+.page {
+  width: 100%;
+  background: #fff;
+  color: #111;
+}
+
+.container {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* =========================
+   ARTICLE HEADER
+========================= */
+
+.articleHeader {
+  width: 100%;
+  padding: 55px 0 30px;
+  background: #fff;
+  text-align: center;
+}
+
+.category {
+  display: block;
+  margin-bottom: 12px;
+  color: #164d39;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.articleHeader h1 {
+  max-width: 800px;
+  margin: 0 auto 16px;
+  color: #111;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #888;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+.author {
+  color: #164d39;
+  font-weight: 600;
+}
+
+.separator {
+  color: #c8a83e;
+}
+
+/* =========================
+   ARTICLE
+========================= */
+
+.article {
+  width: 100%;
+  padding: 15px 0 80px;
+  background: #fff;
+}
+
+/* =========================
+   FEATURED IMAGE
+========================= */
+
+.featuredImage {
+  position: relative;
+  width: 100%;
+  margin-bottom: 42px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.featuredImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================
+   ARTICLE CONTENT
+========================= */
+
+.articleContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.articleContent h2,
+.contentSection h2,
+.locationSection h2,
+.infoSection h2,
+.textSection h2,
+.projectSection h2 {
+  margin: 42px 0 17px;
+  color: #164d39;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.articleContent > h2:first-child {
+  margin-top: 0;
+}
+
+.articleContent p,
+.contentSection p,
+.locationSection p,
+.textSection p {
+  margin: 0 0 17px;
+  color: #555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* =========================
+   CONTENT SECTION
+========================= */
+
+.contentSection {
+  margin-top: 48px;
+}
+
+.sectionImage {
+  position: relative;
+  width: 100%;
+  margin: 30px 0;
+  overflow: hidden;
+  background: #eee;
+}
+
+.sectionImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================
+   FEATURE BOX
+========================= */
+
+.featureBox {
+  margin: 30px 0;
+  padding: 25px 27px;
+  border-left: 3px solid #c8a83e;
+  background: #f6f7f4;
+}
+
+.featureBox h3 {
+  margin: 0 0 12px;
+  color: #164d39;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.featureBox p {
+  margin: 0 0 14px;
+}
+
+.featureBox p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.locationSection {
+  margin-top: 48px;
+  padding: 32px;
+  border-left: 3px solid #164d39;
+  background: #f6f7f4;
+}
+
+.locationSection h2 {
+  margin-top: 0;
+}
+
+.locationImage {
+  margin-top: 25px;
+  overflow: hidden;
+}
+
+.locationImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================
+   GREEN INFORMATION BOX
+========================= */
+
+.infoSection {
+  margin-top: 45px;
+  padding: 30px;
+  background: #164d39;
+}
+
+.infoSection h2 {
+  margin-top: 0;
+  color: #c8a83e;
+}
+
+.infoSection ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.infoSection li {
+  margin-bottom: 10px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.infoSection li:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   INSTALLMENT SECTION
+========================= */
+
+.installmentSection {
+  margin-top: 48px;
+  padding: 30px;
+  background: #164d39;
+}
+
+.installmentSection h2 {
+  margin: 0 0 18px;
+  color: #c8a83e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.installmentSection p {
+  margin: 0 0 17px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.installmentSection p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   PROJECT SECTION
+========================= */
+
+.projectSection {
+  margin-top: 45px;
+}
+
+.projectSection ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.projectSection li {
+  margin-bottom: 9px;
+  color: #555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================
+   ARTICLE NAVIGATION
+========================= */
+
+.articleNavigation {
+  max-width: 800px;
+  margin: 60px auto 0;
+  padding-top: 30px;
+  border-top: 1px solid #ddd;
+}
+
+.nextBlog {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.nextBlog span {
+  color: #164d39;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nextBlog strong {
+  color: #111;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.nextBlog:hover strong {
+  color: #a78628;
+}
+
+.backToBlogs {
+  display: inline-block;
+  margin-top: 28px;
+  color: #164d39;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.backToBlogs:hover {
+  color: #b08d27;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .articleHeader {
+    padding: 42px 0 25px;
+  }
+
+  .category {
+    font-size: 8px;
+  }
+
+  .articleHeader h1 {
+    font-size: 32px;
+  }
+
+  .meta {
+    flex-wrap: wrap;
+    font-size: 9px;
+  }
+
+  .article {
+    padding-bottom: 55px;
+  }
+
+  .featuredImage {
+    margin-bottom: 30px;
+  }
+
+  .articleContent p,
+  .contentSection p,
+  .locationSection p,
+  .textSection p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .articleContent h2,
+  .contentSection h2,
+  .locationSection h2,
+  .infoSection h2,
+  .textSection h2,
+  .projectSection h2 {
+    margin-top: 34px;
+    font-size: 24px;
+  }
+
+  .featureBox {
+    margin: 25px 0;
+    padding: 20px;
+  }
+
+  .featureBox h3 {
+    font-size: 19px;
+  }
+
+  .locationSection,
+  .infoSection,
+  .installmentSection {
+    padding: 22px;
+  }
+
+  .nextBlog strong {
+    font-size: 18px;
+  }
+}

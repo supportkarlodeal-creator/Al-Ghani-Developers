@@ -1,0 +1,928 @@
+/* =========================================================
+   GREEN LIVING INITIATIVE
+   ========================================================= */
+
+.page {
+  width: 100%;
+  background: #ffffff;
+  color: #111111;
+}
+
+.container {
+  width: min(980px, calc(100% - 50px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   CEO'S VISION
+   ========================================================= */
+
+.visionSection {
+  width: 100%;
+  padding: 55px 0 70px;
+  background: #ffffff;
+}
+
+.visionGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.visionImageWrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #eeeeee;
+}
+
+.visionImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.visionContent {
+  padding-left: 5px;
+}
+
+.visionHeading {
+  margin-bottom: 20px;
+}
+
+.visionHeading span {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #164d39;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.visionHeading h1 {
+  margin: 0;
+
+  color: #164d39;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 38px;
+  font-weight: 400;
+
+  line-height: 1.1;
+}
+
+.visionContent p {
+  margin: 0 0 15px;
+
+  color: #444444;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+.signature {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin-top: 20px;
+}
+
+.signature span {
+  color: #111111;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.signature strong {
+  color: #111111;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   TREES SECTION
+   ========================================================= */
+
+.treesSection {
+  position: relative;
+
+  width: 100%;
+  height: 610px;
+
+  padding-top: 112px;
+
+  overflow: hidden;
+
+  background: #dce8cf;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+   ========================================================= */
+
+.treesBackground {
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  z-index: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: none !important;
+
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+/* =========================================================
+   BACKGROUND OVERLAY
+   ========================================================= */
+
+.treesOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background: rgba(20, 70, 40, 0.08);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TREE SECTION CONTENT
+   ========================================================= */
+
+.treesInner {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TREE SECTION TITLE
+   ========================================================= */
+
+.treesTitle {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  text-align: center;
+
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   COUNTER PANEL
+   ========================================================= */
+
+.counterPanel {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    30%
+    35%
+    35%;
+
+  align-items: center;
+
+  width: 62%;
+
+  min-height: 235px;
+
+  margin: 0 auto;
+
+  border: 1px solid rgba(45, 70, 20, 0.7);
+
+  border-radius: 20px;
+
+  background: rgba(210, 226, 168, 0.72);
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.15);
+
+  backdrop-filter: blur(1px);
+}
+
+
+/* =========================================================
+   TREE CIRCLE
+   ========================================================= */
+
+.treeCircle {
+  position: absolute;
+
+  left: -15px;
+  top: 50%;
+
+  width: 225px;
+  height: 225px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: #23477e;
+
+  transform: translateY(-50%);
+}
+
+.treeImage {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 18px;
+}
+
+
+/* =========================================================
+   TREE NUMBER
+   ========================================================= */
+
+.countArea {
+  grid-column: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding-left: 35px;
+}
+
+.countNumber {
+  color: #14275c;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 43px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   TREE LABEL
+   ========================================================= */
+
+.countLabel {
+  grid-column: 3;
+
+  color: #050505;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   GOAL CIRCLE
+   ========================================================= */
+
+.goalCircle {
+  position: absolute;
+
+  left: 50%;
+  bottom: -174px;
+
+  z-index: 5;
+
+  width: 250px;
+  height: 250px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 7px solid #4b6e21;
+
+  border-radius: 50%;
+
+  background: #7da548;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  transform: translateX(-50%);
+}
+
+
+/* =========================================================
+   GOAL TITLE
+   ========================================================= */
+
+.goalTitle {
+  margin-top: -5px;
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 36px;
+  font-weight: 400;
+
+  line-height: 1.1;
+}
+
+
+/* =========================================================
+   GOAL NUMBER
+   ========================================================= */
+
+.goalNumber {
+  margin-top: 8px;
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 40px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   GOAL DESCRIPTION
+   ========================================================= */
+
+.goalLabel {
+  max-width: 190px;
+
+  margin-top: 13px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  line-height: 1.35;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TABLET — 901px to 1100px
+   ========================================================= */
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .counterPanel {
+    width: 72%;
+    min-height: 220px;
+  }
+
+  .treeCircle {
+    left: -12px;
+    width: 205px;
+    height: 205px;
+  }
+
+  .treeImage {
+    padding: 16px;
+  }
+
+  .countArea {
+    padding-left: 25px;
+  }
+
+  .countNumber {
+    font-size: 39px;
+  }
+
+  .countLabel {
+    font-size: 13px;
+  }
+
+  .goalCircle {
+    width: 230px;
+    height: 230px;
+    bottom: -165px;
+  }
+
+  .goalTitle {
+    font-size: 33px;
+  }
+
+  .goalNumber {
+    font-size: 37px;
+  }
+
+  .goalLabel {
+    max-width: 175px;
+    font-size: 10.5px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP — 701px to 900px
+   ========================================================= */
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .visionSection {
+    padding: 45px 0 60px;
+  }
+
+  .container {
+    width: calc(100% - 50px);
+  }
+
+  .visionGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .visionHeading h1 {
+    font-size: 32px;
+  }
+
+  .visionContent p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+
+  /* -------------------------------------------------------
+     TREE SECTION
+     ------------------------------------------------------- */
+
+  .treesSection {
+    height: 570px;
+    padding-top: 105px;
+  }
+
+  .treesTitle {
+    font-size: 27px;
+    margin-bottom: 15px;
+  }
+
+  .treesInner {
+    width: 100%;
+  }
+
+
+  /* -------------------------------------------------------
+     COUNTER PANEL
+     ------------------------------------------------------- */
+
+  .counterPanel {
+    width: 78%;
+    min-height: 215px;
+
+    grid-template-columns:
+      30%
+      35%
+      35%;
+  }
+
+
+  /* -------------------------------------------------------
+     TREE CIRCLE
+     ------------------------------------------------------- */
+
+  .treeCircle {
+    left: -10px;
+
+    width: 195px;
+    height: 195px;
+  }
+
+  .treeImage {
+    padding: 15px;
+  }
+
+
+  /* -------------------------------------------------------
+     NUMBER
+     ------------------------------------------------------- */
+
+  .countArea {
+    padding-left: 25px;
+  }
+
+  .countNumber {
+    font-size: 36px;
+  }
+
+
+  /* -------------------------------------------------------
+     LABEL
+     ------------------------------------------------------- */
+
+  .countLabel {
+    font-size: 13px;
+  }
+
+
+  /* -------------------------------------------------------
+     GOAL
+     ------------------------------------------------------- */
+
+  .goalCircle {
+    width: 220px;
+    height: 220px;
+
+    bottom: -155px;
+
+    border-width: 6px;
+  }
+
+  .goalTitle {
+    font-size: 31px;
+  }
+
+  .goalNumber {
+    font-size: 35px;
+  }
+
+  .goalLabel {
+    max-width: 170px;
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — 700px and below
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* -------------------------------------------------------
+     CEO VISION
+     ------------------------------------------------------- */
+
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .visionSection {
+    padding: 40px 0 50px;
+  }
+
+  .visionGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .visionImageWrap {
+    width: 100%;
+  }
+
+  .visionImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .visionContent {
+    padding-left: 0;
+  }
+
+  .visionHeading {
+    margin-bottom: 18px;
+    text-align: center;
+  }
+
+  .visionHeading span {
+    font-size: 9px;
+    letter-spacing: 1.7px;
+  }
+
+  .visionHeading h1 {
+    font-size: 30px;
+  }
+
+  .visionContent p {
+    margin-bottom: 14px;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    text-align: left;
+  }
+
+  .signature {
+    margin-top: 18px;
+    text-align: center;
+  }
+
+  .signature span {
+    font-size: 12px;
+  }
+
+  .signature strong {
+    font-size: 10px;
+  }
+
+
+  /* =======================================================
+     TREE SECTION
+     ======================================================= */
+
+  .treesSection {
+    height: 620px;
+
+    padding-top: 65px;
+
+    overflow: hidden;
+  }
+
+
+  /* -------------------------------------------------------
+     BACKGROUND
+     ------------------------------------------------------- */
+
+  .treesBackground {
+    object-position: center center;
+  }
+
+
+  /* -------------------------------------------------------
+     TITLE
+     ------------------------------------------------------- */
+
+  .treesTitle {
+    padding: 0 15px;
+
+    margin: 0 0 22px;
+
+    font-size: 23px;
+
+    line-height: 1.25;
+  }
+
+
+  /* -------------------------------------------------------
+     COUNTER PANEL
+     ------------------------------------------------------- */
+
+  .counterPanel {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100% - 30px);
+
+    min-height: 330px;
+
+    margin: 0 auto;
+
+    padding: 100px 20px 35px;
+
+    border-radius: 18px;
+  }
+
+
+  /* -------------------------------------------------------
+     TREE CIRCLE
+     ------------------------------------------------------- */
+
+  .treeCircle {
+    left: 50%;
+    top: -70px;
+
+    width: 145px;
+    height: 145px;
+
+    transform: translateX(-50%);
+  }
+
+  .treeImage {
+    padding: 10px;
+  }
+
+
+  /* -------------------------------------------------------
+     NUMBER
+     ------------------------------------------------------- */
+
+  .countArea {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 0;
+  }
+
+  .countNumber {
+    font-size: 38px;
+  }
+
+
+  /* -------------------------------------------------------
+     LABEL
+     ------------------------------------------------------- */
+
+  .countLabel {
+    margin-top: 18px;
+
+    font-size: 14px;
+
+    text-align: center;
+  }
+
+
+  /* -------------------------------------------------------
+     GOAL CIRCLE
+     ------------------------------------------------------- */
+
+  .goalCircle {
+    left: 50%;
+
+    bottom: -125px;
+
+    width: 205px;
+    height: 205px;
+
+    border-width: 6px;
+  }
+
+  .goalTitle {
+    font-size: 28px;
+  }
+
+  .goalNumber {
+    margin-top: 7px;
+
+    font-size: 30px;
+  }
+
+  .goalLabel {
+    max-width: 160px;
+
+    margin-top: 11px;
+
+    font-size: 9.5px;
+
+    line-height: 1.35;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 480px and below
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .visionSection {
+    padding: 35px 0 45px;
+  }
+
+  .visionHeading h1 {
+    font-size: 27px;
+  }
+
+  .visionContent p {
+    font-size: 12.5px;
+  }
+
+
+  /* -------------------------------------------------------
+     TREE SECTION
+     ------------------------------------------------------- */
+
+  .treesSection {
+    height: 600px;
+
+    padding-top: 60px;
+  }
+
+  .treesTitle {
+    padding: 0 10px;
+
+    font-size: 21px;
+
+    line-height: 1.3;
+  }
+
+
+  /* -------------------------------------------------------
+     PANEL
+     ------------------------------------------------------- */
+
+  .counterPanel {
+    width: calc(100% - 24px);
+
+    min-height: 315px;
+
+    padding: 95px 15px 30px;
+  }
+
+
+  /* -------------------------------------------------------
+     TREE
+     ------------------------------------------------------- */
+
+  .treeCircle {
+    top: -65px;
+
+    width: 135px;
+    height: 135px;
+  }
+
+  .treeImage {
+    padding: 9px;
+  }
+
+
+  /* -------------------------------------------------------
+     COUNT
+     ------------------------------------------------------- */
+
+  .countNumber {
+    font-size: 34px;
+  }
+
+  .countLabel {
+    margin-top: 16px;
+
+    font-size: 13px;
+  }
+
+
+  /* -------------------------------------------------------
+     GOAL
+     ------------------------------------------------------- */
+
+  .goalCircle {
+    bottom: -118px;
+
+    width: 190px;
+    height: 190px;
+  }
+
+  .goalTitle {
+    font-size: 26px;
+  }
+
+  .goalNumber {
+    font-size: 27px;
+  }
+
+  .goalLabel {
+    max-width: 145px;
+
+    font-size: 9px;
+  }
+}

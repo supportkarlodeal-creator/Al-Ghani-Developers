@@ -1,0 +1,719 @@
+.page {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+}
+
+.container {
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+   IMAGE ONLY
+========================================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.heroImage {
+  position: relative !important;
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primaryButton,
+.outlineButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 27px;
+  border: 1px solid transparent;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.primaryButton {
+  background: #164d39;
+  border-color: #164d39;
+  color: #fff;
+}
+
+.primaryButton:hover {
+  background: #c6a43d;
+  border-color: #c6a43d;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.outlineButton {
+  background: transparent;
+  border-color: #164d39;
+  color: #164d39;
+}
+
+.outlineButton:hover {
+  background: #164d39;
+  border-color: #164d39;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.sectionEyebrow {
+  display: block;
+  margin-bottom: 11px;
+  color: #164d39;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.sectionHeading {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.sectionHeading > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #164d39;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  color: #111;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.introSection {
+  padding: 90px 0 85px;
+  background: #fff;
+}
+
+.introContent {
+  width: min(950px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.introContent h1 {
+  margin: 0 0 25px;
+  color: #111;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.introContent p {
+  max-width: 950px;
+  margin: 0 auto 17px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.introContent .buttonRow {
+  justify-content: center;
+}
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.projectImageSection {
+  width: 100%;
+  padding: 0 0 90px;
+  background: #fff;
+}
+
+.projectImageWrapper {
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.projectImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   AMENITIES
+========================================================= */
+
+.amenitiesSection {
+  padding: 90px 0 100px;
+  background: #f7f6f1;
+}
+
+.amenitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.amenityCard {
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 12px;
+  border: 1px solid #e1ded4;
+  background: #fff;
+  text-align: center;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.amenityCard:hover {
+  transform: translateY(-4px);
+  border-color: #c6a43d;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+.amenityIcon {
+  position: relative;
+  width: 78px;
+  height: 78px;
+  margin-bottom: 15px;
+}
+
+.containImage {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+.amenityCard h3 {
+  margin: 0;
+  color: #222;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.locationSection {
+  width: 100%;
+  background: #fff;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  min-height: 480px;
+}
+
+.locationCopy {
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      135deg,
+      #103e2e 0%,
+      #164d39 65%,
+      #205f46 100%
+    );
+}
+
+.locationContent {
+  width: 100%;
+  padding: 70px;
+}
+
+.locationContent .sectionEyebrow {
+  color: #d0b24d;
+}
+
+.locationContent h2 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: 42px;
+  line-height: 1.15;
+}
+
+.locationContent p {
+  margin: 0 0 25px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.map {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border: 0;
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.contactSection {
+  padding: 90px 0;
+  background: #f7f6f1;
+}
+
+.contactCard {
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      135deg,
+      #103e2e 0%,
+      #164d39 55%,
+      #245f46 100%
+    );
+}
+
+.contactContent {
+  width: min(800px, calc(100% - 40px));
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contactContent .sectionEyebrow {
+  color: #d0b24d;
+}
+
+.contactContent h2 {
+  margin: 0 0 28px;
+  color: #fff;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.contactContent .primaryButton {
+  background: #c6a43d;
+  border-color: #c6a43d;
+}
+
+.contactContent .primaryButton:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #164d39;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .amenitiesGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .amenitiesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .locationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationCopy {
+    min-height: 400px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 400px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .introSection {
+    padding: 60px 0 65px;
+  }
+
+  .introContent h1 {
+    font-size: 36px;
+  }
+
+  .introContent p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .outlineButton {
+    width: 100%;
+  }
+
+  .projectImageSection {
+    padding-bottom: 60px;
+  }
+
+  .projectImageWrapper {
+    width: calc(100% - 30px);
+  }
+
+  .amenitiesSection {
+    padding: 60px 0 70px;
+  }
+
+  .sectionHeading {
+    margin-bottom: 30px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 32px;
+  }
+
+  .amenitiesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .amenityCard {
+    min-height: 155px;
+    padding: 18px 10px;
+  }
+
+  .amenityIcon {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 12px;
+  }
+
+  .amenityCard h3 {
+    font-size: 12px;
+  }
+
+  .locationCopy {
+    min-height: 350px;
+  }
+
+  .locationContent {
+    padding: 45px 25px;
+  }
+
+  .locationContent h2 {
+    font-size: 34px;
+  }
+
+  .locationContent p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 330px;
+  }
+
+  .contactSection {
+    padding: 60px 0;
+  }
+
+  .contactCard {
+    min-height: 290px;
+  }
+
+  .contactContent {
+    padding: 45px 10px;
+  }
+
+  .contactContent h2 {
+    font-size: 32px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .amenitiesGrid {
+    gap: 9px;
+  }
+
+  .amenityCard {
+    min-height: 140px;
+  }
+
+  .amenityIcon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .amenityCard h3 {
+    font-size: 11px;
+  }
+
+  .locationCopy {
+    min-height: 330px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 300px;
+  }
+}
+/* =========================================================
+   PAYMENT PLAN
+========================================================= */
+
+.paymentSection {
+  width: 100%;
+  padding: 85px 20px;
+  background: #fff;
+}
+
+.paymentSection .sectionInner {
+  width: min(1150px, 100%);
+  margin: 0 auto;
+}
+
+.paymentSection .sectionHeading {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.paymentSection .sectionHeading span {
+  display: block;
+  margin-bottom: 10px;
+  color: #17613f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.paymentSection .sectionHeading h2 {
+  margin: 0;
+  color: #111;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.paymentImageWrap {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #e2e2e2;
+  background: #fff;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.paymentImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  .paymentSection {
+    padding: 60px 15px;
+  }
+
+  .paymentSection .sectionHeading {
+    margin-bottom: 25px;
+  }
+
+  .paymentSection .sectionHeading h2 {
+    font-size: 30px;
+  }
+
+  .paymentImageWrap {
+    border: 0;
+    box-shadow: none;
+  }
+}
+/* =========================================================
+   YOUTUBE VIDEOS
+   ========================================================= */
+
+.videosSection {
+  width: 100%;
+  padding: 10px 0 40px;
+  background: #fff;
+}
+
+.videosContainer {
+  width: min(1200px, calc(100% - 44px));
+  margin: 0 auto;
+}
+
+.videosGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.videoCard {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-decoration: none;
+  background: #111;
+}
+
+.videoFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+}
+.videoImage {
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.videoFrame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.videoCard:hover .videoImage {
+  transform: scale(1.03);
+}
+
+.playButton {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 42px;
+  border-radius: 12px;
+  background: #ff0033;
+  color: #fff;
+  font-size: 23px;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.videoCard:hover .playButton {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: #e6002e;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .videosGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .videosGrid .videoCard:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 8px);
+    justify-self: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .videosSection {
+    padding: 5px 0 30px;
+  }
+
+  .videosContainer {
+    width: calc(100% - 30px);
+  }
+
+  .videosGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .videosGrid .videoCard:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .playButton {
+    width: 52px;
+    height: 38px;
+    font-size: 20px;
+  }
+}

@@ -84,10 +84,7 @@ const mainLinks = [
     label: "Green Living Initiative",
     href: "/green-living-initiative",
   },
-  {
-    label: "Careers",
-    href: "/career",
-  },
+  
   {
     label: "Contact Us",
     href: "/contact-us",
@@ -96,10 +93,7 @@ const mainLinks = [
     label: "Blogs",
     href: "/blogs",
   },
-  {
-    label: "Ballot Result",
-    href: "/balloting-result",
-  },
+ 
 ];
 
 function DesktopProjectItem({
@@ -374,27 +368,27 @@ export default function Header() {
             </Link>
 
             <div className="desktop-projects">
-              <button
-                type="button"
-                className="desktop-nav-button"
-              >
-                Projects
-                <span className="nav-arrow">
-                  ▾
-                </span>
-              </button>
+  <Link
+    href="/projects"
+    className="desktop-nav-button"
+  >
+    Projects
+    <span className="nav-arrow">
+      ▾
+    </span>
+  </Link>
 
-              <div className="desktop-project-dropdown">
-                <ul>
-                  {projects.map((project) => (
-                    <DesktopProjectItem
-                      key={project.href}
-                      item={project}
-                    />
-                  ))}
-                </ul>
-              </div>
-            </div>
+  <div className="desktop-project-dropdown">
+    <ul>
+      {projects.map((project) => (
+        <DesktopProjectItem
+          key={project.href}
+          item={project}
+        />
+      ))}
+    </ul>
+  </div>
+</div>
 
             {mainLinks.slice(2).map((link) => (
               <Link

@@ -1,0 +1,59 @@
+.page {
+  width: 100%;
+  background: #fff;
+}
+
+/* =========================================================
+   HERO / MAIN IMAGE
+========================================================= */
+
+.hero {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+  width: 100%;
+  padding: 55px 20px 75px;
+  background: #fff;
+}
+
+.descriptionInner {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.descriptionInner p {
+  margin: 0;
+  color: #222;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .description {
+    padding: 40px 18px 55px;
+  }
+
+  .descriptionInner p {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+}
