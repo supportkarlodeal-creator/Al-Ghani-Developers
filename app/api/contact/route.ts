@@ -4,9 +4,16 @@ import { Resend } from "resend";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
-const resendApiKey = process.env.RESEND_API_KEY;
 
-const resend = resendApiKey ? new Resend(resendApiKey) : null;
+function getResendClient() {
+  const apiKey = process.env["RESEND_API_KEY"];
+
+  if (!apiKey) {
+    return null;
+  }
+
+  return new Resend(apiKey);
+}
 
 function escapeHtml(value: string) {
   return value
@@ -25,6 +32,8 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
+
+    const resend = getResendClient();
 
     if (!resend) {
       return NextResponse.json(
@@ -98,15 +107,23 @@ export async function POST(request: Request) {
           <div style="font-family: Arial, sans-serif; line-height: 1.6;">
             <h2>New Contact Enquiry</h2>
 
-            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p>
+              <strong>Name:</strong> ${escapeHtml(name)}
+            </p>
 
-            <p><strong>Mobile Number:</strong> ${escapeHtml(phone)}</p>
+            <p>
+              <strong>Mobile Number:</strong> ${escapeHtml(phone)}
+            </p>
 
-            <p><strong>Email:</strong> ${
-              email ? escapeHtml(email) : "Not provided"
-            }</p>
+            <p>
+              <strong>Email:</strong> ${
+                email ? escapeHtml(email) : "Not provided"
+              }
+            </p>
 
-            <p><strong>Message:</strong></p>
+            <p>
+              <strong>Message:</strong>
+            </p>
 
             <p style="white-space: pre-wrap;">
               ${escapeHtml(message || "No message provided")}
