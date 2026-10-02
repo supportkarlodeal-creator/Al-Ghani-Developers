@@ -1,3 +1,7 @@
+/* =========================================================
+   OLIVE BLOCK PAGE
+========================================================= */
+
 .page {
   --green: #263c25;
   --green-dark: #0d180c;
@@ -6,93 +10,180 @@
   --gold-dark: #a98248;
   --cream: #fff0c9;
   --paper: #f7f0df;
+
   color: var(--green);
   background: var(--paper);
 }
+
+
+/* =========================================================
+   GLOBAL CONTAINER
+========================================================= */
 
 .container {
   width: min(1180px, calc(100% - 50px));
   margin: 0 auto;
 }
 
+
+/* =========================================================
+   HERO
+========================================================= */
+
 .hero {
   position: relative;
-  min-height: min(850px, 78vw);
+
+  width: 100%;
+
+  /*
+    IMPORTANT:
+    Hero ratio matches the wide generated banner.
+
+    This prevents the large empty/black area below
+    the actual image.
+  */
+  aspect-ratio: 1600 / 610;
+
   overflow: hidden;
+
   background: var(--green-dark);
 }
 
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
 .heroImage {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover;
   object-position: center;
+  z-index: 0;
+  opacity: 0;
+  animation: oliveHeroFade 10s infinite ease-in-out;
 }
+
+.heroImageFirst {
+  opacity: 1;
+  animation-delay: 0s;
+}
+
+.heroImageSecond {
+  opacity: 0;
+  animation-delay: 5s;
+}
+
+
+
+/* =========================================================
+   HERO OVERLAY
+========================================================= */
 
 .heroOverlay {
   position: absolute;
+
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(7, 14, 6, .70),
-    rgba(7, 14, 6, .25) 52%,
-    rgba(7, 14, 6, .08)
-  );
+
+  z-index: 1;
+
+  /*
+    Very subtle overlay only.
+    The generated artwork already contains
+    its own dark/light composition.
+  */
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 14, 6, 0.02),
+      rgba(7, 14, 6, 0) 60%,
+      rgba(7, 14, 6, 0.03)
+    );
+
+  pointer-events: none;
 }
+
+
+/* =========================================================
+   HERO CONTENT / PAYMENT BUTTON POSITION
+========================================================= */
 
 .heroContent {
-  position: relative;
-  z-index: 1;
-  width: min(1180px, calc(100% - 50px));
-  min-height: min(850px, 78vw);
-  margin: auto;
+  position: absolute;
+
+  z-index: 5;
+
+  /*
+    Button sits ON TOP of the actual image.
+  */
+  left: 4.5%;
+  bottom: 7%;
+
+  width: auto;
+
+  margin: 0;
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+
   color: white;
 }
 
-.heroContent > span {
-  color: var(--gold);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
 
-.heroContent h1 {
-  margin: 12px 0 0;
-  color: var(--gold);
-  font: 400 clamp(80px, 11vw, 160px)/.85 Georgia, "Times New Roman", serif;
-  letter-spacing: 4px;
-}
+/* =========================================================
+   HERO BUTTON
+========================================================= */
 
-.heroContent p {
-  margin: 15px 0 35px;
-  color: var(--gold);
-  font: 400 clamp(18px, 2vw, 28px)/1 Georgia, "Times New Roman", serif;
-  letter-spacing: 7px;
-}
-
-.heroButton,
-.ctaActions a {
+.heroButton {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
+
   min-height: 50px;
+
   width: fit-content;
+
   padding: 0 26px;
+
   border: 1px solid var(--gold);
+
+  background: rgba(13, 24, 12, 0.78);
+
   color: white;
+
   text-decoration: none;
+
   font-size: 12px;
+
   font-weight: 700;
+
   letter-spacing: 2px;
-  transition: .25s ease;
+
+  backdrop-filter: blur(3px);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.heroButton:hover,
-.ctaActions a:hover {
+.heroButton:hover {
   background: var(--gold);
+
   color: var(--green-dark);
+
+  transform: translateY(-2px);
 }
+
+
+/* =========================================================
+   INTRO / GENERAL SECTIONS
+========================================================= */
 
 .intro,
 .amenitiesSection,
@@ -102,9 +193,15 @@
   padding: 100px 0;
 }
 
+
 .intro {
   background: var(--paper);
 }
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
 
 .sectionHeading {
   text-align: center;
@@ -112,23 +209,44 @@
 
 .sectionHeading > span {
   display: block;
+
   margin-bottom: 10px;
+
   color: var(--gold-dark);
+
   font-size: 11px;
+
   font-weight: 700;
+
   letter-spacing: 3px;
 }
 
 .sectionHeading h2 {
   margin: 0;
-  font: 400 clamp(42px, 6vw, 72px)/1 Georgia, "Times New Roman", serif;
+
+  font:
+    400 clamp(42px, 6vw, 72px) / 1
+    Georgia,
+    "Times New Roman",
+    serif;
 }
 
 .sectionHeading p {
   margin: 10px 0 0;
-  font: 400 19px/1.3 Georgia, "Times New Roman", serif;
+
+  font:
+    400 19px / 1.3
+    Georgia,
+    "Times New Roman",
+    serif;
+
   letter-spacing: 5px;
 }
+
+
+/* =========================================================
+   LIGHT HEADINGS
+========================================================= */
 
 .lightHeading h2,
 .lightHeading p {
@@ -139,95 +257,180 @@
   color: var(--gold);
 }
 
+
+/* =========================================================
+   INTRO TEXT
+========================================================= */
+
 .introText {
   max-width: 760px;
+
   margin: 35px auto 0;
+
   color: #4e564b;
+
   font-size: 18px;
+
   line-height: 1.8;
+
   text-align: center;
 }
+
+
+/* =========================================================
+   PAYMENT / LOCATION SECTIONS
+========================================================= */
 
 .paymentSection,
 .locationSection {
   padding: 100px 0;
-  background: radial-gradient(circle at 50% 20%, #405a39, var(--green) 60%, var(--green-dark));
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #405a39,
+      var(--green) 60%,
+      var(--green-dark)
+    );
+
   color: white;
 }
 
+
+/* =========================================================
+   PRICE HIGHLIGHT
+========================================================= */
+
 .priceHighlight {
   max-width: 700px;
+
   margin: 40px auto 35px;
+
   padding: 25px;
+
   border: 1px solid var(--gold);
+
   text-align: center;
 }
 
 .priceHighlight small {
   display: block;
+
   color: var(--gold);
-  font: 400 17px/1.2 Georgia, "Times New Roman", serif;
+
+  font:
+    400 17px / 1.2
+    Georgia,
+    "Times New Roman",
+    serif;
+
   letter-spacing: 3px;
 }
 
 .priceHighlight strong {
   display: inline-block;
+
   margin: 8px 15px 0 0;
+
   color: var(--gold);
-  font: 700 clamp(64px, 9vw, 110px)/.9 Georgia, "Times New Roman", serif;
+
+  font:
+    700 clamp(64px, 9vw, 110px) / 0.9
+    Georgia,
+    "Times New Roman",
+    serif;
 }
 
 .priceHighlight span {
   color: var(--gold);
-  font: 400 18px/1 Georgia, "Times New Roman", serif;
+
+  font:
+    400 18px / 1
+    Georgia,
+    "Times New Roman",
+    serif;
+
   letter-spacing: 2px;
 }
 
+
+/* =========================================================
+   PAYMENT TABLE
+========================================================= */
+
 .tableWrap {
   overflow-x: auto;
-  border: 1px solid rgba(240, 202, 136, .5);
+
+  border: 1px solid rgba(240, 202, 136, 0.5);
 }
 
 .tableWrap table {
   width: 100%;
+
   min-width: 820px;
+
   border-collapse: collapse;
 }
 
 .tableWrap th,
 .tableWrap td {
   padding: 16px 12px;
-  border-bottom: 1px solid rgba(240, 202, 136, .28);
+
+  border-bottom:
+    1px solid rgba(240, 202, 136, 0.28);
+
   text-align: center;
 }
 
 .tableWrap th {
   background: var(--cream);
+
   color: var(--green);
+
   font-size: 12px;
 }
 
 .tableWrap td {
   color: #fff8e9;
+
   font-size: 14px;
+
   font-weight: 600;
 }
 
 .tableWrap td:first-child {
   color: var(--gold);
+
   font-weight: 800;
 }
 
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
 .disclaimer {
   margin: 15px 0 0;
+
   color: #e7d9bb;
+
   font-size: 14px;
 }
 
+
+/* =========================================================
+   AMENITIES
+========================================================= */
+
 .amenitiesSection {
   background:
-    linear-gradient(rgba(38, 60, 37, .96), rgba(38, 60, 37, .96)),
-    url("/images/projects/olive-block/olive-flyer-page-1.png") center / cover;
+    linear-gradient(
+      rgba(38, 60, 37, 0.96),
+      rgba(38, 60, 37, 0.96)
+    ),
+    url("/images/projects/olive-block/olive-flyer-page-1.png")
+      center / cover;
+
   color: white;
 }
 
@@ -238,54 +441,106 @@
 
 .amenitiesTitle {
   width: fit-content;
+
   margin: 45px auto 25px;
+
   padding: 9px 35px;
+
   background: var(--cream);
+
   color: var(--green);
-  font: 400 20px Georgia, "Times New Roman", serif;
+
+  font:
+    400 20px
+    Georgia,
+    "Times New Roman",
+    serif;
 }
+
+
+/* =========================================================
+   AMENITIES GRID
+========================================================= */
 
 .amenitiesGrid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 0;
-  border-top: 1px solid rgba(240, 202, 136, .45);
+
+  border-top:
+    1px solid rgba(240, 202, 136, 0.45);
 }
 
 .amenity {
   min-height: 58px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   padding: 12px;
-  border-bottom: 1px solid rgba(240, 202, 136, .25);
+
+  border-bottom:
+    1px solid rgba(240, 202, 136, 0.25);
+
   color: #fff0ce;
+
   text-align: center;
+
   font-size: 15px;
 }
 
 
+/* =========================================================
+   AMENITIES SOURCE IMAGE
+========================================================= */
+
 .amenitiesSourceImage {
   max-width: 1110px;
+
   margin: 35px auto 0;
+
   overflow: hidden;
-  border: 1px solid rgba(240, 202, 136, .35);
+
+  border:
+    1px solid rgba(240, 202, 136, 0.35);
 }
 
 .amenitiesSourceImage img {
   display: block;
+
   width: 100%;
+
   height: auto;
 }
 
+
+/* =========================================================
+   SOURCE NOTE
+========================================================= */
+
 .sourceNote {
   max-width: 760px;
+
   margin: 25px auto 0;
+
   color: #d9d1bf;
+
   font-size: 12px;
+
   line-height: 1.6;
+
   text-align: center;
 }
+
+
+/* =========================================================
+   MASTER PLAN
+========================================================= */
 
 .masterPlanSection {
   background: var(--paper);
@@ -293,9 +548,13 @@
 
 .largeImage {
   margin: 50px auto 0;
+
   max-width: 1100px;
+
   overflow: hidden;
-  box-shadow: 0 20px 55px rgba(20, 30, 15, .18);
+
+  box-shadow:
+    0 20px 55px rgba(20, 30, 15, 0.18);
 }
 
 .largeImage img,
@@ -303,45 +562,75 @@
 .registryImage img,
 .campaignCard img {
   display: block;
+
   width: 100%;
+
   height: auto;
 }
 
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
 .locationGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(300px, .6fr);
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(300px, 0.6fr);
+
   gap: 30px;
+
   margin-top: 50px;
+
   align-items: stretch;
 }
 
 .locationImage {
   overflow: hidden;
+
   background: #eee0bd;
 }
 
 .distanceCard {
   padding: 32px;
-  border: 1px solid rgba(240, 202, 136, .7);
-  background: rgba(9, 24, 8, .45);
+
+  border:
+    1px solid rgba(240, 202, 136, 0.7);
+
+  background:
+    rgba(9, 24, 8, 0.45);
 }
 
 .distanceCard h3 {
   margin: 0 0 25px;
+
   color: var(--gold);
-  font: 400 28px Georgia, "Times New Roman", serif;
+
+  font:
+    400 28px
+    Georgia,
+    "Times New Roman",
+    serif;
 }
 
 .distanceRow {
   display: flex;
+
   justify-content: space-between;
+
   gap: 15px;
+
   padding: 17px 0;
-  border-bottom: 1px solid rgba(240, 202, 136, .25);
+
+  border-bottom:
+    1px solid rgba(240, 202, 136, 0.25);
 }
 
 .distanceRow strong {
   color: var(--gold);
+
   white-space: nowrap;
 }
 
@@ -349,15 +638,28 @@
   text-align: right;
 }
 
+
+/* =========================================================
+   REGISTRY
+========================================================= */
+
 .registrySection {
   background: #eee2c8;
 }
 
 .registryImage {
   max-width: 600px;
+
   margin: 45px auto 0;
-  box-shadow: 0 18px 50px rgba(20, 30, 15, .15);
+
+  box-shadow:
+    0 18px 50px rgba(20, 30, 15, 0.15);
 }
+
+
+/* =========================================================
+   CAMPAIGN
+========================================================= */
 
 .campaignSection {
   background: #e5dcc5;
@@ -365,57 +667,157 @@
 
 .campaignGrid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 20px;
+
   margin-top: 50px;
 }
 
 .campaignCard {
   overflow: hidden;
+
   background: white;
-  box-shadow: 0 15px 40px rgba(20, 30, 15, .14);
+
+  box-shadow:
+    0 15px 40px rgba(20, 30, 15, 0.14);
 }
+
+
+/* =========================================================
+   CTA
+========================================================= */
 
 .cta {
   padding: 110px 0;
+
   background:
-    linear-gradient(rgba(8, 18, 7, .93), rgba(8, 18, 7, .93)),
-    url("/images/projects/olive-block/olive-hero.jpg") center / cover;
+    linear-gradient(
+      rgba(8, 18, 7, 0.93),
+      rgba(8, 18, 7, 0.93)
+    ),
+    url("/images/projects/olive-block/olive-hero.jpg")
+      center / cover;
+
   color: white;
+
   text-align: center;
 }
 
 .cta > .container > span {
   color: var(--gold);
+
   font-size: 12px;
+
   font-weight: 700;
+
   letter-spacing: 3px;
 }
 
 .cta h2 {
   margin: 20px 0 0;
+
   color: var(--gold);
-  font: 400 clamp(70px, 9vw, 125px)/.8 Georgia, "Times New Roman", serif;
+
+  font:
+    400 clamp(70px, 9vw, 125px) / 0.8
+    Georgia,
+    "Times New Roman",
+    serif;
 }
 
 .cta p {
   margin: 15px 0 35px;
+
   color: var(--gold);
-  font: 400 18px Georgia, "Times New Roman", serif;
+
+  font:
+    400 18px
+    Georgia,
+    "Times New Roman",
+    serif;
+
   letter-spacing: 6px;
 }
 
 .ctaActions {
   display: flex;
+
   justify-content: center;
+
   gap: 12px;
+
   flex-wrap: wrap;
 }
 
+.ctaActions a {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 50px;
+
+  width: fit-content;
+
+  padding: 0 26px;
+
+  border: 1px solid var(--gold);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  transition: 0.25s ease;
+}
+
+.ctaActions a:hover {
+  background: var(--gold);
+
+  color: var(--green-dark);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
 @media (max-width: 900px) {
-  .hero,
+
+  /*
+    KEEP HERO RATIO.
+    Do NOT give it a fixed 680px height.
+  */
+  .hero {
+    aspect-ratio: 1600 / 610;
+
+    min-height: 0;
+  }
+
   .heroContent {
-    min-height: 680px;
+    left: 4%;
+
+    bottom: 7%;
+
+    min-height: 0;
+
+    width: auto;
+  }
+
+  .heroButton {
+    min-height: 46px;
+
+    padding: 0 21px;
+
+    font-size: 11px;
   }
 
   .amenitiesGrid {
@@ -431,35 +833,102 @@
   }
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 600px) {
-  .container,
-  .heroContent {
+
+  .container {
     width: calc(100% - 30px);
   }
 
-  .hero,
-  .heroContent {
-    min-height: 620px;
+
+  /* -------------------------------------------------------
+     HERO
+  ------------------------------------------------------- */
+
+  .hero {
+    /*
+      CRITICAL:
+      No fixed 620px height.
+
+      The hero automatically gets its height from
+      the banner's wide aspect ratio.
+    */
+    width: 100%;
+
+    aspect-ratio: 1600 / 610;
+
+    height: auto;
+
+    min-height: 0;
+
+    overflow: hidden;
   }
+
+
+  .heroImage {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    object-fit: cover;
+
+    object-position: center;
+  }
+
+
+  /*
+    Payment button stays ON the banner.
+  */
 
   .heroContent {
-    align-items: center;
-    text-align: center;
+    position: absolute;
+
+    left: 4%;
+
+    bottom: 6%;
+
+    width: auto;
+
+    min-height: 0;
+
+    margin: 0;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: flex-start;
   }
 
-  .heroContent > span {
-    font-size: 9px;
-    letter-spacing: 2px;
+
+  .heroButton {
+    min-height: 38px;
+
+    padding: 0 13px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    background: rgba(13, 24, 12, 0.82);
+
+    white-space: nowrap;
   }
 
-  .heroContent h1 {
-    font-size: 76px;
-  }
 
-  .heroContent p {
-    font-size: 14px;
-    letter-spacing: 4px;
-  }
+  /* -------------------------------------------------------
+     SECTIONS
+  ------------------------------------------------------- */
 
   .intro,
   .amenitiesSection,
@@ -472,20 +941,79 @@
     padding: 70px 0;
   }
 
-  .amenitiesGrid,
-  .campaignGrid {
+
+  /* -------------------------------------------------------
+     HEADINGS
+  ------------------------------------------------------- */
+
+  .sectionHeading > span {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 42px;
+  }
+
+  .sectionHeading p {
+    font-size: 14px;
+
+    letter-spacing: 3px;
+  }
+
+
+  /* -------------------------------------------------------
+     INTRO
+  ------------------------------------------------------- */
+
+  .introText {
+    margin-top: 25px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+
+  /* -------------------------------------------------------
+     AMENITIES
+  ------------------------------------------------------- */
+
+  .amenitiesGrid {
     grid-template-columns: 1fr;
   }
 
   .amenity {
     min-height: 50px;
+
+    font-size: 14px;
   }
+
+  .amenitiesTitle {
+    margin-top: 35px;
+
+    padding: 8px 24px;
+
+    font-size: 18px;
+  }
+
+
+  /* -------------------------------------------------------
+     PRICE
+  ------------------------------------------------------- */
 
   .priceHighlight {
     padding: 20px 10px;
   }
 
+  .priceHighlight small {
+    font-size: 14px;
+  }
+
   .priceHighlight strong {
+    margin-right: 8px;
+
     font-size: 70px;
   }
 
@@ -493,7 +1021,149 @@
     font-size: 13px;
   }
 
+
+  /* -------------------------------------------------------
+     LOCATION
+  ------------------------------------------------------- */
+
+  .locationGrid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
   .distanceCard {
     padding: 22px 18px;
+  }
+
+  .distanceCard h3 {
+    font-size: 24px;
+  }
+
+  .distanceRow {
+    padding: 14px 0;
+
+    font-size: 14px;
+  }
+
+
+  /* -------------------------------------------------------
+     CAMPAIGN
+  ------------------------------------------------------- */
+
+  .campaignGrid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  /* -------------------------------------------------------
+     CTA
+  ------------------------------------------------------- */
+
+  .cta h2 {
+    font-size: 70px;
+  }
+
+  .cta p {
+    font-size: 14px;
+
+    letter-spacing: 4px;
+  }
+
+  .ctaActions {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .ctaActions a {
+    width: 100%;
+
+    max-width: 280px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .container {
+    width: calc(100% - 24px);
+  }
+
+
+  /* -------------------------------------------------------
+     HERO
+  ------------------------------------------------------- */
+
+  .hero {
+    aspect-ratio: 1600 / 610;
+
+    min-height: 0;
+
+    height: auto;
+  }
+
+  .heroContent {
+    left: 3.5%;
+
+    bottom: 5%;
+  }
+
+  .heroButton {
+    min-height: 34px;
+
+    padding: 0 10px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.8px;
+  }
+
+
+  /* -------------------------------------------------------
+     SECTIONS
+  ------------------------------------------------------- */
+
+  .intro,
+  .amenitiesSection,
+  .masterPlanSection,
+  .registrySection,
+  .campaignSection,
+  .paymentSection,
+  .locationSection,
+  .cta {
+    padding: 60px 0;
+  }
+
+
+  .sectionHeading h2 {
+    font-size: 36px;
+  }
+
+
+  .priceHighlight strong {
+    font-size: 60px;
+  }
+
+
+  .cta h2 {
+    font-size: 60px;
+  }
+}
+@keyframes oliveHeroFade {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
   }
 }

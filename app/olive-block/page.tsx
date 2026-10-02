@@ -1,8 +1,15 @@
 import Image from "next/image";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
+
 import styles from "./olive-block.module.css";
+
+const heroImages = [
+  "/images/projects/olive-block/olive-hero.jpg",
+  "/images/projects/olive-block/olive-hero-2.jpg",
+];
 
 const paymentPlan = [
   {
@@ -78,104 +85,224 @@ export default function OliveBlockPage() {
       <Header />
 
       <main className={styles.page}>
+
+        {/* =====================================================
+            HERO
+        ===================================================== */}
+
         <section className={styles.hero}>
-          <Image
-            src="/images/projects/olive-block/olive-hero.jpg"
-            alt="Olive — The Green Living, Al Ghani Garden Phase 7"
-            fill
-            priority
-            sizes="100vw"
-            className={styles.heroImage}
-          />
+{heroImages.map((image, index) => (
+  <Image
+    key={image}
+    src={image}
+    alt="Olive — The Green Living, Al Ghani Garden Phase 7"
+    fill
+    priority={index === 0}
+    sizes="100vw"
+    className={`${styles.heroImage} ${
+      index === 0 ? styles.heroImageFirst : styles.heroImageSecond
+    }`}
+  />
+))}
+
           <div className={styles.heroOverlay} />
+
+          {/* Only the button is added over the artwork */}
           <div className={styles.heroContent}>
-            <span>AL GHANI GARDEN · PHASE 7</span>
-            <h1>OLIVE</h1>
-            <p>THE GREEN LIVING</p>
-            <a href="#payment-plan" className={styles.heroButton}>
+            <a
+              href="#payment-plan"
+              className={styles.heroButton}
+            >
               VIEW PAYMENT PLAN
             </a>
           </div>
+
         </section>
+
+
+        {/* =====================================================
+            INTRO
+        ===================================================== */}
 
         <section className={styles.intro}>
           <div className={styles.container}>
+
             <div className={styles.sectionHeading}>
               <span>AL GHANI GARDEN · PHASE 7</span>
+
               <h2>OLIVE</h2>
+
               <p>THE GREEN LIVING</p>
             </div>
+
             <p className={styles.introText}>
               Residential plots are offered in 3 Marla, 5 Marla, 10 Marla
               and 01 Kanal sizes. The supplied Olive material presents the
               project around the theme “Perfect Lifestyle with Affordability”.
             </p>
+
           </div>
         </section>
 
-        <section id="payment-plan" className={styles.paymentSection}>
+
+        {/* =====================================================
+            PAYMENT PLAN
+        ===================================================== */}
+
+        <section
+          id="payment-plan"
+          className={styles.paymentSection}
+        >
           <div className={styles.container}>
-            <div className={`${styles.sectionHeading} ${styles.lightHeading}`}>
+
+            <div
+              className={`${styles.sectionHeading} ${styles.lightHeading}`}
+            >
               <span>RESIDENTIAL PLOTS</span>
+
               <h2>PAYMENT PLAN</h2>
             </div>
 
             <div className={styles.priceHighlight}>
-              <small>42 MONTHLY INSTALLMENT</small>
-              <strong>3,000</strong>
-              <span>PER MARLA</span>
+
+              <small>
+                42 MONTHLY INSTALLMENT
+              </small>
+
+              <strong>
+                3,000
+              </strong>
+
+              <span>
+                PER MARLA
+              </span>
+
             </div>
 
             <div className={styles.tableWrap}>
+
               <table>
+
                 <thead>
                   <tr>
                     <th>SIZE</th>
-                    <th>TOTAL AMOUNT<br />(COST OF LAND ONLY)</th>
-                    <th>BOOKING</th>
-                    <th>42 MONTHLY<br />INSTALLMENT</th>
-                    <th>BALLOTING</th>
-                    <th>POSSESSION</th>
+
+                    <th>
+                      TOTAL AMOUNT
+                      <br />
+                      (COST OF LAND ONLY)
+                    </th>
+
+                    <th>
+                      BOOKING
+                    </th>
+
+                    <th>
+                      42 MONTHLY
+                      <br />
+                      INSTALLMENT
+                    </th>
+
+                    <th>
+                      BALLOTING
+                    </th>
+
+                    <th>
+                      POSSESSION
+                    </th>
                   </tr>
                 </thead>
+
                 <tbody>
+
                   {paymentPlan.map((row) => (
                     <tr key={row.size}>
-                      <td>{row.size}</td>
-                      <td>{row.total}</td>
-                      <td>{row.booking}</td>
-                      <td>{row.installment}</td>
-                      <td>{row.balloting}</td>
-                      <td>{row.possession}</td>
+
+                      <td>
+                        {row.size}
+                      </td>
+
+                      <td>
+                        {row.total}
+                      </td>
+
+                      <td>
+                        {row.booking}
+                      </td>
+
+                      <td>
+                        {row.installment}
+                      </td>
+
+                      <td>
+                        {row.balloting}
+                      </td>
+
+                      <td>
+                        {row.possession}
+                      </td>
+
                     </tr>
                   ))}
+
                 </tbody>
+
               </table>
+
             </div>
 
-            <p className={styles.disclaimer}>* Development Charges Extra.</p>
+            <p className={styles.disclaimer}>
+              * Development Charges Extra.
+            </p>
+
           </div>
         </section>
 
+
+        {/* =====================================================
+            AMENITIES
+        ===================================================== */}
+
         <section className={styles.amenitiesSection}>
           <div className={styles.container}>
+
             <div className={styles.sectionHeading}>
-              <span>OLIVE · THE GREEN LIVING</span>
-              <h2>Perfect</h2>
-              <p>Lifestyle with Affordability</p>
+
+              <span>
+                OLIVE · THE GREEN LIVING
+              </span>
+
+              <h2>
+                Perfect
+              </h2>
+
+              <p>
+                Lifestyle with Affordability
+              </p>
+
             </div>
 
-            <div className={styles.amenitiesTitle}>AMENITIES</div>
+            <div className={styles.amenitiesTitle}>
+              AMENITIES
+            </div>
 
             <div className={styles.amenitiesGrid}>
+
               {amenities.map((item) => (
-                <div key={item} className={styles.amenity}>
-                  <span>{item}</span>
+                <div
+                  key={item}
+                  className={styles.amenity}
+                >
+                  <span>
+                    {item}
+                  </span>
                 </div>
               ))}
+
             </div>
 
             <div className={styles.amenitiesSourceImage}>
+
               <Image
                 src="/images/projects/olive-block/olive-amenities.png"
                 alt="Amenities artwork from the supplied Olive flyer"
@@ -183,6 +310,7 @@ export default function OliveBlockPage() {
                 height={410}
                 sizes="(max-width: 900px) 100vw, 1110px"
               />
+
             </div>
 
             <p className={styles.sourceNote}>
@@ -190,18 +318,37 @@ export default function OliveBlockPage() {
               page does not silently reinterpret wording that is difficult to
               read from the graphic.
             </p>
+
           </div>
         </section>
 
+
+        {/* =====================================================
+            MASTER PLAN
+        ===================================================== */}
+
         <section className={styles.masterPlanSection}>
+
           <div className={styles.container}>
+
             <div className={styles.sectionHeading}>
-              <span>ORIGINAL PROPOSED MASTER PLAN</span>
-              <h2>Olive Master Plan</h2>
-              <p>Designed by MEINHARDT Pakistan Pvt. Ltd.</p>
+
+              <span>
+                ORIGINAL PROPOSED MASTER PLAN
+              </span>
+
+              <h2>
+                Olive Master Plan
+              </h2>
+
+              <p>
+                Designed by MEINHARDT Pakistan Pvt. Ltd.
+              </p>
+
             </div>
 
             <div className={styles.largeImage}>
+
               <Image
                 src="/images/projects/olive-block/olive-master-plan.png"
                 alt="Original proposed Olive master plan by Meinhardt"
@@ -209,19 +356,40 @@ export default function OliveBlockPage() {
                 height={830}
                 sizes="(max-width: 900px) 100vw, 1100px"
               />
+
             </div>
+
           </div>
+
         </section>
 
+
+        {/* =====================================================
+            LOCATION
+        ===================================================== */}
+
         <section className={styles.locationSection}>
+
           <div className={styles.container}>
-            <div className={`${styles.sectionHeading} ${styles.lightHeading}`}>
-              <span>AL GHANI GARDEN · PHASE 7</span>
-              <h2>LOCATION</h2>
+
+            <div
+              className={`${styles.sectionHeading} ${styles.lightHeading}`}
+            >
+
+              <span>
+                AL GHANI GARDEN · PHASE 7
+              </span>
+
+              <h2>
+                LOCATION
+              </h2>
+
             </div>
 
             <div className={styles.locationGrid}>
+
               <div className={styles.locationImage}>
+
                 <Image
                   src="/images/projects/olive-block/olive-location-map.png"
                   alt="Olive location map"
@@ -229,30 +397,64 @@ export default function OliveBlockPage() {
                   height={755}
                   sizes="(max-width: 900px) 100vw, 700px"
                 />
+
               </div>
 
               <div className={styles.distanceCard}>
-                <h3>LOCATION HIGHLIGHTS</h3>
+
+                <h3>
+                  LOCATION HIGHLIGHTS
+                </h3>
 
                 {distances.map(([time, place]) => (
-                  <div key={place} className={styles.distanceRow}>
-                    <strong>{time}</strong>
-                    <span>{place}</span>
+                  <div
+                    key={place}
+                    className={styles.distanceRow}
+                  >
+
+                    <strong>
+                      {time}
+                    </strong>
+
+                    <span>
+                      {place}
+                    </span>
+
                   </div>
                 ))}
+
               </div>
+
             </div>
+
           </div>
+
         </section>
 
-        {/* <section className={styles.registrySection}>
+
+        {/* =====================================================
+            REGISTRY
+        ===================================================== */}
+
+        {/*
+        <section className={styles.registrySection}>
+
           <div className={styles.container}>
+
             <div className={styles.sectionHeading}>
-              <span>FROM THE SUPPLIED OLIVE FLYER</span>
-              <h2>Registry & Transfer</h2>
+
+              <span>
+                FROM THE SUPPLIED OLIVE FLYER
+              </span>
+
+              <h2>
+                Registry & Transfer
+              </h2>
+
             </div>
 
             <div className={styles.registryImage}>
+
               <Image
                 src="/images/projects/olive-block/olive-registry-tahaffuz.png"
                 alt="Registry and transfer information from Olive flyer"
@@ -260,24 +462,48 @@ export default function OliveBlockPage() {
                 height={580}
                 sizes="(max-width: 700px) 100vw, 415px"
               />
+
             </div>
+
           </div>
-        </section> */}
+
+        </section>
+        */}
+
+
+        {/* =====================================================
+            CAMPAIGN
+        ===================================================== */}
 
         <section className={styles.campaignSection}>
+
           <div className={styles.container}>
+
             <div className={styles.sectionHeading}>
-              <span>OLIVE · THE GREEN LIVING</span>
-              <h2>Campaign</h2>
+
+              <span>
+                OLIVE · THE GREEN LIVING
+              </span>
+
+              <h2>
+                Campaign
+              </h2>
+
             </div>
 
             <div className={styles.campaignGrid}>
+
               {[
                 "olive-offer-1.jpg",
                 "olive-offer-2.jpg",
                 "olive-offer-3.jpg",
               ].map((image, index) => (
-                <div className={styles.campaignCard} key={image}>
+
+                <div
+                  className={styles.campaignCard}
+                  key={image}
+                >
+
                   <Image
                     src={`/images/projects/olive-block/${image}`}
                     alt={`Olive campaign creative ${index + 1}`}
@@ -285,20 +511,44 @@ export default function OliveBlockPage() {
                     height={2048}
                     sizes="(max-width: 700px) 100vw, 33vw"
                   />
+
                 </div>
+
               ))}
+
             </div>
+
           </div>
+
         </section>
 
+
+        {/* =====================================================
+            CTA
+        ===================================================== */}
+
         <section className={styles.cta}>
+
           <div className={styles.container}>
-            <span>AL GHANI GARDEN · PHASE 7</span>
-            <h2>OLIVE</h2>
-            <p>THE GREEN LIVING</p>
+
+            <span>
+              AL GHANI GARDEN · PHASE 7
+            </span>
+
+            <h2>
+              OLIVE
+            </h2>
+
+            <p>
+              THE GREEN LIVING
+            </p>
 
             <div className={styles.ctaActions}>
-              <a href="tel:+92-307-3777841">CALL +92-307-3777841</a>
+
+              <a href="tel:+92-307-3777841">
+                CALL +92-307-3777841
+              </a>
+
               <a
                 href="https://wa.me/923073777841"
                 target="_blank"
@@ -306,12 +556,17 @@ export default function OliveBlockPage() {
               >
                 WHATSAPP
               </a>
+
             </div>
+
           </div>
+
         </section>
+
       </main>
 
       <FloatingActions />
+
       <Footer />
     </>
   );

@@ -36,7 +36,7 @@ const projects = [
     title: "AL GHANI GARDEN PHASE 7",
     image:
       "https://alghani.com.pk/wp-content/uploads/2024/10/L1-e1737031360776-300x279.png",
-    href: "/alghani",
+    href: "/phase-7",
   },
 ];
 

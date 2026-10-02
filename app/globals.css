@@ -249,7 +249,7 @@ img {
   display: flex;
   align-items: center;
 
-  gap: 11px;
+  gap: 8px;
 
   color: #ffffff;
 
@@ -259,24 +259,45 @@ img {
   white-space: nowrap;
 }
 
-.header-phone a {
-  color: #ffffff;
-
-  text-decoration: none;
-}
-
-.header-phone a:hover {
-  text-decoration: underline;
-}
-
-.header-phone-number {
+.header-phone-call {
+  font-size: 10px;
   font-weight: 600;
 }
 
+.header-phone-number {
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+
+  text-decoration: none;
+
+  animation: headerPhoneBlink 1.5s ease-in-out infinite;
+}
+
+.header-phone-number:hover {
+  color: #f4d39f;
+  text-decoration: underline;
+}
+
 .phone-separator {
+  margin: 0 3px;
+
   opacity: 0.5;
 }
 
+@keyframes headerPhoneBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
 /* =========================================================
    MAIN HEADER
 ========================================================= */
@@ -868,18 +889,27 @@ img {
   position: absolute;
   top: 50%;
   z-index: 5;
+
   width: 48px;
   height: 48px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   transform: translateY(-50%);
+
   border: 1px solid rgba(255, 255, 255, 0.5);
+
   background: rgba(0, 0, 0, 0.35);
+
   color: #ffffff;
+
   font-size: 32px;
   line-height: 1;
+
   cursor: pointer;
+
   transition:
     background 0.2s ease,
     border-color 0.2s ease;
@@ -897,7 +927,23 @@ img {
 .hero-arrow-right {
   right: 25px;
 }
+.hero-arrow-icon {
+  width: 9px;
+  height: 9px;
 
+  display: block;
+
+  border-bottom: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+}
+
+.hero-arrow-left .hero-arrow-icon {
+  transform: rotate(45deg);
+}
+
+.hero-arrow-right .hero-arrow-icon {
+  transform: rotate(225deg);
+}
 /* =========================================================
    HERO DOTS
 ========================================================= */
@@ -2612,10 +2658,15 @@ img {
     gap: 6px;
   }
 
-  .header-phone-number,
-  .phone-separator {
-    display: none;
-  }
+  .header-phone-number {
+  display: inline;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.phone-separator {
+  display: inline;
+}
 
   .site-logo-image {
     width: 135px;

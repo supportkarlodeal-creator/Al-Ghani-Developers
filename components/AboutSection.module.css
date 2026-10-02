@@ -1,0 +1,307 @@
+.aboutSection {
+  width: 100%;
+  padding: 95px 0;
+  background: #ffffff;
+}
+
+.aboutContainer {
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   SECTION INTRO
+========================================================= */
+
+.aboutIntro {
+  margin-bottom: 45px;
+}
+
+.aboutEyebrow {
+  display: block;
+  margin-bottom: 10px;
+
+  color: var(--primary-color);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.aboutHeading {
+  margin: 0 0 18px;
+
+  color: #111111;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.aboutIntroText,
+.aboutLocation {
+  margin: 0;
+
+  color: #555555;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.aboutLocation {
+  margin-top: 8px;
+}
+
+/* =========================================================
+   PROJECT SHOWCASE
+========================================================= */
+
+.aboutProjectShowcase {
+  display: grid;
+
+  grid-template-columns: 0.72fr 1.28fr;
+
+  column-gap: 20px;
+  row-gap: 18px;
+}
+
+.aboutProject {
+  min-width: 0;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.aboutProjectImage {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+.aboutProjectImageElement {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.45s ease;
+}
+
+.aboutProject:hover .aboutProjectImageElement {
+  transform: scale(1.025);
+}
+
+.aboutProjectTitle {
+  margin-top: 6px;
+
+  color: #222222;
+
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   SQUARE AVENUE
+========================================================= */
+
+.projectSquare {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.projectSquare .aboutProjectImage {
+  aspect-ratio: 0.82;
+}
+
+/* =========================================================
+   PHASE 7 + PHASE 1
+========================================================= */
+
+.aboutRightTop {
+  grid-column: 2;
+  grid-row: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.projectPhase7 .aboutProjectImage,
+.projectPhase1 .aboutProjectImage {
+  aspect-ratio: 2.8;
+}
+
+/* =========================================================
+   BOTTOM PROJECTS
+========================================================= */
+
+.aboutBottomProjects {
+  grid-column: 1 / -1;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px 20px;
+}
+
+.projectPhase3 .aboutProjectImage,
+.projectPhase2 .aboutProjectImage,
+.projectKingsLane .aboutProjectImage {
+  aspect-ratio: 1.75;
+}
+
+/* =========================================================
+   KINGS LANE
+========================================================= */
+
+.projectKingsLane {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+}
+
+.projectKingsLane > div:first-child {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 420px !important;
+
+  aspect-ratio: auto !important;
+
+  overflow: hidden !important;
+}
+
+.projectKingsLane > div:first-child img {
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+  .aboutSection {
+    padding: 55px 0 65px;
+  }
+
+  .aboutContainer {
+    width: calc(100% - 30px);
+  }
+
+  .aboutHeading {
+    font-size: 28px;
+  }
+
+  .aboutIntroText,
+  .aboutLocation {
+    font-size: 12px;
+  }
+
+  /* =====================================================
+     MOBILE PROJECT ORDER
+     
+     1. Phase 7
+     2. Square Avenue
+     3. Kings Lane
+     4. Phase 3
+     5. Phase 2
+     6. Phase 1
+  ===================================================== */
+
+  .aboutProjectShowcase {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /*
+     Remove the visual grouping of the desktop wrappers.
+     Their children become flex items of the showcase.
+  */
+
+  .aboutRightTop,
+  .aboutBottomProjects {
+    display: contents;
+  }
+
+  /* =====================================================
+     PROJECT ORDER
+  ===================================================== */
+
+  .projectPhase7 {
+    order: 1;
+  }
+
+  .projectSquare {
+    order: 2;
+  }
+
+  .projectKingsLane {
+    order: 3;
+  }
+
+  .projectPhase3 {
+    order: 4;
+  }
+
+  .projectPhase2 {
+    order: 5;
+  }
+
+  .projectPhase1 {
+    order: 6;
+  }
+
+  /* =====================================================
+     FULL WIDTH
+  ===================================================== */
+
+  .projectSquare,
+  .projectPhase7,
+  .projectPhase1,
+  .projectPhase3,
+  .projectPhase2,
+  .projectKingsLane {
+    width: 100%;
+  }
+
+  /* =====================================================
+     MOBILE IMAGE RATIOS
+  ===================================================== */
+
+  .projectSquare .aboutProjectImage {
+    aspect-ratio: 1.25;
+  }
+
+  .projectPhase7 .aboutProjectImage,
+  .projectPhase1 .aboutProjectImage {
+    aspect-ratio: 1.8;
+  }
+
+  .projectPhase3 .aboutProjectImage,
+  .projectPhase2 .aboutProjectImage,
+  .projectKingsLane .aboutProjectImage {
+    aspect-ratio: 1.7;
+  }
+
+  /* =====================================================
+     KINGS LANE
+     
+     Override the desktop 420px height on mobile.
+  ===================================================== */
+
+  .projectKingsLane > div:first-child {
+    height: auto !important;
+    aspect-ratio: 1.7 !important;
+  }
+}

@@ -1,0 +1,983 @@
+.phase7Page {
+  --phase7-green: #172a1c;
+  --phase7-green-dark: #101d14;
+  --phase7-green-light: #273c27;
+  --phase7-gold: #c8a45a;
+  --phase7-gold-light: #dfc681;
+  --phase7-beige: #f4d39f;
+  --phase7-cream: #faf5eb;
+  --phase7-text: #333;
+  --phase7-muted: #666;
+
+  background: var(--phase7-cream);
+  color: var(--phase7-text);
+}
+
+.phase7Container {
+  width: min(1200px, calc(100% - 50px));
+  margin: 0 auto;
+}
+
+.sectionPadding {
+  padding: 90px 0;
+}
+
+/* HERO */
+
+.phase7Hero {
+  position: relative;
+  width: 100%;
+  height: min(760px, calc(100vh - 120px));
+  min-height: 560px;
+  overflow: hidden;
+  background: var(--phase7-green-dark);
+}
+
+.phase7HeroImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.phase7HeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(9, 22, 12, 0.82) 0%,
+    rgba(9, 22, 12, 0.55) 42%,
+    rgba(9, 22, 12, 0.15) 100%
+  );
+}
+
+.phase7HeroContent {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, calc(100% - 50px));
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.phase7Eyebrow {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--phase7-gold-light);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.phase7Hero h1 {
+  margin: 0;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 7vw, 92px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -2px;
+}
+
+.phase7Hero h1 span {
+  color: var(--phase7-gold-light);
+}
+
+.phase7Hero p {
+  max-width: 520px;
+  margin: 25px 0 30px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.phase7PrimaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 165px;
+  min-height: 48px;
+  padding: 12px 25px;
+  border: 1px solid var(--phase7-gold);
+  background: var(--phase7-gold);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.phase7PrimaryButton:hover {
+  background: transparent;
+  color: var(--phase7-gold-light);
+}
+
+/* TYPOGRAPHY */
+
+.phase7SmallTitle {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--phase7-gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.phase7SectionHeading span {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--phase7-gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.phase7SectionHeading h2,
+.phase7Introduction h2,
+.phase7Masjid h2,
+.phase7GreenInitiative h2,
+.phase7Miyawaki h2,
+.phase7Tahaffuz h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 5vw, 62px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* ABOUT */
+
+.phase7About {
+  background: var(--phase7-cream);
+}
+
+.phase7TwoColumn {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.phase7Text {
+  max-width: 680px;
+}
+
+.phase7Text p,
+.phase7IntroductionCopy p,
+.phase7MasjidCopy p,
+.phase7GreenInitiativeCopy p,
+.phase7MiyawakiCopy p,
+.phase7EducationCopy p,
+.phase7TahaffuzCopy p {
+  margin: 0 0 20px;
+  color: var(--phase7-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.phase7Text p:last-child,
+.phase7IntroductionCopy p:last-child,
+.phase7MasjidCopy p:last-child,
+.phase7GreenInitiativeCopy p:last-child,
+.phase7MiyawakiCopy p:last-child,
+.phase7EducationCopy p:last-child,
+.phase7TahaffuzCopy p:last-child {
+  margin-bottom: 0;
+}
+
+/* INTRODUCTION + AMENITIES */
+
+.phase7Introduction {
+  padding: 0;
+  background: var(--phase7-green);
+}
+
+.phase7Introduction .phase7Container {
+  align-items: stretch;
+}
+
+.phase7IntroductionCopy {
+  padding: 90px 0;
+  padding-right: 30px;
+}
+
+.phase7IntroductionCopy .phase7SmallTitle,
+.phase7IntroductionCopy h2 {
+  color: var(--phase7-beige);
+}
+
+.phase7IntroductionCopy p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.phase7Amenities {
+  padding: 90px 0 90px 50px;
+  border-left: 1px solid rgba(200, 164, 90, 0.25);
+}
+
+.phase7Amenities > .phase7SmallTitle {
+  color: var(--phase7-gold-light);
+}
+
+.phase7AmenitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 30px;
+}
+
+.phase7Amenity {
+  min-height: 88px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+
+.phase7Amenity:nth-child(3n) {
+  border-right: none;
+}
+
+.phase7Amenity span:last-child {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.phase7AmenityIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 9px;
+  color: var(--phase7-gold-light);
+}
+
+/* FULL WIDTH IMAGES */
+
+.phase7ImageSection {
+  position: relative;
+  width: 100%;
+  height: min(760px, 72vw);
+  min-height: 480px;
+  overflow: hidden;
+  background: var(--phase7-green-dark);
+}
+
+.phase7FullImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.phase7ImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(12, 25, 14, 0.55),
+    rgba(12, 25, 14, 0.05)
+  );
+}
+
+.phase7ImageTitle {
+  position: absolute;
+  top: 55px;
+  left: max(25px, calc((100% - 1200px) / 2));
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  color: var(--phase7-beige);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 5vw, 64px);
+  line-height: 0.95;
+}
+
+.phase7ImageTitle span {
+  font-weight: 400;
+}
+
+.phase7ImageTitle strong {
+  font-weight: 700;
+}
+
+/* MASJID */
+
+.phase7Masjid {
+  background: var(--phase7-cream);
+}
+
+.phase7MasjidCopy {
+  padding-right: 20px;
+}
+
+.phase7FeatureImage {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  overflow: hidden;
+}
+
+.phase7CoverImage {
+  object-fit: cover;
+}
+
+/* TOWN PLANNING */
+
+.phase7Vision {
+  padding: 0 0 90px;
+  background: var(--phase7-cream);
+}
+
+.phase7VisionImage {
+  position: relative;
+  width: 100%;
+  height: min(720px, 58vw);
+  min-height: 400px;
+  overflow: hidden;
+}
+
+/* EDUCATION */
+
+.phase7Education {
+  background: var(--phase7-green);
+}
+
+.phase7EducationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 650px;
+}
+
+.phase7EducationImage {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.phase7EducationCopy {
+  padding: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--phase7-beige);
+}
+
+.phase7EducationCopy .phase7SmallTitle {
+  color: #536040;
+}
+
+.phase7EducationCopy p {
+  color: #4e4e42;
+}
+
+.phase7University {
+  background: var(--phase7-green-light);
+}
+
+.phase7University .phase7SmallTitle {
+  color: var(--phase7-gold-light);
+}
+
+.phase7University p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* GREEN LIVING */
+
+.phase7GreenLiving {
+  padding: 90px 0;
+  background: var(--phase7-cream);
+}
+
+.phase7GreenLivingGrid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  min-height: 600px;
+}
+
+.phase7GreenCopy {
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--phase7-green);
+}
+
+.phase7GreenCopy .phase7SmallTitle,
+.phase7GreenCopy h2 {
+  color: var(--phase7-beige);
+}
+
+.phase7GreenCopy h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.phase7OliveLogo {
+  margin-top: 80px;
+  color: var(--phase7-gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 55px;
+  line-height: 0.9;
+}
+
+.phase7OliveLogo small {
+  display: block;
+  margin-top: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.phase7GreenImage {
+  position: relative;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+/* GREEN INITIATIVE */
+
+.phase7GreenInitiative {
+  background: var(--phase7-green);
+}
+
+.phase7GreenInitiativeCopy {
+  padding-right: 25px;
+}
+
+.phase7GreenInitiativeCopy .phase7SmallTitle,
+.phase7GreenInitiativeCopy h2 {
+  color: var(--phase7-beige);
+}
+
+.phase7GreenInitiativeCopy p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.phase7GreenInitiativeCopy ul {
+  margin: 30px 0 0;
+  padding-left: 20px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.phase7LandscapedImage {
+  position: relative;
+  min-height: 570px;
+  overflow: hidden;
+}
+
+.phase7LandscapedTitle {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  color: var(--phase7-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 35px;
+  line-height: 0.95;
+}
+
+/* MIYAWAKI */
+
+.phase7Miyawaki {
+  background: var(--phase7-beige);
+}
+
+.phase7MiyawakiCopy {
+  padding-right: 25px;
+}
+
+.phase7MiyawakiCopy .phase7SmallTitle,
+.phase7MiyawakiCopy h2 {
+  color: var(--phase7-green);
+}
+
+.phase7MiyawakiCopy h3 {
+  margin: 30px 0 25px;
+  color: var(--phase7-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.phase7MiyawakiCopy p {
+  color: #4e4e42;
+}
+
+.phase7MiyawakiStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 35px 0;
+  border-top: 1px solid rgba(23, 42, 28, 0.2);
+  border-bottom: 1px solid rgba(23, 42, 28, 0.2);
+}
+
+.phase7MiyawakiStats div {
+  padding: 20px 10px;
+  text-align: center;
+  border-right: 1px solid rgba(23, 42, 28, 0.2);
+}
+
+.phase7MiyawakiStats div:last-child {
+  border-right: none;
+}
+
+.phase7MiyawakiStats strong {
+  display: block;
+  color: var(--phase7-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+}
+
+.phase7MiyawakiStats span {
+  display: block;
+  margin-top: 5px;
+  color: #596052;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.phase7MiyawakiFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.phase7MiyawakiFeatures span {
+  padding: 7px 10px;
+  border: 1px solid rgba(23, 42, 28, 0.25);
+  color: var(--phase7-green);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.phase7MiyawakiImage {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+/* DEVELOPMENT */
+
+.phase7Development {
+  background: var(--phase7-green-dark);
+}
+
+/* LOCATION */
+
+.phase7Location {
+  background: var(--phase7-cream);
+}
+
+.phase7LocationCopy {
+  padding: 50px;
+  background: var(--phase7-green);
+}
+
+.phase7LocationCopy .phase7SmallTitle {
+  color: var(--phase7-gold-light);
+}
+
+.phase7LocationCopy h2 {
+  margin: 0;
+  color: var(--phase7-beige);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 400;
+}
+
+.phase7LocationCopy p {
+  margin: 35px 0 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  line-height: 1.15;
+}
+
+.phase7LocationImage {
+  position: relative;
+  min-height: 550px;
+  overflow: hidden;
+  background: var(--phase7-beige);
+}
+
+.phase7LocationLabel {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 2;
+  padding: 8px 14px;
+  background: var(--phase7-beige);
+  color: var(--phase7-green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* LOCATION HIGHLIGHTS */
+
+.phase7LocationHighlights {
+  padding: 55px 0;
+  background: var(--phase7-green);
+}
+
+.phase7LocationHighlightGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.phase7LocationHighlightGrid div {
+  padding: 15px;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.phase7LocationHighlightGrid div:last-child {
+  border-right: none;
+}
+
+.phase7LocationHighlightGrid strong {
+  display: block;
+  color: var(--phase7-gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+}
+
+.phase7LocationHighlightGrid span {
+  display: block;
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+/* TAHAFFUZ */
+
+.phase7Tahaffuz {
+  background: var(--phase7-beige);
+}
+
+.phase7TahaffuzImage {
+  position: relative;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.phase7TahaffuzCopy {
+  padding-left: 25px;
+}
+
+.phase7TahaffuzCopy .phase7SmallTitle,
+.phase7TahaffuzCopy h2 {
+  color: var(--phase7-green);
+}
+
+.phase7TahaffuzCopy h3 {
+  margin: 30px 0;
+  color: var(--phase7-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+/* CTA */
+
+.phase7Cta {
+  padding: 100px 0;
+  background: linear-gradient(
+    rgba(13, 30, 17, 0.94),
+    rgba(13, 30, 17, 0.94)
+  );
+  text-align: center;
+}
+
+.phase7Cta span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--phase7-gold-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.phase7Cta h2 {
+  margin: 0;
+  color: var(--phase7-beige);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 7vw, 90px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.phase7Cta p {
+  margin: 25px auto 30px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .phase7TwoColumn {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .phase7IntroductionCopy,
+  .phase7Amenities {
+    padding: 70px 0;
+  }
+
+  .phase7Amenities {
+    padding-left: 0;
+    border-top: 1px solid rgba(200, 164, 90, 0.25);
+    border-left: none;
+  }
+
+  .phase7FeatureImage {
+    min-height: 500px;
+  }
+
+  .phase7EducationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .phase7EducationCopy {
+    min-height: 350px;
+  }
+
+  .phase7GreenLivingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .phase7GreenCopy {
+    min-height: 450px;
+  }
+
+  .phase7GreenImage {
+    min-height: 500px;
+  }
+
+  .phase7LocationHighlightGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .phase7LocationHighlightGrid div:nth-child(3) {
+    border-right: none;
+  }
+
+  .phase7LocationHighlightGrid div {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .phase7Container {
+    width: calc(100% - 30px);
+  }
+
+  .sectionPadding {
+    padding: 60px 0;
+  }
+
+  .phase7Hero {
+    height: 620px;
+    min-height: 0;
+  }
+
+  .phase7HeroContent {
+    width: calc(100% - 30px);
+  }
+
+  .phase7Eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .phase7Hero h1 {
+    font-size: 52px;
+    letter-spacing: -1px;
+  }
+
+  .phase7Hero p {
+    max-width: 320px;
+    font-size: 13px;
+  }
+
+  .phase7SectionHeading h2,
+  .phase7Introduction h2,
+  .phase7Masjid h2,
+  .phase7GreenInitiative h2,
+  .phase7Miyawaki h2,
+  .phase7Tahaffuz h2 {
+    font-size: 42px;
+  }
+
+  .phase7Text p,
+  .phase7IntroductionCopy p,
+  .phase7MasjidCopy p,
+  .phase7GreenInitiativeCopy p,
+  .phase7MiyawakiCopy p,
+  .phase7EducationCopy p,
+  .phase7TahaffuzCopy p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .phase7AmenitiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .phase7Amenity:nth-child(3n) {
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .phase7Amenity:nth-child(2n) {
+    border-right: none;
+  }
+
+  .phase7ImageSection {
+    height: 520px;
+    min-height: 0;
+  }
+
+  .phase7ImageTitle {
+    top: 30px;
+    left: 20px;
+    font-size: 38px;
+  }
+
+  .phase7FeatureImage {
+    min-height: 400px;
+  }
+
+  .phase7VisionImage {
+    height: 400px;
+    min-height: 0;
+  }
+
+  .phase7EducationCopy {
+    padding: 45px 25px;
+    min-height: 300px;
+  }
+
+  .phase7EducationImage {
+    min-height: 330px;
+  }
+
+  .phase7GreenLiving {
+    padding: 60px 0;
+  }
+
+  .phase7GreenCopy {
+    min-height: 400px;
+    padding: 45px 25px;
+  }
+
+  .phase7GreenImage {
+    min-height: 400px;
+  }
+
+  .phase7OliveLogo {
+    margin-top: 50px;
+    font-size: 45px;
+  }
+
+  .phase7LandscapedImage {
+    min-height: 400px;
+  }
+
+  .phase7LandscapedTitle {
+    font-size: 28px;
+  }
+
+  .phase7MiyawakiStats {
+    margin: 25px 0;
+  }
+
+  .phase7MiyawakiStats strong {
+    font-size: 24px;
+  }
+
+  .phase7MiyawakiStats span {
+    font-size: 7px;
+  }
+
+  .phase7MiyawakiImage {
+    min-height: 400px;
+  }
+
+  .phase7LocationCopy {
+    padding: 45px 25px;
+  }
+
+  .phase7LocationCopy h2 {
+    font-size: 48px;
+  }
+
+  .phase7LocationCopy p {
+    font-size: 21px;
+  }
+
+  .phase7LocationImage {
+    min-height: 400px;
+  }
+
+  .phase7LocationHighlightGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .phase7LocationHighlightGrid div:nth-child(3) {
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .phase7LocationHighlightGrid div:nth-child(2n) {
+    border-right: none;
+  }
+
+  .phase7TahaffuzImage {
+    min-height: 400px;
+  }
+
+  .phase7TahaffuzCopy {
+    padding: 45px 0 0;
+  }
+
+  .phase7Cta {
+    padding: 75px 0;
+  }
+
+  .phase7Cta h2 {
+    font-size: 55px;
+  }
+}

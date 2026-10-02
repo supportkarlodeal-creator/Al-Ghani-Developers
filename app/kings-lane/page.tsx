@@ -291,7 +291,7 @@ export default function KingsLanePage() {
 
               <div className={styles.paymentCard}>
                 <Image
-                  src="https://alghani.com.pk/wp-content/uploads/2025/06/kingslane-flyer-final-22-8-24_page-0002-725x1024.jpg"
+                  src="/images/projects/kings-lane/payment.png"
                   alt="Kings Lane payment plan"
                   width={725}
                   height={1024}

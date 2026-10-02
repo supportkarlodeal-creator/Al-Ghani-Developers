@@ -293,7 +293,7 @@ export default function AlGhaniPhaseIIIPage() {
 
               <div className={styles.paymentImageBox}>
                 <Image
-                  src="https://alghani.com.pk/wp-content/uploads/2025/03/WhatsApp-Image-2025-03-15-at-12.10.22-PM.jpeg"
+                  src="/images/projects/phase-3/payment-plan.png"
                   alt="Al Ghani Phase III Payment Plan Option I"
                   width={1200}
                   height={850}

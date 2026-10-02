@@ -318,22 +318,19 @@ export default function Header() {
           </div>
 
           <div className="header-phone">
-            <span className="header-phone-number">
-              +92-307-3777841
-            </span>
+  <span className="phone-separator">|</span>
 
-            <span className="phone-separator">
-              |
-            </span>
+  <span className="header-phone-call">
+    Call Now:
+  </span>
 
-            <span>
-              Call Now:{" "}
-              <a href="tel:+92-307-3777841">
-                +92-307-3777841
-              </a>{" "}
-              (UAN)
-            </span>
-          </div>
+  <a
+    href="tel:+92-307-3777841"
+    className="header-phone-number"
+  >
+    +92-307-3777841
+  </a>
+</div>
         </div>
       </div>
 

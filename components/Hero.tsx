@@ -116,22 +116,22 @@ export default function Hero() {
       {slides.length > 1 && (
         <>
           <button
-            type="button"
-            className="hero-arrow hero-arrow-left"
-            onClick={goToPrevious}
-            aria-label="Previous slide"
-          >
-            ‹
-          </button>
+  type="button"
+  className="hero-arrow hero-arrow-left"
+  onClick={goToPrevious}
+  aria-label="Previous slide"
+>
+  <span className="hero-arrow-icon" />
+</button>
 
-          <button
-            type="button"
-            className="hero-arrow hero-arrow-right"
-            onClick={goToNext}
-            aria-label="Next slide"
-          >
-            ›
-          </button>
+<button
+  type="button"
+  className="hero-arrow hero-arrow-right"
+  onClick={goToNext}
+  aria-label="Next slide"
+>
+  <span className="hero-arrow-icon" />
+</button>
 
           {/* =================================================
               SLIDE DOTS

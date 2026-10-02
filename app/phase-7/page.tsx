@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 
+import styles from "./phase-7.module.css";
+
 const amenities = [
   "Amusement Park",
   "Food Court / Club",
@@ -25,6 +27,163 @@ const amenities = [
   "Water Filtration Plant",
   "Shuttle Service",
 ];
+
+function AmenityIcon({ type }: { type: number }) {
+  const common = {
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.6,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
+  };
+
+  switch (type) {
+    case 0:
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="8" />
+          <circle cx="12" cy="12" r="2" />
+          <path d="M12 4v4M20 12h-4M12 20v-4M4 12h4" />
+        </svg>
+      );
+
+    case 1:
+      return (
+        <svg {...common}>
+          <path d="M5 12h14a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5Z" />
+          <path d="M8 8v4M6 5v4M10 5v4M18 5v7" />
+        </svg>
+      );
+
+    case 2:
+      return (
+        <svg {...common}>
+          <rect x="3" y="6" width="18" height="11" rx="2" />
+          <path d="M7 6V4h10v2M8 10h3v3H8zM16 10h2M5 20h14M6 17v3M18 17v3" />
+        </svg>
+      );
+
+    case 3:
+      return (
+        <svg {...common}>
+          <path d="M7 21V8a5 5 0 0 1 10 0v13" />
+          <path d="M5 21h14M9 12h6M12 9v6" />
+        </svg>
+      );
+
+    case 4:
+      return (
+        <svg {...common}>
+          <path d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16" />
+          <path d="M9 8h6M12 5v6M8 21v-5h8v5" />
+        </svg>
+      );
+
+    case 5:
+      return (
+        <svg {...common}>
+          <path d="M4 7h16v5H4zM7 12v5M17 12v5M3 17h18M8 20h8" />
+        </svg>
+      );
+
+    case 6:
+      return (
+        <svg {...common}>
+          <path d="m3 10 9-7 9 7v10H3z" />
+          <path d="M8 20v-6h8v6M10 10h4" />
+        </svg>
+      );
+
+    case 7:
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="8" />
+          <path d="m8 8 8 8M16 8l-8 8M12 4v16M4 12h16" />
+        </svg>
+      );
+
+    case 8:
+      return (
+        <svg {...common}>
+          <path d="M12 3 20 6v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" />
+          <path d="m9 12 2 2 4-4" />
+        </svg>
+      );
+
+    case 9:
+      return (
+        <svg {...common}>
+          <path d="M3 18h18M5 18l3-10h8l3 10M10 8l2-4 2 4M9 14h6" />
+        </svg>
+      );
+
+    case 10:
+      return (
+        <svg {...common}>
+          <path d="M3 10h18v10H3zM5 10V7h14v3M3 14h18M8 14v6M16 14v6" />
+        </svg>
+      );
+
+    case 11:
+      return (
+        <svg {...common}>
+          <path d="M4 7h11l5 5v5H4z" />
+          <path d="M15 7v5h5M7 11h4M9 9v4" />
+        </svg>
+      );
+
+    case 12:
+      return (
+        <svg {...common}>
+          <path d="M5 21V4h14v17M8 8h3M13 8h3M8 12h3M13 12h3M8 16h3M13 16h3" />
+        </svg>
+      );
+
+    case 13:
+      return (
+        <svg {...common}>
+          <circle cx="8" cy="9" r="3" />
+          <circle cx="16" cy="9" r="3" />
+          <path d="M3 19c.8-3 2.5-4 5-4s4.2 1 5 4M11 19c.8-3 2.5-4 5-4s4.2 1 5 4" />
+        </svg>
+      );
+
+    case 14:
+      return (
+        <svg {...common}>
+          <path d="M4 20h16M6 20V11a6 6 0 0 1 12 0v9M9 20v-6h6v6M3 11h18M12 5V2" />
+        </svg>
+      );
+
+    case 15:
+      return (
+        <svg {...common}>
+          <path d="M12 21s7-5.3 7-11A7 7 0 0 0 5 10c0 5.7 7 11 7 11Z" />
+          <path d="M12 6v5M9.5 8.5h5" />
+        </svg>
+      );
+
+    case 16:
+      return (
+        <svg {...common}>
+          <path d="M12 3s5 5.3 5 9a5 5 0 0 1-10 0c0-3.7 5-9 5-9Z" />
+          <path d="M9.5 14a3 3 0 0 0 5 1" />
+        </svg>
+      );
+
+    default:
+      return (
+        <svg {...common}>
+          <rect x="3" y="6" width="18" height="12" rx="2" />
+          <path d="M7 6V4h10v2M7 18v2M17 18v2M3 12h18M7 10h3" />
+        </svg>
+      );
+  }
+}
 
 const greenInitiatives = [
   "Street Plantation",
@@ -51,26 +210,21 @@ export default function Phase7Page() {
     <>
       <Header />
 
-      <main className="phase7-page">
-
-        {/* =====================================================
-            HERO
-        ===================================================== */}
-
-        <section className="phase7-hero">
+      <main className={styles.phase7Page}>
+        <section className={styles.phase7Hero}>
           <Image
             src="/images/projects/phase-7/phase-7-hero.png"
             alt="Al Ghani Garden Phase 7"
             fill
             priority
             sizes="100vw"
-            className="phase7-hero-image"
+            className={styles.phase7HeroImage}
           />
 
-          <div className="phase7-hero-overlay" />
+          <div className={styles.phase7HeroOverlay} />
 
-          <div className="phase7-hero-content">
-            <span className="phase7-eyebrow">
+          <div className={styles.phase7HeroContent}>
+            <span className={styles.phase7Eyebrow}>
               AL GHANI DEVELOPERS
             </span>
 
@@ -80,28 +234,26 @@ export default function Phase7Page() {
               <span>PHASE 7</span>
             </h1>
 
-            <p>
-              Premium Residential Living in Eastern Lahore
-            </p>
+            <p>Premium Residential Living in Eastern Lahore</p>
 
             <Link
               href="/contact-us"
-              className="phase7-primary-button"
+              className={styles.phase7PrimaryButton}
             >
               GET IN TOUCH
             </Link>
           </div>
         </section>
 
-        {/* =====================================================
-            ABOUT US
-        ===================================================== */}
-
-        <section className="phase7-about section-padding">
-          <div className="phase7-container phase7-two-column">
-
-            <div className="phase7-section-heading">
+        <section
+          className={`${styles.phase7About} ${styles.sectionPadding}`}
+        >
+          <div
+            className={`${styles.phase7Container} ${styles.phase7TwoColumn}`}
+          >
+            <div className={styles.phase7SectionHeading}>
               <span>ABOUT US</span>
+
               <h2>
                 AL GHANI
                 <br />
@@ -109,7 +261,7 @@ export default function Phase7Page() {
               </h2>
             </div>
 
-            <div className="phase7-text">
+            <div className={styles.phase7Text}>
               <p>
                 Al Ghani Developers is a distinguished real estate
                 development company with an established footprint
@@ -133,20 +285,15 @@ export default function Phase7Page() {
                 affordable living.
               </p>
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            PHASE 7 INTRO + AMENITIES
-        ===================================================== */}
-
-        <section className="phase7-introduction">
-          <div className="phase7-container phase7-two-column">
-
-            <div className="phase7-introduction-copy">
-
-              <span className="phase7-small-title">
+        <section className={styles.phase7Introduction}>
+          <div
+            className={`${styles.phase7Container} ${styles.phase7TwoColumn}`}
+          >
+            <div className={styles.phase7IntroductionCopy}>
+              <span className={styles.phase7SmallTitle}>
                 AL GHANI GARDEN
               </span>
 
@@ -180,70 +327,58 @@ export default function Phase7Page() {
                 communities that enhance Lahore’s modern urban
                 landscape.
               </p>
-
             </div>
 
-            <div className="phase7-amenities">
-
-              <span className="phase7-small-title">
+            <div className={styles.phase7Amenities}>
+              <span className={styles.phase7SmallTitle}>
                 AMENITIES
               </span>
 
-              <div className="phase7-amenities-grid">
-                {amenities.map((amenity) => (
+              <div className={styles.phase7AmenitiesGrid}>
+                {amenities.map((amenity, index) => (
                   <div
                     key={amenity}
-                    className="phase7-amenity"
+                    className={styles.phase7Amenity}
                   >
-                    <span className="phase7-amenity-icon">
-                      +
+                    <span className={styles.phase7AmenityIcon}>
+                      <AmenityIcon type={index} />
                     </span>
 
                     <span>{amenity}</span>
                   </div>
                 ))}
               </div>
-
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            MASTER PLAN
-        ===================================================== */}
-
-        <section className="phase7-master-plan">
-
-          <div className="phase7-image-section">
+        <section className={styles.phase7MasterPlan}>
+          <div className={styles.phase7ImageSection}>
             <Image
               src="/images/projects/phase-7/master-plan.png"
               alt="Al Ghani Garden Phase 7 Master Plan"
               fill
               sizes="100vw"
-              className="phase7-full-image"
+              className={styles.phase7FullImage}
             />
 
-            <div className="phase7-image-overlay" />
+            <div className={styles.phase7ImageOverlay} />
 
-            <div className="phase7-image-title">
+            <div className={styles.phase7ImageTitle}>
               <span>MASTER</span>
               <strong>PLAN</strong>
             </div>
           </div>
-
         </section>
 
-        {/* =====================================================
-            MASJID AL-AQSA
-        ===================================================== */}
-
-        <section className="phase7-masjid section-padding">
-          <div className="phase7-container phase7-two-column">
-
-            <div className="phase7-masjid-copy">
-
-              <span className="phase7-small-title">
+        <section
+          className={`${styles.phase7Masjid} ${styles.sectionPadding}`}
+        >
+          <div
+            className={`${styles.phase7Container} ${styles.phase7TwoColumn}`}
+          >
+            <div className={styles.phase7MasjidCopy}>
+              <span className={styles.phase7SmallTitle}>
                 MASJID
               </span>
 
@@ -291,63 +426,51 @@ export default function Phase7Page() {
                 Pakistan, allowing visitors to experience the beauty
                 and atmosphere of this iconic Islamic landmark.
               </p>
-
             </div>
 
-            <div className="phase7-feature-image">
+            <div className={styles.phase7FeatureImage}>
               <Image
                 src="/images/projects/phase-7/masjid-al-aqsa.png"
                 alt="Masjid Al-Aqsa concept"
                 fill
                 sizes="(max-width: 800px) 100vw, 50vw"
-                className="phase7-cover-image"
+                className={styles.phase7CoverImage}
               />
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            TOWN PLANNING / VISION
-        ===================================================== */}
-
-        <section className="phase7-vision">
-          <div className="phase7-container">
-
-            <div className="phase7-vision-image">
+        <section className={styles.phase7Vision}>
+          <div className={styles.phase7Container}>
+            <div className={styles.phase7VisionImage}>
               <Image
                 src="/images/projects/phase-7/town-planning.png"
                 alt="Al Ghani Garden Phase 7 town planning"
                 fill
                 sizes="100vw"
-                className="phase7-cover-image"
+                className={styles.phase7CoverImage}
               />
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            SCHOOL + UNIVERSITY
-        ===================================================== */}
-
-        <section className="phase7-education section-padding">
-          <div className="phase7-container">
-
-            <div className="phase7-education-grid">
-
-              <div className="phase7-education-image">
+        <section
+          className={`${styles.phase7Education} ${styles.sectionPadding}`}
+        >
+          <div className={styles.phase7Container}>
+            <div className={styles.phase7EducationGrid}>
+              <div className={styles.phase7EducationImage}>
                 <Image
                   src="/images/projects/phase-7/school.png"
                   alt="Al Ghani Garden Phase 7 School"
                   fill
                   sizes="(max-width: 800px) 100vw, 50vw"
-                  className="phase7-cover-image"
+                  className={styles.phase7CoverImage}
                 />
               </div>
 
-              <div className="phase7-education-copy">
-                <span className="phase7-small-title">
+              <div className={styles.phase7EducationCopy}>
+                <span className={styles.phase7SmallTitle}>
                   SCHOOL
                 </span>
 
@@ -361,8 +484,10 @@ export default function Phase7Page() {
                 </p>
               </div>
 
-              <div className="phase7-education-copy phase7-university">
-                <span className="phase7-small-title">
+              <div
+                className={`${styles.phase7EducationCopy} ${styles.phase7University}`}
+              >
+                <span className={styles.phase7SmallTitle}>
                   UNIVERSITY
                 </span>
 
@@ -378,32 +503,24 @@ export default function Phase7Page() {
                 </p>
               </div>
 
-              <div className="phase7-education-image">
+              <div className={styles.phase7EducationImage}>
                 <Image
                   src="/images/projects/phase-7/university.png"
                   alt="Al Ghani Garden Phase 7 University"
                   fill
                   sizes="(max-width: 800px) 100vw, 50vw"
-                  className="phase7-cover-image"
+                  className={styles.phase7CoverImage}
                 />
               </div>
-
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            OLIVE / GREEN LIVING
-        ===================================================== */}
-
-        <section className="phase7-green-living">
-          <div className="phase7-container">
-
-            <div className="phase7-green-living-grid">
-
-              <div className="phase7-green-copy">
-                <span className="phase7-small-title">
+        <section className={styles.phase7GreenLiving}>
+          <div className={styles.phase7Container}>
+            <div className={styles.phase7GreenLivingGrid}>
+              <div className={styles.phase7GreenCopy}>
+                <span className={styles.phase7SmallTitle}>
                   BUILDING
                 </span>
 
@@ -413,37 +530,33 @@ export default function Phase7Page() {
                   NATURE & FUTURE
                 </h2>
 
-                <div className="phase7-olive-logo">
+                <div className={styles.phase7OliveLogo}>
                   OLIVE
                   <small>THE GREEN LIVING</small>
                 </div>
               </div>
 
-              <div className="phase7-green-image">
+              <div className={styles.phase7GreenImage}>
                 <Image
                   src="/images/projects/phase-7/olive-green-living.png"
                   alt="Olive The Green Living"
                   fill
                   sizes="(max-width: 800px) 100vw, 50vw"
-                  className="phase7-cover-image"
+                  className={styles.phase7CoverImage}
                 />
               </div>
-
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            GREEN LIVING INITIATIVE
-        ===================================================== */}
-
-        <section className="phase7-green-initiative section-padding">
-          <div className="phase7-container phase7-two-column">
-
-            <div className="phase7-green-initiative-copy">
-
-              <span className="phase7-small-title">
+        <section
+          className={`${styles.phase7GreenInitiative} ${styles.sectionPadding}`}
+        >
+          <div
+            className={`${styles.phase7Container} ${styles.phase7TwoColumn}`}
+          >
+            <div className={styles.phase7GreenInitiativeCopy}>
+              <span className={styles.phase7SmallTitle}>
                 GREEN LIVING
               </span>
 
@@ -460,37 +573,33 @@ export default function Phase7Page() {
                   <li key={initiative}>{initiative}</li>
                 ))}
               </ul>
-
             </div>
 
-            <div className="phase7-landscaped-image">
+            <div className={styles.phase7LandscapedImage}>
               <Image
                 src="/images/projects/phase-7/landscaped-parks.png"
                 alt="Landscaped Parks"
                 fill
                 sizes="(max-width: 800px) 100vw, 50vw"
-                className="phase7-cover-image"
+                className={styles.phase7CoverImage}
               />
 
-              <div className="phase7-landscaped-title">
+              <div className={styles.phase7LandscapedTitle}>
                 <span>LANDSCAPED</span>
                 <strong>PARKS</strong>
               </div>
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            MIYAWAKI FOREST
-        ===================================================== */}
-
-        <section className="phase7-miyawaki section-padding">
-          <div className="phase7-container phase7-two-column">
-
-            <div className="phase7-miyawaki-copy">
-
-              <span className="phase7-small-title">
+        <section
+          className={`${styles.phase7Miyawaki} ${styles.sectionPadding}`}
+        >
+          <div
+            className={`${styles.phase7Container} ${styles.phase7TwoColumn}`}
+          >
+            <div className={styles.phase7MiyawakiCopy}>
+              <span className={styles.phase7SmallTitle}>
                 MIYAWAKI
               </span>
 
@@ -509,7 +618,7 @@ export default function Phase7Page() {
                 close together to accelerate natural forest growth.
               </p>
 
-              <div className="phase7-miyawaki-stats">
+              <div className={styles.phase7MiyawakiStats}>
                 <div>
                   <strong>10x</strong>
                   <span>FASTER GROWTH</span>
@@ -526,105 +635,83 @@ export default function Phase7Page() {
                 </div>
               </div>
 
-              <div className="phase7-miyawaki-features">
+              <div className={styles.phase7MiyawakiFeatures}>
                 {miyawakiFeatures.map((feature) => (
                   <span key={feature}>{feature}</span>
                 ))}
               </div>
-
             </div>
 
-            <div className="phase7-miyawaki-image">
+            <div className={styles.phase7MiyawakiImage}>
               <Image
                 src="/images/projects/phase-7/miyawaki-forest.png"
                 alt="Miyawaki Forest"
                 fill
                 sizes="(max-width: 800px) 100vw, 50vw"
-                className="phase7-cover-image"
+                className={styles.phase7CoverImage}
               />
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            DEVELOPMENT UPDATES
-        ===================================================== */}
-
-        <section className="phase7-development">
-          <div className="phase7-image-section">
-
+        <section className={styles.phase7Development}>
+          <div className={styles.phase7ImageSection}>
             <Image
               src="/images/projects/phase-7/development-updates.png"
               alt="Al Ghani Garden Phase 7 Development Updates"
               fill
               sizes="100vw"
-              className="phase7-full-image"
+              className={styles.phase7FullImage}
             />
 
-            <div className="phase7-image-overlay" />
+            <div className={styles.phase7ImageOverlay} />
 
-            <div className="phase7-image-title">
+            <div className={styles.phase7ImageTitle}>
               <span>DEVELOPMENT</span>
               <strong>UPDATES</strong>
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            LOCATION
-        ===================================================== */}
-
-        <section className="phase7-location section-padding">
-          <div className="phase7-container phase7-two-column">
-
-            <div className="phase7-location-copy">
-
-              <span className="phase7-small-title">
+        <section
+          className={`${styles.phase7Location} ${styles.sectionPadding}`}
+        >
+          <div
+            className={`${styles.phase7Container} ${styles.phase7TwoColumn}`}
+          >
+            <div className={styles.phase7LocationCopy}>
+              <span className={styles.phase7SmallTitle}>
                 DESIGNED BY
               </span>
 
-              <h2>
-                MEINHARDT
-              </h2>
+              <h2>MEINHARDT</h2>
 
               <p>
                 World’s Leading
                 <br />
                 Town Planning Firm
               </p>
-
             </div>
 
-            <div className="phase7-location-image">
-
+            <div className={styles.phase7LocationImage}>
               <Image
                 src="/images/projects/phase-7/location.png"
                 alt="Al Ghani Garden Phase 7 Location"
                 fill
                 sizes="(max-width: 800px) 100vw, 50vw"
-                className="phase7-cover-image"
+                className={styles.phase7CoverImage}
               />
 
-              <div className="phase7-location-label">
+              <div className={styles.phase7LocationLabel}>
                 <span>LOCATION</span>
               </div>
-
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            LOCATION HIGHLIGHTS
-        ===================================================== */}
-
-        <section className="phase7-location-highlights">
-          <div className="phase7-container">
-
-            <div className="phase7-location-highlight-grid">
-
+        <section className={styles.phase7LocationHighlights}>
+          <div className={styles.phase7Container}>
+            <div className={styles.phase7LocationHighlightGrid}>
               <div>
                 <strong>8 MINUTES</strong>
                 <span>FROM ORANGE TRAIN</span>
@@ -654,32 +741,28 @@ export default function Phase7Page() {
                 <strong>18 MINUTES</strong>
                 <span>FROM MALL ROAD</span>
               </div>
-
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            AL GHANI TAHAFFUZ
-        ===================================================== */}
-
-        <section className="phase7-tahaffuz section-padding">
-          <div className="phase7-container phase7-two-column">
-
-            <div className="phase7-tahaffuz-image">
+        <section
+          className={`${styles.phase7Tahaffuz} ${styles.sectionPadding}`}
+        >
+          <div
+            className={`${styles.phase7Container} ${styles.phase7TwoColumn}`}
+          >
+            <div className={styles.phase7TahaffuzImage}>
               <Image
                 src="/images/projects/phase-7/tahaffuz.png"
                 alt="Al Ghani Tahaffuz"
                 fill
                 sizes="(max-width: 800px) 100vw, 50vw"
-                className="phase7-cover-image"
+                className={styles.phase7CoverImage}
               />
             </div>
 
-            <div className="phase7-tahaffuz-copy">
-
-              <span className="phase7-small-title">
+            <div className={styles.phase7TahaffuzCopy}>
+              <span className={styles.phase7SmallTitle}>
                 AL-GHANI
               </span>
 
@@ -704,24 +787,15 @@ export default function Phase7Page() {
                 legal heirs, in accordance with the applicable terms
                 and conditions, with no additional charges levied.
               </p>
-
             </div>
-
           </div>
         </section>
 
-        {/* =====================================================
-            CTA
-        ===================================================== */}
-
-        <section className="phase7-cta">
-          <div className="phase7-container">
-
+        <section className={styles.phase7Cta}>
+          <div className={styles.phase7Container}>
             <span>AL GHANI GARDEN</span>
 
-            <h2>
-              PHASE 7
-            </h2>
+            <h2>PHASE 7</h2>
 
             <p>
               Discover a thoughtfully planned community in eastern
@@ -730,14 +804,12 @@ export default function Phase7Page() {
 
             <Link
               href="/contact-us"
-              className="phase7-primary-button"
+              className={styles.phase7PrimaryButton}
             >
               CONTACT US
             </Link>
-
           </div>
         </section>
-
       </main>
 
       <FloatingActions />
