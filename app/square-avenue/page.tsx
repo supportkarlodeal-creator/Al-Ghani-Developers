@@ -29,7 +29,7 @@ const amenities = [
   ["Dispensary", `${sourceBase}/pharmacy.png`],
   ["Life-Time Maintenance", `${sourceBase}/maintenance.png`],
   ["Water Filtration Plant", `${sourceBase}/water-filteration.png`],
-  ["Small Zoo", `${sourceBase}/zoo.png`],
+  ["Mini Zoo", `${sourceBase}/zoo.png`],
   ["Building Control Department", `${sourceBase}/garage.png`],
   ["Shuttle Ambulance Service", `${sourceBase}/ambulance.png`],
   ["Community Center", `${sourceBase}/community.png`],

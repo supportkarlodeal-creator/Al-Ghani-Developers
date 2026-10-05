@@ -5,6 +5,12 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
+    image: "/images/hero/olive-hero.png",
+    width: 1600,
+    height: 581,
+    alt: "Al Ghani Developers",
+  },
+  {
     image: "/images/hero/hero-2.png",
     width: 1600,
     height: 610,
@@ -22,6 +28,7 @@ const slides = [
     height: 610,
     alt: "Al Ghani Developers",
   },
+
 ];
 
 export default function Hero() {

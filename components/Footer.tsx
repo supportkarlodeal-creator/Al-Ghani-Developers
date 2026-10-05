@@ -109,12 +109,6 @@ export default function Footer() {
               </li>
 
               <li>
-                <Link href="/career">
-                  Careers
-                </Link>
-              </li>
-
-              <li>
                 <Link href="/contact-us">
                   Contact Us
                 </Link>
@@ -126,11 +120,6 @@ export default function Footer() {
                 </Link>
               </li>
 
-              <li>
-                <Link href="/balloting-result">
-                  Ballot Result
-                </Link>
-              </li>
               <Link href="/privacy-policy">Privacy Policy</Link>
             </ul>
           </div>
