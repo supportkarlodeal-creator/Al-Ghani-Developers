@@ -1,4 +1,4 @@
-import crypto from "node:crypto";
+import * as crypto from "node:crypto";
 
 type FlowRequestPayload = {
   encrypted_aes_key: string;
@@ -12,49 +12,43 @@ export type DecryptedFlowRequest = {
   initialVector: Buffer;
 };
 
-function getPrivateKey() {
-  const rawPrivateKey = process.env.WHATSAPP_FLOW_PRIVATE_KEY;
+function getPrivateKey(): crypto.KeyObject {
+  const privateKeyBase64 =
+    process.env.WHATSAPP_FLOW_PRIVATE_KEY_BASE64;
 
-  if (!rawPrivateKey) {
-    throw new Error("WHATSAPP_FLOW_PRIVATE_KEY is not configured");
-  }
-
-  let privateKey = rawPrivateKey.trim();
-
-  // Handle environment variables that contain literal "\n" characters.
-  privateKey = privateKey
-    .replace(/\\r\\n/g, "\n")
-    .replace(/\\n/g, "\n")
-    .replace(/\r\n/g, "\n")
-    .replace(/\r/g, "\n");
-
-  // Remove accidental surrounding quotes if the whole PEM was stored quoted.
-  if (
-    (privateKey.startsWith('"') && privateKey.endsWith('"')) ||
-    (privateKey.startsWith("'") && privateKey.endsWith("'"))
-  ) {
-    privateKey = privateKey.slice(1, -1).trim();
-  }
-
-  if (
-    !privateKey.includes("-----BEGIN PRIVATE KEY-----") &&
-    !privateKey.includes("-----BEGIN RSA PRIVATE KEY-----")
-  ) {
+  if (!privateKeyBase64) {
     throw new Error(
-      "WHATSAPP_FLOW_PRIVATE_KEY does not contain a valid PEM private-key header",
+      "WHATSAPP_FLOW_PRIVATE_KEY_BASE64 is not configured",
     );
   }
 
   try {
+    const privateKey = Buffer.from(
+      privateKeyBase64.trim(),
+      "base64",
+    ).toString("utf8");
+
+    if (
+      !privateKey.includes("-----BEGIN PRIVATE KEY-----") &&
+      !privateKey.includes("-----BEGIN RSA PRIVATE KEY-----")
+    ) {
+      throw new Error(
+        "Decoded value does not contain a valid PEM private-key header",
+      );
+    }
+
     return crypto.createPrivateKey({
       key: privateKey,
       format: "pem",
     });
   } catch (error) {
-    console.error("Failed to load WhatsApp Flow private key:", error);
+    console.error(
+      "Failed to load WhatsApp Flow private key:",
+      error,
+    );
 
     throw new Error(
-      "WHATSAPP_FLOW_PRIVATE_KEY could not be decoded as a PEM private key",
+      "WHATSAPP_FLOW_PRIVATE_KEY_BASE64 could not be decoded as a PEM private key",
     );
   }
 }
@@ -111,10 +105,13 @@ export function decryptFlowRequest(
   );
 
   if (encryptedFlowData.length <= 16) {
-    throw new Error("Encrypted Flow data is too short");
+    throw new Error(
+      "Encrypted Flow data is too short",
+    );
   }
 
-  // AES-GCM authentication tag is appended to the encrypted payload.
+  // Meta sends the AES-GCM authentication tag
+  // appended to the encrypted flow data.
   const authTag = encryptedFlowData.subarray(
     encryptedFlowData.length - 16,
   );
@@ -151,9 +148,8 @@ export function decryptFlowRequest(
 /**
  * Encrypt a WhatsApp Flow response.
  *
- * Meta requires the response to use the transformed IV from the
- * incoming request. The official Meta example transforms each IV
- * byte using its bitwise complement.
+ * Meta requires the response to use a transformed IV.
+ * Each byte of the incoming IV is bitwise complemented.
  */
 export function encryptFlowResponse(
   response: Record<string, unknown>,
@@ -161,17 +157,28 @@ export function encryptFlowResponse(
   initialVector: Buffer,
 ): string {
   if (aesKey.length !== 16) {
-    throw new Error("AES key must be 16 bytes");
+    throw new Error(
+      "AES key must be 16 bytes",
+    );
   }
 
   if (initialVector.length !== 16) {
-    throw new Error("IV must be 16 bytes");
+    throw new Error(
+      "IV must be 16 bytes",
+    );
   }
 
-  const transformedIv = Buffer.from(initialVector);
+  const transformedIv = Buffer.from(
+    initialVector,
+  );
 
-  for (let i = 0; i < transformedIv.length; i += 1) {
-    transformedIv[i] = ~transformedIv[i] & 0xff;
+  for (
+    let i = 0;
+    i < transformedIv.length;
+    i += 1
+  ) {
+    transformedIv[i] =
+      ~transformedIv[i] & 0xff;
   }
 
   const cipher = crypto.createCipheriv(
