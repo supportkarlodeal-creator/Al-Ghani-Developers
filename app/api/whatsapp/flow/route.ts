@@ -35,15 +35,35 @@ export async function POST(request: NextRequest) {
 
     console.log("WhatsApp Flow request:", body);
 
-    /*
-     * Temporary response.
-     *
-     * We will replace this with the real:
-     *
-     * Project → Block → Plot Size → Customer Details
-     *
-     * flow after the endpoint has passed Meta's health check.
-     */
+    // ---------------------------------------------------------
+    // WhatsApp Flow Health Check
+    // ---------------------------------------------------------
+
+    if (body.action === "ping") {
+      const response = {
+        data: {
+          status: "active",
+        },
+      };
+
+      const encryptedResponse = encryptFlowResponse(
+        response,
+        aesKey,
+        initialVector,
+      );
+
+      return new NextResponse(encryptedResponse, {
+        status: 200,
+        headers: {
+          "Content-Type": "text/plain",
+        },
+      });
+    }
+
+    // ---------------------------------------------------------
+    // Temporary response for other Flow requests
+    // ---------------------------------------------------------
+
     const response = {
       version: "3.0",
       screen: "WELCOME_SCREEN",
@@ -63,7 +83,10 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error("WhatsApp Flow endpoint error:", error);
+    console.error(
+      "WhatsApp Flow endpoint error:",
+      error,
+    );
 
     return NextResponse.json(
       {

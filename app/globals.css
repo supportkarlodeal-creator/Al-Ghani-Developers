@@ -2902,9 +2902,10 @@ img {
     font-size: 8px;
   }
 
-  .site-logo-image {
-    width: 125px;
-  }
+ .site-logo-image {
+  width: 140px;
+  height: 60px;
+}
 
   .project-tabs {
     grid-template-columns: 1fr;
@@ -7501,4 +7502,12 @@ img {
   .east-final-content p {
     font-size: 14px;
   }
+}
+@media (max-width: 600px) {
+
+  .site-logo-image {
+    width: 140px;
+    height: 60px;
+  }
+
 }
