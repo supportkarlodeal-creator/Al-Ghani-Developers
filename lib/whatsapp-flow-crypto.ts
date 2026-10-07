@@ -13,18 +13,50 @@ export type DecryptedFlowRequest = {
 };
 
 function getPrivateKey() {
-  const privateKey = process.env.WHATSAPP_FLOW_PRIVATE_KEY;
-  const passphrase = process.env.WHATSAPP_FLOW_PRIVATE_KEY_PASSPHRASE;
+  const rawPrivateKey = process.env.WHATSAPP_FLOW_PRIVATE_KEY;
 
-  if (!privateKey) {
+  if (!rawPrivateKey) {
     throw new Error("WHATSAPP_FLOW_PRIVATE_KEY is not configured");
   }
 
-  return crypto.createPrivateKey({
-    key: privateKey.replace(/\\n/g, "\n"),
-    format: "pem",
-    passphrase: passphrase || undefined,
-  });
+  let privateKey = rawPrivateKey.trim();
+
+  // Handle environment variables that contain literal "\n" characters.
+  privateKey = privateKey
+    .replace(/\\r\\n/g, "\n")
+    .replace(/\\n/g, "\n")
+    .replace(/\r\n/g, "\n")
+    .replace(/\r/g, "\n");
+
+  // Remove accidental surrounding quotes if the whole PEM was stored quoted.
+  if (
+    (privateKey.startsWith('"') && privateKey.endsWith('"')) ||
+    (privateKey.startsWith("'") && privateKey.endsWith("'"))
+  ) {
+    privateKey = privateKey.slice(1, -1).trim();
+  }
+
+  if (
+    !privateKey.includes("-----BEGIN PRIVATE KEY-----") &&
+    !privateKey.includes("-----BEGIN RSA PRIVATE KEY-----")
+  ) {
+    throw new Error(
+      "WHATSAPP_FLOW_PRIVATE_KEY does not contain a valid PEM private-key header",
+    );
+  }
+
+  try {
+    return crypto.createPrivateKey({
+      key: privateKey,
+      format: "pem",
+    });
+  } catch (error) {
+    console.error("Failed to load WhatsApp Flow private key:", error);
+
+    throw new Error(
+      "WHATSAPP_FLOW_PRIVATE_KEY could not be decoded as a PEM private key",
+    );
+  }
 }
 
 /**
@@ -86,6 +118,7 @@ export function decryptFlowRequest(
   const authTag = encryptedFlowData.subarray(
     encryptedFlowData.length - 16,
   );
+
   const ciphertext = encryptedFlowData.subarray(
     0,
     encryptedFlowData.length - 16,
@@ -104,10 +137,9 @@ export function decryptFlowRequest(
     decipher.final(),
   ]);
 
-  const body = JSON.parse(plaintext.toString("utf8")) as Record<
-    string,
-    unknown
-  >;
+  const body = JSON.parse(
+    plaintext.toString("utf8"),
+  ) as Record<string, unknown>;
 
   return {
     body,
@@ -148,7 +180,10 @@ export function encryptFlowResponse(
     transformedIv,
   );
 
-  const plaintext = Buffer.from(JSON.stringify(response), "utf8");
+  const plaintext = Buffer.from(
+    JSON.stringify(response),
+    "utf8",
+  );
 
   const ciphertext = Buffer.concat([
     cipher.update(plaintext),
@@ -157,7 +192,10 @@ export function encryptFlowResponse(
 
   const authTag = cipher.getAuthTag();
 
-  return Buffer.concat([ciphertext, authTag]).toString("base64");
+  return Buffer.concat([
+    ciphertext,
+    authTag,
+  ]).toString("base64");
 }
 
 export type { FlowRequestPayload };
